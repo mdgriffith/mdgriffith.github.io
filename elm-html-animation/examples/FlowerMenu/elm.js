@@ -10695,6 +10695,9 @@ Elm.Html.Animation.Properties.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
+   var ListItem = {ctor: "ListItem"};
+   var InlineFlex = {ctor: "InlineFlex"};
+   var Flex = {ctor: "Flex"};
    var Block = {ctor: "Block"};
    var InlineBlock = {ctor: "InlineBlock"};
    var Inline = {ctor: "Inline"};
@@ -10899,7 +10902,10 @@ Elm.Html.Animation.Properties.make = function (_elm) {
                                                   ,None: None
                                                   ,Inline: Inline
                                                   ,InlineBlock: InlineBlock
-                                                  ,Block: Block};
+                                                  ,Block: Block
+                                                  ,Flex: Flex
+                                                  ,InlineFlex: InlineFlex
+                                                  ,ListItem: ListItem};
 };
 Elm.Html = Elm.Html || {};
 Elm.Html.Animation = Elm.Html.Animation || {};
@@ -10926,7 +10932,10 @@ Elm.Html.Animation.Render.make = function (_elm) {
       {case "None": return "none";
          case "Inline": return "inline";
          case "InlineBlock": return "inline-block";
-         default: return "block";}
+         case "Block": return "block";
+         case "Flex": return "flex";
+         case "InlineFlex": return "inline-flex";
+         default: return "list-item";}
    };
    var angleUnit = function (unit) {
       var _p1 = unit;
@@ -11265,11 +11274,9 @@ Elm.Html.Animation.Spring.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $Time = Elm.Time.make(_elm);
    var _op = {};
-   var bounds = {ctor: "_Tuple2",_0: 0,_1: 1000};
-   var boundRange = $Basics.snd(bounds) - $Basics.fst(bounds);
    var vTolerance = 0.1;
    var tolerance = 1.0e-2;
-   var internalUpdate = F3(function (dtms,spring,phys) {
+   var update = F3(function (dtms,spring,phys) {
       var fdamper = (0 - spring.damping) * phys.velocity;
       var fspring = (0 - spring.stiffness) * (phys.position - spring.destination);
       var a = fspring + fdamper;
@@ -11278,15 +11285,6 @@ Elm.Html.Animation.Spring.make = function (_elm) {
       var newX = phys.position + newV * dt;
       return _U.cmp($Basics.abs(spring.destination - newX),tolerance) < 0 && _U.cmp($Basics.abs(newV),vTolerance) < 0 ? _U.update(phys,
       {position: spring.destination,velocity: 0.0}) : _U.update(phys,{position: newX,velocity: newV});
-   });
-   var update = internalUpdate;
-   var normalizedUpdate = F3(function (dtms,spring,phys) {
-      var normalizedSpring = _U.update(spring,{destination: $Basics.snd(bounds)});
-      var range = spring.destination - phys.initial;
-      var normalizedPosition = (phys.position - phys.initial) / range * boundRange;
-      var normalizedPhys = {position: normalizedPosition,initial: $Basics.fst(bounds),velocity: phys.velocity / range * boundRange};
-      var updated = A3(internalUpdate,dtms,normalizedSpring,normalizedPhys);
-      return _U.update(phys,{velocity: updated.velocity / boundRange * range,position: updated.position / boundRange * range + phys.initial});
    });
    var atRest = F2(function (spring,physical) {
       return _U.cmp($Basics.abs(spring.destination - physical.position),tolerance) < 0 && _U.cmp($Basics.abs(physical.velocity),vTolerance) < 0;
@@ -11301,7 +11299,7 @@ Elm.Html.Animation.Spring.make = function (_elm) {
       {ctor: "_Tuple2",_0: phys,_1: 0},
       _U.range(1,10000)));
    });
-   var Physical = F3(function (a,b,c) {    return {initial: a,position: b,velocity: c};});
+   var Physical = F2(function (a,b) {    return {position: a,velocity: b};});
    var Model = F3(function (a,b,c) {    return {stiffness: a,damping: b,destination: c};});
    return _elm.Html.Animation.Spring.values = {_op: _op,update: update,atRest: atRest,duration: duration,Model: Model,Physical: Physical};
 };
@@ -11976,7 +11974,7 @@ Elm.Html.Animation.Core.make = function (_elm) {
             if (_p92.ctor === "Nothing") {
                   var newSpring = physics.spring;
                   var targeted = _U.update(newSpring,{destination: A2(physics.target,_p95,1.0)});
-                  var positioned = _U.eq(current,0.0) && _U.eq(dt,0.0) ? {initial: _p95,position: _p95,velocity: physics.physical.velocity} : physics.physical;
+                  var positioned = _U.eq(current,0.0) && _U.eq(dt,0.0) ? {position: _p95,velocity: physics.physical.velocity} : physics.physical;
                   var finalPhysical = A3($Html$Animation$Spring.update,dt,targeted,positioned);
                   return _U.update(physics,{physical: finalPhysical,spring: targeted});
                } else {
@@ -12031,7 +12029,7 @@ Elm.Html.Animation.Core.make = function (_elm) {
                   var eased = _p99.ease(sampleSize / _p99.duration);
                   var easeV = A3(velocity,0,eased,sampleSize);
                   var deltaV = _p100.physical.velocity - easeV;
-                  var newEasing = $Maybe.Just(_U.update(_p99,{counterForcePhys: $Maybe.Just({initial: 0,position: 0,velocity: deltaV})}));
+                  var newEasing = $Maybe.Just(_U.update(_p99,{counterForcePhys: $Maybe.Just({position: 0,velocity: deltaV})}));
                   return _U.update(target,{easing: newEasing,physical: newV});
                }
          }
@@ -12253,7 +12251,7 @@ Elm.Html.Animation.Core.make = function (_elm) {
                           return model.elapsed + _p115.delay - _p114._0.at;
                        }
                  }();
-                 var interruptions = A2($Basics._op["++"],model.interruption,_U.list([{at: interruptionTime,anim: _p116}]));
+                 var interruptions = A2($Basics._op["++"],A2($List.take,1,model.interruption),_U.list([{at: interruptionTime,anim: _p116}]));
                  return {ctor: "_Tuple2",_0: _U.update(model,{interruption: interruptions}),_1: $Effects.tick(Tick)};
               }
          default: var _p122 = _p112._0;
@@ -12297,6 +12295,7 @@ Elm.Html.Animation.Core.make = function (_elm) {
                                             ,emptyEasing: emptyEasing
                                             ,Model: Model
                                             ,StyleKeyframe: StyleKeyframe
+                                            ,Interruption: Interruption
                                             ,Physics: Physics
                                             ,Queue: Queue
                                             ,Interrupt: Interrupt
@@ -12421,7 +12420,7 @@ Elm.Html.Animation.make = function (_elm) {
    var SpringProps = F2(function (a,b) {    return {stiffness: a,damping: b};});
    var emptyPhysics = function (target) {
       return {target: target
-             ,physical: {initial: 0,position: 0,velocity: 0}
+             ,physical: {position: 0,velocity: 0}
              ,spring: {stiffness: noWobble.stiffness,damping: noWobble.damping,destination: 1}
              ,easing: $Maybe.Nothing};
    };
