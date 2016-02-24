@@ -11265,9 +11265,11 @@ Elm.Html.Animation.Spring.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $Time = Elm.Time.make(_elm);
    var _op = {};
+   var bounds = {ctor: "_Tuple2",_0: 0,_1: 1000};
+   var boundRange = $Basics.snd(bounds) - $Basics.fst(bounds);
    var vTolerance = 0.1;
    var tolerance = 1.0e-2;
-   var update = F3(function (dtms,spring,phys) {
+   var internalUpdate = F3(function (dtms,spring,phys) {
       var fdamper = (0 - spring.damping) * phys.velocity;
       var fspring = (0 - spring.stiffness) * (phys.position - spring.destination);
       var a = fspring + fdamper;
@@ -11276,6 +11278,15 @@ Elm.Html.Animation.Spring.make = function (_elm) {
       var newX = phys.position + newV * dt;
       return _U.cmp($Basics.abs(spring.destination - newX),tolerance) < 0 && _U.cmp($Basics.abs(newV),vTolerance) < 0 ? _U.update(phys,
       {position: spring.destination,velocity: 0.0}) : _U.update(phys,{position: newX,velocity: newV});
+   });
+   var update = internalUpdate;
+   var normalizedUpdate = F3(function (dtms,spring,phys) {
+      var normalizedSpring = _U.update(spring,{destination: $Basics.snd(bounds)});
+      var range = spring.destination - phys.initial;
+      var normalizedPosition = (phys.position - phys.initial) / range * boundRange;
+      var normalizedPhys = {position: normalizedPosition,initial: $Basics.fst(bounds),velocity: phys.velocity / range * boundRange};
+      var updated = A3(internalUpdate,dtms,normalizedSpring,normalizedPhys);
+      return _U.update(phys,{velocity: updated.velocity / boundRange * range,position: updated.position / boundRange * range + phys.initial});
    });
    var atRest = F2(function (spring,physical) {
       return _U.cmp($Basics.abs(spring.destination - physical.position),tolerance) < 0 && _U.cmp($Basics.abs(physical.velocity),vTolerance) < 0;
@@ -11290,7 +11301,7 @@ Elm.Html.Animation.Spring.make = function (_elm) {
       {ctor: "_Tuple2",_0: phys,_1: 0},
       _U.range(1,10000)));
    });
-   var Physical = F2(function (a,b) {    return {position: a,velocity: b};});
+   var Physical = F3(function (a,b,c) {    return {initial: a,position: b,velocity: c};});
    var Model = F3(function (a,b,c) {    return {stiffness: a,damping: b,destination: c};});
    return _elm.Html.Animation.Spring.values = {_op: _op,update: update,atRest: atRest,duration: duration,Model: Model,Physical: Physical};
 };
@@ -11963,11 +11974,9 @@ Elm.Html.Animation.Core.make = function (_elm) {
             var _p95 = _p91._0;
             var _p92 = physics.easing;
             if (_p92.ctor === "Nothing") {
-                  var pos = _U.eq(current,0.0) && _U.eq(dt,0.0) ? _p95 : physics.physical.position;
                   var newSpring = physics.spring;
                   var targeted = _U.update(newSpring,{destination: A2(physics.target,_p95,1.0)});
-                  var newPhysical = physics.physical;
-                  var positioned = _U.update(newPhysical,{position: pos});
+                  var positioned = _U.eq(current,0.0) && _U.eq(dt,0.0) ? {initial: _p95,position: _p95,velocity: physics.physical.velocity} : physics.physical;
                   var finalPhysical = A3($Html$Animation$Spring.update,dt,targeted,positioned);
                   return _U.update(physics,{physical: finalPhysical,spring: targeted});
                } else {
@@ -12022,7 +12031,7 @@ Elm.Html.Animation.Core.make = function (_elm) {
                   var eased = _p99.ease(sampleSize / _p99.duration);
                   var easeV = A3(velocity,0,eased,sampleSize);
                   var deltaV = _p100.physical.velocity - easeV;
-                  var newEasing = $Maybe.Just(_U.update(_p99,{counterForcePhys: $Maybe.Just({position: 0,velocity: deltaV})}));
+                  var newEasing = $Maybe.Just(_U.update(_p99,{counterForcePhys: $Maybe.Just({initial: 0,position: 0,velocity: deltaV})}));
                   return _U.update(target,{easing: newEasing,physical: newV});
                }
          }
@@ -12405,14 +12414,14 @@ Elm.Html.Animation.make = function (_elm) {
             default: return _p17._0;}
       }
    });
-   var fastAndLoose = {stiffness: 400,damping: 28,destination: 1};
-   var stiff = {stiffness: 210,damping: 20,destination: 1};
-   var wobbly = {stiffness: 180,damping: 12,destination: 1};
-   var gentle = {stiffness: 120,damping: 14,destination: 1};
-   var noWobble = {stiffness: 170,damping: 26,destination: 1};
+   var stiff = {stiffness: 210,damping: 20};
+   var wobbly = {stiffness: 180,damping: 12};
+   var gentle = {stiffness: 120,damping: 14};
+   var noWobble = {stiffness: 170,damping: 26};
+   var SpringProps = F2(function (a,b) {    return {stiffness: a,damping: b};});
    var emptyPhysics = function (target) {
       return {target: target
-             ,physical: {position: 0,velocity: 0}
+             ,physical: {initial: 0,position: 0,velocity: 0}
              ,spring: {stiffness: noWobble.stiffness,damping: noWobble.damping,destination: 1}
              ,easing: $Maybe.Nothing};
    };
@@ -12467,6 +12476,10 @@ Elm.Html.Animation.make = function (_elm) {
                  }
            }()}));}
    });
+   var spring = F2(function (spring,action) {
+      var newSpring = $Maybe.Just({destination: 1.0,damping: spring.damping,stiffness: spring.stiffness});
+      return A2(updateOrCreate,action,function (a) {    return _U.update(a,{spring: newSpring});});
+   });
    var props = F2(function (p,action) {
       return A2(updateOrCreate,
       action,
@@ -12497,7 +12510,6 @@ Elm.Html.Animation.make = function (_elm) {
       });
    });
    var easing = F2(function (ease,action) {    return A2(updateOrCreate,action,function (a) {    return _U.update(a,{easing: $Maybe.Just(ease)});});});
-   var spring = F2(function (spring,action) {    return A2(updateOrCreate,action,function (a) {    return _U.update(a,{spring: $Maybe.Just(spring)});});});
    var PreAction = F2(function (a,b) {    return {frames: a,action: b};});
    var KeyframeWithOptions = F4(function (a,b,c,d) {    return {frame: a,duration: b,easing: c,spring: d};});
    var A = function (a) {    return {ctor: "A",_0: a};};
@@ -12592,7 +12604,6 @@ Elm.Html.Animation.make = function (_elm) {
                                        ,gentle: gentle
                                        ,wobbly: wobbly
                                        ,stiff: stiff
-                                       ,fastAndLoose: fastAndLoose
                                        ,toColor: toColor
                                        ,toRGB: toRGB
                                        ,toRGBA: toRGBA
@@ -12678,7 +12689,7 @@ Elm.Main.make = function (_elm) {
                  model,
                  A2($Html$Animation.props,
                  _U.list([A2($Html$Animation$Properties.Rotate,$Html$Animation.to(-0.125),$Html$Animation$Properties.Turn)]),
-                 $Html$Animation.animate));
+                 A2($Html$Animation.spring,{stiffness: 500,damping: 30},$Html$Animation.animate)));
                  var newMenu = _p1._0;
                  var menuFx = _p1._1;
                  var _p2 = A2(onAllSubmenus,
@@ -12686,7 +12697,7 @@ Elm.Main.make = function (_elm) {
                  $Html$Animation.stagger(F2(function (total,i) {
                     return A2($Html$Animation.props,
                     _U.list([A2($Html$Animation$Properties.TranslateY,$Html$Animation.to(0),$Html$Animation$Properties.Px)]),
-                    A2($Html$Animation.spring,$Html$Animation.fastAndLoose,A2($Html$Animation.delay,i * 5.0e-2 * $Time.second,$Html$Animation.animate)));
+                    A2($Html$Animation.spring,{stiffness: 400,damping: 28},A2($Html$Animation.delay,i * 5.0e-2 * $Time.second,$Html$Animation.animate)));
                  })));
                  var submenus = _p2._0;
                  var submenuFx = _p2._1;
@@ -12696,7 +12707,7 @@ Elm.Main.make = function (_elm) {
                  model,
                  A2($Html$Animation.props,
                  _U.list([A2($Html$Animation$Properties.Rotate,$Html$Animation.to(0),$Html$Animation$Properties.Turn)]),
-                 $Html$Animation.animate));
+                 A2($Html$Animation.spring,{stiffness: 500,damping: 30},$Html$Animation.animate)));
                  var newMenu = _p3._0;
                  var menuFx = _p3._1;
                  var _p4 = A2(onAllSubmenus,
@@ -12704,7 +12715,7 @@ Elm.Main.make = function (_elm) {
                  $Html$Animation.stagger(F2(function (total,i) {
                     return A2($Html$Animation.props,
                     _U.list([A2($Html$Animation$Properties.TranslateY,$Html$Animation.to(100),$Html$Animation$Properties.Px)]),
-                    A2($Html$Animation.spring,$Html$Animation.fastAndLoose,A2($Html$Animation.delay,i * 2.5e-2 * $Time.second,$Html$Animation.animate)));
+                    A2($Html$Animation.spring,{stiffness: 400,damping: 28},A2($Html$Animation.delay,i * 2.5e-2 * $Time.second,$Html$Animation.animate)));
                  })));
                  var submenus = _p4._0;
                  var submenuFx = _p4._1;
