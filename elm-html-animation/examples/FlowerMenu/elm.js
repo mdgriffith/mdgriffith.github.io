@@ -12204,10 +12204,12 @@ Elm.Html.Animation.Core.make = function (_elm) {
    });
    var tick = F6(function (model,current,elapsed,dt,start,now) {
       if (_U.eq(dt,0)) return A3($continue,model,elapsed,start); else if (A2(done,elapsed,current)) {
+               var interruption = A2($List.map,function (inter) {    return _U.update(inter,{at: inter.at - elapsed});},model.interruption);
                var previous = A2(bake,current,model.previous);
-               var anims = A2($Maybe.withDefault,_U.list([]),$List.tail(model.anim));
+               var anims = A2($List.drop,1,model.anim);
                return {ctor: "_Tuple2"
-                      ,_0: _U.update(model,{elapsed: 0.0,start: $Maybe.Just(now),previous: previous,anim: A2(initializeFrame,previous,anims)})
+                      ,_0: _U.update(model,
+                      {elapsed: 0.0,start: $Maybe.Just(now),previous: previous,anim: A2(initializeFrame,previous,anims),interruption: interruption})
                       ,_1: $Effects.tick(Tick)};
             } else return {ctor: "_Tuple2"
                           ,_0: _U.update(model,
@@ -12236,50 +12238,46 @@ Elm.Html.Animation.Core.make = function (_elm) {
       var _p112 = action;
       switch (_p112.ctor)
       {case "Queue": return {ctor: "_Tuple2",_0: _U.update(model,{anim: A2($Basics._op["++"],model.anim,_p112._0)}),_1: $Effects.tick(Tick)};
-         case "Interrupt": var _p116 = _p112._0;
-           var _p113 = $List.head(_p116);
+         case "Interrupt": var _p117 = _p112._0;
+           var _p113 = $List.head(_p117);
            if (_p113.ctor === "Nothing") {
                  return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
               } else {
-                 var _p115 = _p113._0;
+                 var _p116 = _p113._0;
                  var last = $List.head($List.reverse(model.interruption));
-                 var interruptionTime = function () {
+                 var interruptions = function () {
                     var _p114 = last;
                     if (_p114.ctor === "Nothing") {
-                          return model.elapsed + _p115.delay;
+                          return _U.list([{at: model.elapsed + _p116.delay,anim: _p117}]);
                        } else {
-                          return model.elapsed + _p115.delay - _p114._0.at;
+                          var _p115 = _p114._0;
+                          return A2($List._op["::"],_p115,_U.list([{at: model.elapsed + _p116.delay - _p115.at,anim: _p117}]));
                        }
                  }();
-                 var interruptions = A2($Basics._op["++"],A2($List.take,1,model.interruption),_U.list([{at: interruptionTime,anim: _p116}]));
                  return {ctor: "_Tuple2",_0: _U.update(model,{interruption: interruptions}),_1: $Effects.tick(Tick)};
               }
-         default: var _p122 = _p112._0;
-           var _p117 = A2(getTimes,_p122,model);
-           var start = _p117._0;
-           var elapsed = _p117._1;
-           var dt = _p117._2;
-           var _p118 = $List.head(model.interruption);
-           if (_p118.ctor === "Just") {
-                 var _p120 = _p118._0;
-                 if (_U.cmp(elapsed,_p120.at) > -1) return A4(interrupt,
-                    _p122,
-                    model,
-                    _p120.anim,
-                    A2($Maybe.withDefault,_U.list([]),$List.tail(model.interruption))); else {
-                       var _p119 = $List.head(model.anim);
-                       if (_p119.ctor === "Nothing") {
+         default: var _p123 = _p112._0;
+           var _p118 = A2(getTimes,_p123,model);
+           var start = _p118._0;
+           var elapsed = _p118._1;
+           var dt = _p118._2;
+           var _p119 = $List.head(model.interruption);
+           if (_p119.ctor === "Just") {
+                 var _p121 = _p119._0;
+                 if (_U.cmp(elapsed,_p121.at) > -1) return A4(interrupt,_p123,model,_p121.anim,A2($List.drop,1,model.interruption)); else {
+                       var _p120 = $List.head(model.anim);
+                       if (_p120.ctor === "Nothing") {
                              return A3($continue,model,elapsed,start);
                           } else {
-                             return A6(tick,model,_p119._0,elapsed,dt,start,_p122);
+                             return A6(tick,model,_p120._0,elapsed,dt,start,_p123);
                           }
                     }
               } else {
-                 var _p121 = $List.head(model.anim);
-                 if (_p121.ctor === "Nothing") {
+                 var _p122 = $List.head(model.anim);
+                 if (_p122.ctor === "Nothing") {
                        return {ctor: "_Tuple2",_0: _U.update(model,{elapsed: 0.0,start: $Maybe.Nothing,anim: _U.list([])}),_1: $Effects.none};
                     } else {
-                       return A6(tick,model,_p121._0,elapsed,dt,start,_p122);
+                       return A6(tick,model,_p122._0,elapsed,dt,start,_p123);
                     }
               }}
    });
