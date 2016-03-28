@@ -10651,6 +10651,9 @@ Elm.Html.Animation.Properties.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
+   var ListItem = {ctor: "ListItem"};
+   var InlineFlex = {ctor: "InlineFlex"};
+   var Flex = {ctor: "Flex"};
    var Block = {ctor: "Block"};
    var InlineBlock = {ctor: "InlineBlock"};
    var Inline = {ctor: "Inline"};
@@ -10855,7 +10858,10 @@ Elm.Html.Animation.Properties.make = function (_elm) {
                                                   ,None: None
                                                   ,Inline: Inline
                                                   ,InlineBlock: InlineBlock
-                                                  ,Block: Block};
+                                                  ,Block: Block
+                                                  ,Flex: Flex
+                                                  ,InlineFlex: InlineFlex
+                                                  ,ListItem: ListItem};
 };Elm.Html = Elm.Html || {};
 Elm.Html.Animation = Elm.Html.Animation || {};
 Elm.Html.Animation.Render = Elm.Html.Animation.Render || {};
@@ -10881,7 +10887,10 @@ Elm.Html.Animation.Render.make = function (_elm) {
       {case "None": return "none";
          case "Inline": return "inline";
          case "InlineBlock": return "inline-block";
-         default: return "block";}
+         case "Block": return "block";
+         case "Flex": return "flex";
+         case "InlineFlex": return "inline-flex";
+         default: return "list-item";}
    };
    var angleUnit = function (unit) {
       var _p1 = unit;
@@ -11028,6 +11037,21 @@ Elm.Html.Animation.Render.make = function (_elm) {
          case "SkewY": return "skewy";
          default: return "perspective";}
    };
+   var webkitPrefix = "-webkit-";
+   var iePrefix = "-ms-";
+   var prefix = function (stylePair) {
+      var propValue = $Basics.snd(stylePair);
+      var propName = $Basics.fst(stylePair);
+      var _p5 = propName;
+      switch (_p5)
+      {case "transform": return _U.list([stylePair
+                                        ,{ctor: "_Tuple2",_0: A2($Basics._op["++"],iePrefix,propName),_1: propValue}
+                                        ,{ctor: "_Tuple2",_0: A2($Basics._op["++"],webkitPrefix,propName),_1: propValue}]);
+         case "transform-origin": return _U.list([stylePair
+                                                 ,{ctor: "_Tuple2",_0: A2($Basics._op["++"],iePrefix,propName),_1: propValue}
+                                                 ,{ctor: "_Tuple2",_0: A2($Basics._op["++"],webkitPrefix,propName),_1: propValue}]);
+         default: return _U.list([stylePair]);}
+   };
    var renderColor = F4(function (x,y,z,a) {
       var renderList = function (xs) {
          return A2($Basics._op["++"],"(",A2($Basics._op["++"],$String.concat(A2($List.intersperse,",",A2($List.map,$Basics.toString,xs))),")"));
@@ -11052,99 +11076,99 @@ Elm.Html.Animation.Render.make = function (_elm) {
       var val = function (a) {    return $Basics.toString(a);};
       var renderLength = F2(function (a,unit) {    return A2($Basics._op["++"],val(a),lenUnit(unit));});
       var renderAngle = F2(function (a,unit) {    return A2($Basics._op["++"],val(a),angleUnit(unit));});
-      var _p5 = prop;
-      switch (_p5.ctor)
-      {case "Prop": return A2($Basics._op["++"],val(_p5._1),_p5._2);
-         case "Display": return displayMode(_p5._0);
-         case "Opacity": return val(_p5._0);
-         case "Height": return A2(renderLength,_p5._0,_p5._1);
-         case "Width": return A2(renderLength,_p5._0,_p5._1);
-         case "Left": return A2(renderLength,_p5._0,_p5._1);
-         case "Top": return A2(renderLength,_p5._0,_p5._1);
-         case "Right": return A2(renderLength,_p5._0,_p5._1);
-         case "Bottom": return A2(renderLength,_p5._0,_p5._1);
-         case "MaxHeight": return A2(renderLength,_p5._0,_p5._1);
-         case "MaxWidth": return A2(renderLength,_p5._0,_p5._1);
-         case "MinHeight": return A2(renderLength,_p5._0,_p5._1);
-         case "MinWidth": return A2(renderLength,_p5._0,_p5._1);
-         case "Padding": return A2(renderLength,_p5._0,_p5._1);
-         case "PaddingLeft": return A2(renderLength,_p5._0,_p5._1);
-         case "PaddingRight": return A2(renderLength,_p5._0,_p5._1);
-         case "PaddingTop": return A2(renderLength,_p5._0,_p5._1);
-         case "PaddingBottom": return A2(renderLength,_p5._0,_p5._1);
-         case "Margin": return A2(renderLength,_p5._0,_p5._1);
-         case "MarginLeft": return A2(renderLength,_p5._0,_p5._1);
-         case "MarginRight": return A2(renderLength,_p5._0,_p5._1);
-         case "MarginTop": return A2(renderLength,_p5._0,_p5._1);
-         case "MarginBottom": return A2(renderLength,_p5._0,_p5._1);
-         case "BorderWidth": return A2(renderLength,_p5._0,_p5._1);
-         case "BorderRadius": return A2(renderLength,_p5._0,_p5._1);
-         case "BorderTopLeftRadius": return A2(renderLength,_p5._0,_p5._1);
-         case "BorderTopRightRadius": return A2(renderLength,_p5._0,_p5._1);
-         case "BorderBottomLeftRadius": return A2(renderLength,_p5._0,_p5._1);
-         case "BorderBottomRightRadius": return A2(renderLength,_p5._0,_p5._1);
-         case "LetterSpacing": return A2(renderLength,_p5._0,_p5._1);
-         case "LineHeight": return A2(renderLength,_p5._0,_p5._1);
-         case "BackgroundPosition": var _p6 = _p5._2;
-           return A2($Basics._op["++"],A2(renderLength,_p5._0,_p6),A2($Basics._op["++"]," ",A2(renderLength,_p5._1,_p6)));
-         case "TransformOrigin": var _p7 = _p5._3;
+      var _p6 = prop;
+      switch (_p6.ctor)
+      {case "Prop": return A2($Basics._op["++"],val(_p6._1),_p6._2);
+         case "Display": return displayMode(_p6._0);
+         case "Opacity": return val(_p6._0);
+         case "Height": return A2(renderLength,_p6._0,_p6._1);
+         case "Width": return A2(renderLength,_p6._0,_p6._1);
+         case "Left": return A2(renderLength,_p6._0,_p6._1);
+         case "Top": return A2(renderLength,_p6._0,_p6._1);
+         case "Right": return A2(renderLength,_p6._0,_p6._1);
+         case "Bottom": return A2(renderLength,_p6._0,_p6._1);
+         case "MaxHeight": return A2(renderLength,_p6._0,_p6._1);
+         case "MaxWidth": return A2(renderLength,_p6._0,_p6._1);
+         case "MinHeight": return A2(renderLength,_p6._0,_p6._1);
+         case "MinWidth": return A2(renderLength,_p6._0,_p6._1);
+         case "Padding": return A2(renderLength,_p6._0,_p6._1);
+         case "PaddingLeft": return A2(renderLength,_p6._0,_p6._1);
+         case "PaddingRight": return A2(renderLength,_p6._0,_p6._1);
+         case "PaddingTop": return A2(renderLength,_p6._0,_p6._1);
+         case "PaddingBottom": return A2(renderLength,_p6._0,_p6._1);
+         case "Margin": return A2(renderLength,_p6._0,_p6._1);
+         case "MarginLeft": return A2(renderLength,_p6._0,_p6._1);
+         case "MarginRight": return A2(renderLength,_p6._0,_p6._1);
+         case "MarginTop": return A2(renderLength,_p6._0,_p6._1);
+         case "MarginBottom": return A2(renderLength,_p6._0,_p6._1);
+         case "BorderWidth": return A2(renderLength,_p6._0,_p6._1);
+         case "BorderRadius": return A2(renderLength,_p6._0,_p6._1);
+         case "BorderTopLeftRadius": return A2(renderLength,_p6._0,_p6._1);
+         case "BorderTopRightRadius": return A2(renderLength,_p6._0,_p6._1);
+         case "BorderBottomLeftRadius": return A2(renderLength,_p6._0,_p6._1);
+         case "BorderBottomRightRadius": return A2(renderLength,_p6._0,_p6._1);
+         case "LetterSpacing": return A2(renderLength,_p6._0,_p6._1);
+         case "LineHeight": return A2(renderLength,_p6._0,_p6._1);
+         case "BackgroundPosition": var _p7 = _p6._2;
+           return A2($Basics._op["++"],A2(renderLength,_p6._0,_p7),A2($Basics._op["++"]," ",A2(renderLength,_p6._1,_p7)));
+         case "TransformOrigin": var _p8 = _p6._3;
            return A2($Basics._op["++"],
-           A2(renderLength,_p5._0,_p7),
-           A2($Basics._op["++"]," ",A2($Basics._op["++"],A2(renderLength,_p5._1,_p7),A2($Basics._op["++"]," ",A2(renderLength,_p5._2,_p7)))));
-         case "Color": return A4(renderColor,_p5._0,_p5._1,_p5._2,_p5._3);
-         case "BackgroundColor": return A4(renderColor,_p5._0,_p5._1,_p5._2,_p5._3);
-         case "BorderColor": return A4(renderColor,_p5._0,_p5._1,_p5._2,_p5._3);
-         case "Translate": var _p8 = _p5._2;
+           A2(renderLength,_p6._0,_p8),
+           A2($Basics._op["++"]," ",A2($Basics._op["++"],A2(renderLength,_p6._1,_p8),A2($Basics._op["++"]," ",A2(renderLength,_p6._2,_p8)))));
+         case "Color": return A4(renderColor,_p6._0,_p6._1,_p6._2,_p6._3);
+         case "BackgroundColor": return A4(renderColor,_p6._0,_p6._1,_p6._2,_p6._3);
+         case "BorderColor": return A4(renderColor,_p6._0,_p6._1,_p6._2,_p6._3);
+         case "Translate": var _p9 = _p6._2;
            return A2($Basics._op["++"],
            "translate(",
-           A2($Basics._op["++"],A2(renderLength,_p5._0,_p8),A2($Basics._op["++"],",",A2($Basics._op["++"],A2(renderLength,_p5._1,_p8),")"))));
-         case "Translate3d": var _p9 = _p5._3;
+           A2($Basics._op["++"],A2(renderLength,_p6._0,_p9),A2($Basics._op["++"],",",A2($Basics._op["++"],A2(renderLength,_p6._1,_p9),")"))));
+         case "Translate3d": var _p10 = _p6._3;
            return A2($Basics._op["++"],
            "translate3d(",
            A2($Basics._op["++"],
-           A2(renderLength,_p5._0,_p9),
+           A2(renderLength,_p6._0,_p10),
            A2($Basics._op["++"],
            ",",
-           A2($Basics._op["++"],A2(renderLength,_p5._1,_p9),A2($Basics._op["++"],",",A2($Basics._op["++"],A2(renderLength,_p5._2,_p9),")"))))));
-         case "TranslateX": return A2($Basics._op["++"],"translateX(",A2($Basics._op["++"],A2(renderLength,_p5._0,_p5._1),")"));
-         case "TranslateY": return A2($Basics._op["++"],"translateY(",A2($Basics._op["++"],A2(renderLength,_p5._0,_p5._1),")"));
-         case "Scale": return A2($Basics._op["++"],"scale(",A2($Basics._op["++"],val(_p5._0),")"));
+           A2($Basics._op["++"],A2(renderLength,_p6._1,_p10),A2($Basics._op["++"],",",A2($Basics._op["++"],A2(renderLength,_p6._2,_p10),")"))))));
+         case "TranslateX": return A2($Basics._op["++"],"translateX(",A2($Basics._op["++"],A2(renderLength,_p6._0,_p6._1),")"));
+         case "TranslateY": return A2($Basics._op["++"],"translateY(",A2($Basics._op["++"],A2(renderLength,_p6._0,_p6._1),")"));
+         case "Scale": return A2($Basics._op["++"],"scale(",A2($Basics._op["++"],val(_p6._0),")"));
          case "Scale3d": return A2($Basics._op["++"],
            "scale3d(",
            A2($Basics._op["++"],
-           val(_p5._0),
-           A2($Basics._op["++"],",",A2($Basics._op["++"],val(_p5._1),A2($Basics._op["++"],",",A2($Basics._op["++"],val(_p5._2),")"))))));
-         case "ScaleX": return A2($Basics._op["++"],"scaleX(",A2($Basics._op["++"],val(_p5._0),")"));
-         case "ScaleY": return A2($Basics._op["++"],"scaleY(",A2($Basics._op["++"],val(_p5._0),")"));
-         case "ScaleZ": return A2($Basics._op["++"],"scaleZ(",A2($Basics._op["++"],val(_p5._0),")"));
-         case "Rotate": return A2($Basics._op["++"],"rotate(",A2($Basics._op["++"],A2(renderAngle,_p5._0,_p5._1),")"));
+           val(_p6._0),
+           A2($Basics._op["++"],",",A2($Basics._op["++"],val(_p6._1),A2($Basics._op["++"],",",A2($Basics._op["++"],val(_p6._2),")"))))));
+         case "ScaleX": return A2($Basics._op["++"],"scaleX(",A2($Basics._op["++"],val(_p6._0),")"));
+         case "ScaleY": return A2($Basics._op["++"],"scaleY(",A2($Basics._op["++"],val(_p6._0),")"));
+         case "ScaleZ": return A2($Basics._op["++"],"scaleZ(",A2($Basics._op["++"],val(_p6._0),")"));
+         case "Rotate": return A2($Basics._op["++"],"rotate(",A2($Basics._op["++"],A2(renderAngle,_p6._0,_p6._1),")"));
          case "Rotate3d": return A2($Basics._op["++"],
            "rotate3d(",
            A2($Basics._op["++"],
-           val(_p5._0),
+           val(_p6._0),
            A2($Basics._op["++"],
            ",",
            A2($Basics._op["++"],
-           val(_p5._1),
-           A2($Basics._op["++"],",",A2($Basics._op["++"],val(_p5._2),A2($Basics._op["++"],",",A2($Basics._op["++"],A2(renderAngle,_p5._3,_p5._4),")"))))))));
-         case "RotateX": return A2($Basics._op["++"],"rotateX(",A2($Basics._op["++"],A2(renderAngle,_p5._0,_p5._1),")"));
-         case "RotateY": return A2($Basics._op["++"],"rotateY(",A2($Basics._op["++"],A2(renderAngle,_p5._0,_p5._1),")"));
-         case "Skew": var _p10 = _p5._2;
+           val(_p6._1),
+           A2($Basics._op["++"],",",A2($Basics._op["++"],val(_p6._2),A2($Basics._op["++"],",",A2($Basics._op["++"],A2(renderAngle,_p6._3,_p6._4),")"))))))));
+         case "RotateX": return A2($Basics._op["++"],"rotateX(",A2($Basics._op["++"],A2(renderAngle,_p6._0,_p6._1),")"));
+         case "RotateY": return A2($Basics._op["++"],"rotateY(",A2($Basics._op["++"],A2(renderAngle,_p6._0,_p6._1),")"));
+         case "Skew": var _p11 = _p6._2;
            return A2($Basics._op["++"],
            "skew(",
-           A2($Basics._op["++"],A2(renderAngle,_p5._0,_p10),A2($Basics._op["++"],",",A2($Basics._op["++"],A2(renderAngle,_p5._1,_p10),")"))));
-         case "SkewX": return A2($Basics._op["++"],"skewX(",A2($Basics._op["++"],A2(renderAngle,_p5._0,_p5._1),")"));
-         case "SkewY": return A2($Basics._op["++"],"skewY(",A2($Basics._op["++"],A2(renderAngle,_p5._0,_p5._1),")"));
-         case "Perspective": return A2($Basics._op["++"],"perspective(",A2($Basics._op["++"],val(_p5._0),")"));
-         case "Matrix": return A2($Basics._op["++"],"matrix",renderList(_U.list([_p5._0,_p5._1,_p5._2,_p5._3,_p5._4,_p5._5])));
+           A2($Basics._op["++"],A2(renderAngle,_p6._0,_p11),A2($Basics._op["++"],",",A2($Basics._op["++"],A2(renderAngle,_p6._1,_p11),")"))));
+         case "SkewX": return A2($Basics._op["++"],"skewX(",A2($Basics._op["++"],A2(renderAngle,_p6._0,_p6._1),")"));
+         case "SkewY": return A2($Basics._op["++"],"skewY(",A2($Basics._op["++"],A2(renderAngle,_p6._0,_p6._1),")"));
+         case "Perspective": return A2($Basics._op["++"],"perspective(",A2($Basics._op["++"],val(_p6._0),")"));
+         case "Matrix": return A2($Basics._op["++"],"matrix",renderList(_U.list([_p6._0,_p6._1,_p6._2,_p6._3,_p6._4,_p6._5])));
          default: return A2($Basics._op["++"],
            "matrix3d",
-           renderList(_U.list([_p5._0,_p5._1,_p5._2,_p5._3,_p5._4,_p5._5,_p5._6,_p5._7,_p5._8,_p5._9,_p5._10,_p5._11,_p5._12,_p5._13,_p5._14,_p5._15])));}
+           renderList(_U.list([_p6._0,_p6._1,_p6._2,_p6._3,_p6._4,_p6._5,_p6._6,_p6._7,_p6._8,_p6._9,_p6._10,_p6._11,_p6._12,_p6._13,_p6._14,_p6._15])));}
    };
    var name = function (styleProp) {
-      var _p11 = styleProp;
-      switch (_p11.ctor)
-      {case "Prop": return _p11._0;
+      var _p12 = styleProp;
+      switch (_p12.ctor)
+      {case "Prop": return _p12._0;
          case "Display": return "display";
          case "Opacity": return "opacity";
          case "Height": return "height";
@@ -11200,7 +11224,16 @@ Elm.Html.Animation.Render.make = function (_elm) {
          case "SkewY": return "transform";
          default: return "transform";}
    };
-   return _elm.Html.Animation.Render.values = {_op: _op,name: name,value: value,id: id,debugName: debugName};
+   var render = function (styleProps) {
+      var rendered = A2($List.map,function (prop) {    return {ctor: "_Tuple2",_0: name(prop),_1: value(prop)};},styleProps);
+      var props = A2($List.filter,function (_p13) {    var _p14 = _p13;return !_U.eq(_p14._0,"transform");},rendered);
+      var transforms = A2($List.map,$Basics.snd,A2($List.filter,function (_p15) {    var _p16 = _p15;return _U.eq(_p16._0,"transform");},rendered));
+      var combinedTransforms = _U.eq($List.length(transforms),0) ? _U.list([]) : _U.list([{ctor: "_Tuple2"
+                                                                                          ,_0: "transform"
+                                                                                          ,_1: $String.concat(A2($List.intersperse," ",transforms))}]);
+      return A2($List.concatMap,prefix,A2($Basics._op["++"],props,combinedTransforms));
+   };
+   return _elm.Html.Animation.Render.values = {_op: _op,render: render,name: name,value: value,id: id,debugName: debugName,prefix: prefix};
 };Elm.Html = Elm.Html || {};
 Elm.Html.Animation = Elm.Html.Animation || {};
 Elm.Html.Animation.Spring = Elm.Html.Animation.Spring || {};
@@ -11916,11 +11949,9 @@ Elm.Html.Animation.Core.make = function (_elm) {
             var _p95 = _p91._0;
             var _p92 = physics.easing;
             if (_p92.ctor === "Nothing") {
-                  var pos = _U.eq(current,0.0) && _U.eq(dt,0.0) ? _p95 : physics.physical.position;
                   var newSpring = physics.spring;
                   var targeted = _U.update(newSpring,{destination: A2(physics.target,_p95,1.0)});
-                  var newPhysical = physics.physical;
-                  var positioned = _U.update(newPhysical,{position: pos});
+                  var positioned = _U.eq(current,0.0) && _U.eq(dt,0.0) ? {position: _p95,velocity: physics.physical.velocity} : physics.physical;
                   var finalPhysical = A3($Html$Animation$Spring.update,dt,targeted,positioned);
                   return _U.update(physics,{physical: finalPhysical,spring: targeted});
                } else {
@@ -11943,7 +11974,7 @@ Elm.Html.Animation.Core.make = function (_elm) {
                }
          }
    });
-   var step = F4(function (frame,prev,current,dt) {
+   var step = F4(function (frame,prev,time,dt) {
       var style = A3($List.foldl,
       F2(function (x,acc) {
          var xI = A2(countOccurance,x,acc);
@@ -11951,7 +11982,7 @@ Elm.Html.Animation.Core.make = function (_elm) {
          if (_p96.ctor === "Nothing") {
                return acc;
             } else {
-               return A2($Basics._op["++"],acc,_U.list([A3(stepProp,x,_p96._0,A2(applyStep,current,dt))]));
+               return A2($Basics._op["++"],acc,_U.list([A3(stepProp,x,_p96._0,A2(applyStep,time,dt))]));
             }
       }),
       _U.list([]),
@@ -12149,17 +12180,20 @@ Elm.Html.Animation.Core.make = function (_elm) {
       return {ctor: "_Tuple2",_0: _U.update(model,{elapsed: elapsed,start: $Maybe.Just(start)}),_1: $Effects.tick(Tick)};
    });
    var tick = F6(function (model,current,elapsed,dt,start,now) {
-      if (_U.eq(dt,0)) return A3($continue,model,elapsed,start); else if (A2(done,elapsed,current)) {
+      var frameElapsed = elapsed - current.delay;
+      if (_U.eq(dt,0) || _U.cmp(frameElapsed,0) < 0) return A3($continue,model,elapsed,start); else if (A2(done,frameElapsed,current)) {
+               var interruption = A2($List.map,function (inter) {    return _U.update(inter,{at: inter.at - elapsed});},model.interruption);
                var previous = A2(bake,current,model.previous);
-               var anims = A2($Maybe.withDefault,_U.list([]),$List.tail(model.anim));
+               var anims = A2($List.drop,1,model.anim);
                return {ctor: "_Tuple2"
-                      ,_0: _U.update(model,{elapsed: 0.0,start: $Maybe.Just(now),previous: previous,anim: A2(initializeFrame,previous,anims)})
+                      ,_0: _U.update(model,
+                      {elapsed: 0.0,start: $Maybe.Just(now),previous: previous,anim: A2(initializeFrame,previous,anims),interruption: interruption})
                       ,_1: $Effects.tick(Tick)};
             } else return {ctor: "_Tuple2"
                           ,_0: _U.update(model,
                           {elapsed: elapsed
                           ,start: $Maybe.Just(start)
-                          ,anim: A3(mapTo,0,function (a) {    return A4(step,a,model.previous,elapsed,dt);},model.anim)})
+                          ,anim: A3(mapTo,0,function (a) {    return A4(step,a,model.previous,frameElapsed,dt);},model.anim)})
                           ,_1: $Effects.tick(Tick)};
    });
    var interrupt = F4(function (now,model,interruption,remaining) {
@@ -12181,51 +12215,55 @@ Elm.Html.Animation.Core.make = function (_elm) {
    var update = F2(function (action,model) {
       var _p112 = action;
       switch (_p112.ctor)
-      {case "Queue": return {ctor: "_Tuple2",_0: _U.update(model,{anim: A2($Basics._op["++"],model.anim,_p112._0)}),_1: $Effects.tick(Tick)};
-         case "Interrupt": var _p116 = _p112._0;
-           var _p113 = $List.head(_p116);
+      {case "Queue": var _p114 = _p112._0;
+           var _p113 = $List.head(model.anim);
            if (_p113.ctor === "Nothing") {
+                 return {ctor: "_Tuple2",_0: _U.update(model,{anim: A2(initializeFrame,model.previous,_p114)}),_1: $Effects.tick(Tick)};
+              } else {
+                 return {ctor: "_Tuple2",_0: _U.update(model,{anim: A2($Basics._op["++"],model.anim,_p114)}),_1: $Effects.tick(Tick)};
+              }
+         case "Interrupt": var _p119 = _p112._0;
+           var _p115 = $List.head(_p119);
+           if (_p115.ctor === "Nothing") {
                  return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
               } else {
-                 var _p115 = _p113._0;
+                 var _p118 = _p115._0;
                  var last = $List.head($List.reverse(model.interruption));
-                 var interruptionTime = function () {
-                    var _p114 = last;
-                    if (_p114.ctor === "Nothing") {
-                          return model.elapsed + _p115.delay;
+                 var interruptions = function () {
+                    var _p116 = last;
+                    if (_p116.ctor === "Nothing") {
+                          return _U.list([{at: model.elapsed + _p118.delay,anim: A2($List.map,function (i) {    return _U.update(i,{delay: 0});},_p119)}]);
                        } else {
-                          return model.elapsed + _p115.delay - _p114._0.at;
+                          var _p117 = _p116._0;
+                          return A2($List._op["::"],
+                          _p117,
+                          _U.list([{at: model.elapsed + _p118.delay - _p117.at,anim: A2($List.map,function (i) {    return _U.update(i,{delay: 0});},_p119)}]));
                        }
                  }();
-                 var interruptions = A2($Basics._op["++"],model.interruption,_U.list([{at: interruptionTime,anim: _p116}]));
                  return {ctor: "_Tuple2",_0: _U.update(model,{interruption: interruptions}),_1: $Effects.tick(Tick)};
               }
-         default: var _p122 = _p112._0;
-           var _p117 = A2(getTimes,_p122,model);
-           var start = _p117._0;
-           var elapsed = _p117._1;
-           var dt = _p117._2;
-           var _p118 = $List.head(model.interruption);
-           if (_p118.ctor === "Just") {
-                 var _p120 = _p118._0;
-                 if (_U.cmp(elapsed,_p120.at) > -1) return A4(interrupt,
-                    _p122,
-                    model,
-                    _p120.anim,
-                    A2($Maybe.withDefault,_U.list([]),$List.tail(model.interruption))); else {
-                       var _p119 = $List.head(model.anim);
-                       if (_p119.ctor === "Nothing") {
+         default: var _p125 = _p112._0;
+           var _p120 = A2(getTimes,_p125,model);
+           var start = _p120._0;
+           var elapsed = _p120._1;
+           var dt = _p120._2;
+           var _p121 = $List.head(model.interruption);
+           if (_p121.ctor === "Just") {
+                 var _p123 = _p121._0;
+                 if (_U.cmp(elapsed,_p123.at) > -1) return A4(interrupt,_p125,model,_p123.anim,A2($List.drop,1,model.interruption)); else {
+                       var _p122 = $List.head(model.anim);
+                       if (_p122.ctor === "Nothing") {
                              return A3($continue,model,elapsed,start);
                           } else {
-                             return A6(tick,model,_p119._0,elapsed,dt,start,_p122);
+                             return A6(tick,model,_p122._0,elapsed,dt,start,_p125);
                           }
                     }
               } else {
-                 var _p121 = $List.head(model.anim);
-                 if (_p121.ctor === "Nothing") {
+                 var _p124 = $List.head(model.anim);
+                 if (_p124.ctor === "Nothing") {
                        return {ctor: "_Tuple2",_0: _U.update(model,{elapsed: 0.0,start: $Maybe.Nothing,anim: _U.list([])}),_1: $Effects.none};
                     } else {
-                       return A6(tick,model,_p121._0,elapsed,dt,start,_p122);
+                       return A6(tick,model,_p124._0,elapsed,dt,start,_p125);
                     }
               }}
    });
@@ -12241,6 +12279,7 @@ Elm.Html.Animation.Core.make = function (_elm) {
                                             ,emptyEasing: emptyEasing
                                             ,Model: Model
                                             ,StyleKeyframe: StyleKeyframe
+                                            ,Interruption: Interruption
                                             ,Physics: Physics
                                             ,Queue: Queue
                                             ,Interrupt: Interrupt
@@ -12265,32 +12304,16 @@ Elm.Html.Animation.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $String = Elm.String.make(_elm),
    $Time = Elm.Time.make(_elm);
    var _op = {};
-   var renderProp = function (prop) {    return {ctor: "_Tuple2",_0: $Html$Animation$Render.name(prop),_1: $Html$Animation$Render.value(prop)};};
    var render = function (_p0) {
       var _p1 = _p0;
-      var _p11 = _p1._0;
-      var currentAnim = $List.head(_p11.anim);
-      var _p2 = currentAnim;
+      var _p3 = _p1._0;
+      var _p2 = $List.head(_p3.anim);
       if (_p2.ctor === "Nothing") {
-            var rendered = A2($List.map,renderProp,_p11.previous);
-            var props = A2($List.filter,function (_p3) {    var _p4 = _p3;return !_U.eq(_p4._0,"transform");},rendered);
-            var transforms = A2($List.map,$Basics.snd,A2($List.filter,function (_p5) {    var _p6 = _p5;return _U.eq(_p6._0,"transform");},rendered));
-            var combinedTransforms = _U.eq($List.length(transforms),0) ? _U.list([]) : _U.list([{ctor: "_Tuple2"
-                                                                                                ,_0: "transform"
-                                                                                                ,_1: $String.concat(A2($List.intersperse," ",transforms))}]);
-            return A2($Basics._op["++"],props,combinedTransforms);
+            return $Html$Animation$Render.render(_p3.previous);
          } else {
-            var baked = A2($Html$Animation$Core.bake,_p2._0,_p11.previous);
-            var rendered = A2($List.map,renderProp,baked);
-            var props = A2($List.filter,function (_p7) {    var _p8 = _p7;return !_U.eq(_p8._0,"transform");},rendered);
-            var transforms = A2($List.map,$Basics.snd,A2($List.filter,function (_p9) {    var _p10 = _p9;return _U.eq(_p10._0,"transform");},rendered));
-            var combinedTransforms = _U.eq($List.length(transforms),0) ? _U.list([]) : _U.list([{ctor: "_Tuple2"
-                                                                                                ,_0: "transform"
-                                                                                                ,_1: $String.concat(A2($List.intersperse," ",transforms))}]);
-            return A2($Basics._op["++"],props,combinedTransforms);
+            return $Html$Animation$Render.render(A2($Html$Animation$Core.bake,_p2._0,_p3.previous));
          }
    };
    var hsla = F5(function (h,s,l,a,prop) {
@@ -12313,27 +12336,27 @@ Elm.Html.Animation.make = function (_elm) {
             var newEasing = $Html$Animation$Core.emptyEasing;
             var withEase = A2($Maybe.map,function (ease) {    return _U.update(newEasing,{ease: ease});},options.easing);
             var withDuration = function () {
-               var _p12 = options.duration;
-               if (_p12.ctor === "Nothing") {
+               var _p4 = options.duration;
+               if (_p4.ctor === "Nothing") {
                      return withEase;
                   } else {
-                     var _p14 = _p12._0;
-                     var _p13 = withEase;
-                     if (_p13.ctor === "Nothing") {
-                           return $Maybe.Just(_U.update(newEasing,{duration: _p14}));
+                     var _p6 = _p4._0;
+                     var _p5 = withEase;
+                     if (_p5.ctor === "Nothing") {
+                           return $Maybe.Just(_U.update(newEasing,{duration: _p6}));
                         } else {
-                           return $Maybe.Just(_U.update(_p13._0,{duration: _p14}));
+                           return $Maybe.Just(_U.update(_p5._0,{duration: _p6}));
                         }
                   }
             }();
             var newSpring = function () {
-               var _p15 = options.spring;
-               if (_p15.ctor === "Nothing") {
+               var _p7 = options.spring;
+               if (_p7.ctor === "Nothing") {
                      return a.spring;
                   } else {
-                     var _p16 = _p15._0;
+                     var _p8 = _p7._0;
                      var oldSpring = a.spring;
-                     return _U.update(oldSpring,{stiffness: _p16.stiffness,damping: _p16.damping});
+                     return _U.update(oldSpring,{stiffness: _p8.stiffness,damping: _p8.damping});
                   }
             }();
             return _U.update(a,{spring: newSpring,easing: withDuration});
@@ -12345,23 +12368,23 @@ Elm.Html.Animation.make = function (_elm) {
    };
    var resolve = F3(function (stag,t,i) {
       resolve: while (true) {
-         var _p17 = stag;
-         switch (_p17.ctor)
-         {case "Unstaggered": var _p18 = _p17._0;
-              return _p18.action(A2($List.map,applyKeyframeOptions,_p18.frames));
-            case "Staggered": var _v10 = A2(_p17._0,$Basics.toFloat(t),$Basics.toFloat(i)),_v11 = t,_v12 = i;
-              stag = _v10;
-              t = _v11;
-              i = _v12;
+         var _p9 = stag;
+         switch (_p9.ctor)
+         {case "Unstaggered": var _p10 = _p9._0;
+              return _p10.action(A2($List.map,applyKeyframeOptions,_p10.frames));
+            case "Staggered": var _v6 = A2(_p9._0,$Basics.toFloat(t),$Basics.toFloat(i)),_v7 = t,_v8 = i;
+              stag = _v6;
+              t = _v7;
+              i = _v8;
               continue resolve;
-            default: return _p17._0;}
+            default: return _p9._0;}
       }
    });
-   var fastAndLoose = {stiffness: 320,damping: 17,destination: 1};
-   var stiff = {stiffness: 210,damping: 20,destination: 1};
-   var wobbly = {stiffness: 180,damping: 12,destination: 1};
-   var gentle = {stiffness: 120,damping: 14,destination: 1};
-   var noWobble = {stiffness: 170,damping: 26,destination: 1};
+   var stiff = {stiffness: 210,damping: 20};
+   var wobbly = {stiffness: 180,damping: 12};
+   var gentle = {stiffness: 120,damping: 14};
+   var noWobble = {stiffness: 170,damping: 26};
+   var SpringProps = F2(function (a,b) {    return {stiffness: a,damping: b};});
    var emptyPhysics = function (target) {
       return {target: target
              ,physical: {position: 0,velocity: 0}
@@ -12396,28 +12419,32 @@ Elm.Html.Animation.make = function (_elm) {
    var Staggered = function (a) {    return {ctor: "Staggered",_0: a};};
    var stagger = Staggered;
    var andThen = function (stag) {
-      var _p19 = stag;
-      switch (_p19.ctor)
-      {case "Internal": return Internal(_p19._0);
-         case "Staggered": return Staggered(_p19._0);
-         default: var _p20 = _p19._0;
-           return Unstaggered(_U.update(_p20,{frames: A2($Basics._op["++"],_p20.frames,_U.list([emptyKeyframeWithOptions]))}));}
+      var _p11 = stag;
+      switch (_p11.ctor)
+      {case "Internal": return Internal(_p11._0);
+         case "Staggered": return Staggered(_p11._0);
+         default: var _p12 = _p11._0;
+           return Unstaggered(_U.update(_p12,{frames: A2($Basics._op["++"],_p12.frames,_U.list([emptyKeyframeWithOptions]))}));}
    };
    var updateOrCreate = F2(function (action,fn) {
-      var _p21 = action;
-      switch (_p21.ctor)
-      {case "Internal": return Internal(_p21._0);
-         case "Staggered": return Staggered(_p21._0);
-         default: var _p23 = _p21._0;
-           return Unstaggered(_U.update(_p23,
+      var _p13 = action;
+      switch (_p13.ctor)
+      {case "Internal": return Internal(_p13._0);
+         case "Staggered": return Staggered(_p13._0);
+         default: var _p15 = _p13._0;
+           return Unstaggered(_U.update(_p15,
            {frames: function () {
-              var _p22 = $List.reverse(_p23.frames);
-              if (_p22.ctor === "[]") {
+              var _p14 = $List.reverse(_p15.frames);
+              if (_p14.ctor === "[]") {
                     return _U.list([fn(emptyKeyframeWithOptions)]);
                  } else {
-                    return $List.reverse(A2($List._op["::"],fn(_p22._0),_p22._1));
+                    return $List.reverse(A2($List._op["::"],fn(_p14._0),_p14._1));
                  }
            }()}));}
+   });
+   var spring = F2(function (spring,action) {
+      var newSpring = $Maybe.Just({destination: 1.0,damping: spring.damping,stiffness: spring.stiffness});
+      return A2(updateOrCreate,action,function (a) {    return _U.update(a,{spring: newSpring});});
    });
    var props = F2(function (p,action) {
       return A2(updateOrCreate,
@@ -12449,7 +12476,6 @@ Elm.Html.Animation.make = function (_elm) {
       });
    });
    var easing = F2(function (ease,action) {    return A2(updateOrCreate,action,function (a) {    return _U.update(a,{easing: $Maybe.Just(ease)});});});
-   var spring = F2(function (spring,action) {    return A2(updateOrCreate,action,function (a) {    return _U.update(a,{spring: $Maybe.Just(spring)});});});
    var PreAction = F2(function (a,b) {    return {frames: a,action: b};});
    var KeyframeWithOptions = F4(function (a,b,c,d) {    return {frame: a,duration: b,easing: c,spring: d};});
    var A = function (a) {    return {ctor: "A",_0: a};};
@@ -12466,48 +12492,56 @@ Elm.Html.Animation.make = function (_elm) {
       sty);
       return A(_U.update(empty,{previous: deduped}));
    };
-   var update = F2(function (action,_p24) {
-      var _p25 = _p24;
-      var _p26 = A2($Html$Animation$Core.update,A3(resolve,action,1,0),_p25._0);
-      var newModel = _p26._0;
-      var fx = _p26._1;
+   var update = F2(function (action,_p16) {
+      var _p17 = _p16;
+      var _p18 = A2($Html$Animation$Core.update,A3(resolve,action,1,0),_p17._0);
+      var newModel = _p18._0;
+      var fx = _p18._1;
       return {ctor: "_Tuple2",_0: A(newModel),_1: A2($Effects.map,Internal,fx)};
    });
    var on = F2(function (model,action) {    return A2(update,action,model);});
-   var forwardTo = F6(function (toInternalAction,styleGet,styleSet,i,widgets,action) {
+   var forwardTo = F5(function (toInternalAction,styleGet,styleSet,widget,action) {
+      var _p19 = styleGet(widget);
+      var anim = _p19._0;
+      var _p20 = A2($Html$Animation$Core.update,A3(resolve,action,1,0),anim);
+      var newStyle = _p20._0;
+      var fx = _p20._1;
+      return {ctor: "_Tuple2",_0: A2(styleSet,widget,A(newStyle)),_1: A2($Effects.map,function (a) {    return toInternalAction(Internal(a));},fx)};
+   });
+   var forwardToIndex = F6(function (toInternalAction,styleGet,styleSet,i,widgets,action) {
       var numWidgets = $List.length(widgets);
-      var _p27 = $List.unzip(A2($List.indexedMap,
+      var _p21 = $List.unzip(A2($List.indexedMap,
       F2(function (j,widget) {
          if (_U.eq(j,i)) {
-               var _p28 = styleGet(widget);
-               var anim = _p28._0;
-               var _p29 = A2($Html$Animation$Core.update,A3(resolve,action,numWidgets,i),anim);
-               var newStyle = _p29._0;
-               var fx = _p29._1;
+               var _p22 = styleGet(widget);
+               var anim = _p22._0;
+               var _p23 = A2($Html$Animation$Core.update,A3(resolve,action,numWidgets,i),anim);
+               var newStyle = _p23._0;
+               var fx = _p23._1;
                return {ctor: "_Tuple2"
                       ,_0: A2(styleSet,widget,A(newStyle))
                       ,_1: A2($Effects.map,function (a) {    return A2(toInternalAction,i,Internal(a));},fx)};
             } else return {ctor: "_Tuple2",_0: widget,_1: $Effects.none};
       }),
       widgets));
-      var widgets = _p27._0;
-      var effects = _p27._1;
+      var widgets = _p21._0;
+      var effects = _p21._1;
       return {ctor: "_Tuple2",_0: widgets,_1: $Effects.batch(effects)};
    });
    var forwardToAll = F5(function (toInternalAction,styleGet,styleSet,widgets,action) {
       var numWidgets = $List.length(widgets);
-      var _p30 = $List.unzip(A2($List.indexedMap,
+      var _p24 = $List.unzip(A2($List.indexedMap,
       F2(function (i,widget) {
-         var _p31 = styleGet(widget);
-         var anim = _p31._0;
-         var _p32 = A2($Html$Animation$Core.update,A3(resolve,action,numWidgets,i),anim);
-         var newStyle = _p32._0;
-         var fx = _p32._1;
+         var _p25 = styleGet(widget);
+         var anim = _p25._0;
+         var _p26 = A2($Html$Animation$Core.update,A3(resolve,action,numWidgets,i),anim);
+         var newStyle = _p26._0;
+         var fx = _p26._1;
          return {ctor: "_Tuple2",_0: A2(styleSet,widget,A(newStyle)),_1: A2($Effects.map,function (a) {    return A2(toInternalAction,i,Internal(a));},fx)};
       }),
       widgets));
-      var widgets = _p30._0;
-      var effects = _p30._1;
+      var widgets = _p24._0;
+      var effects = _p24._1;
       return {ctor: "_Tuple2",_0: widgets,_1: $Effects.batch(effects)};
    });
    return _elm.Html.Animation.values = {_op: _op
@@ -12526,6 +12560,7 @@ Elm.Html.Animation.make = function (_elm) {
                                        ,andThen: andThen
                                        ,set: set
                                        ,forwardTo: forwardTo
+                                       ,forwardToIndex: forwardToIndex
                                        ,forwardToAll: forwardToAll
                                        ,to: to
                                        ,add: add
@@ -12535,7 +12570,6 @@ Elm.Html.Animation.make = function (_elm) {
                                        ,gentle: gentle
                                        ,wobbly: wobbly
                                        ,stiff: stiff
-                                       ,fastAndLoose: fastAndLoose
                                        ,toColor: toColor
                                        ,toRGB: toRGB
                                        ,toRGBA: toRGBA
@@ -12587,16 +12621,15 @@ Elm.Main.make = function (_elm) {
                               ,{ctor: "_Tuple2",_0: "line-height",_1: "40px"}]);
       return A2($Html.div,_U.list([$Html$Attributes.style(A2($Basics._op["++"],menuStyle,$Html$Animation.render(model.style)))]),_U.list([]));
    });
-   var OnWidget = function (a) {    return {ctor: "OnWidget",_0: a};};
    var Animate = F2(function (a,b) {    return {ctor: "Animate",_0: a,_1: b};});
-   var forwardToWidget = A3($Html$Animation.forwardTo,
-   F2(function (i,action) {    return A2(Animate,OnWidget(i),action);}),
+   var onWidget = A3($Html$Animation.forwardToIndex,
+   Animate,
    function (_) {
       return _.style;
    },
    F2(function (w,style) {    return _U.update(w,{style: style});}));
-   var forwardToAllWidgets = A3($Html$Animation.forwardToAll,
-   F2(function (i,action) {    return A2(Animate,OnWidget(i),action);}),
+   var onAllWidgets = A3($Html$Animation.forwardToAll,
+   Animate,
    function (_) {
       return _.style;
    },
@@ -12617,10 +12650,11 @@ Elm.Main.make = function (_elm) {
                                  ,{ctor: "_Tuple2",_0: "cursor",_1: "pointer"}]);
       return A2($Html.div,
       _U.list([A2($Html$Events.onClick,address,Toggle),$Html$Attributes.style(triggerStyle)]),
-      A2($Basics._op["++"],
-      _U.list([A2($Html.h1,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "padding",_1: "25px"}]))]),_U.list([$Html.text("Click me!")]))
-              ,A2($Html.p,_U.list([]),_U.list([$Html.text("This example shows staggered animations")]))]),
-      A2($List.map,viewWidget(address),model.widgets)));
+      $List.concat(_U.list([_U.list([A2($Html.h1,
+                                    _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "padding",_1: "25px"}]))]),
+                                    _U.list([$Html.text("Click me!")]))
+                                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("This example shows staggered animations")]))])
+                           ,A2($List.map,viewWidget(address),model.widgets)])));
    });
    var Hide = {ctor: "Hide"};
    var Show = {ctor: "Show"};
@@ -12639,7 +12673,7 @@ Elm.Main.make = function (_elm) {
                     model = _v4;
                     continue update;
                  }
-            case "Show": var _p1 = A2(forwardToAllWidgets,
+            case "Show": var _p1 = A2(onAllWidgets,
               model.widgets,
               $Html$Animation.stagger(F2(function (total,i) {
                  return A2($Html$Animation.props,
@@ -12649,7 +12683,7 @@ Elm.Main.make = function (_elm) {
               var widgets = _p1._0;
               var fx = _p1._1;
               return {ctor: "_Tuple2",_0: _U.update(model,{widgets: widgets,open: true}),_1: fx};
-            case "Hide": var _p2 = A2(forwardToAllWidgets,
+            case "Hide": var _p2 = A2(onAllWidgets,
               model.widgets,
               $Html$Animation.stagger(F2(function (total,i) {
                  return A2($Html$Animation.props,
@@ -12659,10 +12693,9 @@ Elm.Main.make = function (_elm) {
               var widgets = _p2._0;
               var fx = _p2._1;
               return {ctor: "_Tuple2",_0: _U.update(model,{widgets: widgets,open: false}),_1: fx};
-            default: var _p3 = _p0._0;
-              var _p4 = A3(forwardToWidget,_p3._0,model.widgets,_p0._1);
-              var widgets = _p4._0;
-              var fx = _p4._1;
+            default: var _p3 = A3(onWidget,_p0._0,model.widgets,_p0._1);
+              var widgets = _p3._0;
+              var fx = _p3._1;
               return {ctor: "_Tuple2",_0: _U.update(model,{widgets: widgets}),_1: fx};}
       }
    });
@@ -12678,9 +12711,8 @@ Elm.Main.make = function (_elm) {
                              ,Hide: Hide
                              ,Toggle: Toggle
                              ,Animate: Animate
-                             ,OnWidget: OnWidget
-                             ,forwardToWidget: forwardToWidget
-                             ,forwardToAllWidgets: forwardToAllWidgets
+                             ,onWidget: onWidget
+                             ,onAllWidgets: onAllWidgets
                              ,update: update
                              ,view: view
                              ,viewWidget: viewWidget
