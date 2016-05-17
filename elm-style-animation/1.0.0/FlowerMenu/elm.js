@@ -1,6 +1,4 @@
-<!DOCTYPE HTML>
-<html><head><meta charset="UTF-8"><title>Main</title><style>html,head,body { padding:0; margin:0; }
-body { font-family: calibri, helvetica, arial, sans-serif; }</style><script type="text/javascript">
+
 (function() {
 'use strict';
 
@@ -136,6 +134,7 @@ function A9(fun, a, b, c, d, e, f, g, h, i)
     ? fun.func(a, b, c, d, e, f, g, h, i)
     : fun(a)(b)(c)(d)(e)(f)(g)(h)(i);
 }
+
 //import Native.Utils //
 
 var _elm_lang$core$Native_Basics = function() {
@@ -276,7 +275,8 @@ return {
 	isInfinite: isInfinite
 };
 
-}();//import //
+}();
+//import //
 
 var _elm_lang$core$Native_Utils = function() {
 
@@ -692,7 +692,8 @@ return {
 	toString: toString
 };
 
-}();var _elm_lang$core$Basics$uncurry = F2(
+}();
+var _elm_lang$core$Basics$uncurry = F2(
 	function (f, _p0) {
 		var _p1 = _p0;
 		return A2(f, _p1._0, _p1._1);
@@ -816,6 +817,7 @@ var _elm_lang$core$Basics$LT = {ctor: 'LT'};
 var _elm_lang$core$Basics$Never = function (a) {
 	return {ctor: 'Never', _0: a};
 };
+
 //import Native.Utils //
 
 var _elm_lang$core$Native_Debug = function() {
@@ -845,8 +847,10 @@ return {
 	log: F2(log)
 };
 
-}();var _elm_lang$core$Debug$crash = _elm_lang$core$Native_Debug.crash;
+}();
+var _elm_lang$core$Debug$crash = _elm_lang$core$Native_Debug.crash;
 var _elm_lang$core$Debug$log = _elm_lang$core$Native_Debug.log;
+
 var _elm_lang$core$Maybe$withDefault = F2(
 	function ($default, maybe) {
 		var _p0 = maybe;
@@ -938,6 +942,7 @@ var _elm_lang$core$Maybe$map5 = F6(
 			return _elm_lang$core$Maybe$Nothing;
 		}
 	});
+
 //import Native.Utils //
 
 var _elm_lang$core$Native_List = function() {
@@ -1090,7 +1095,8 @@ return {
 	sortWith: F2(sortWith)
 };
 
-}();var _elm_lang$core$List$sortWith = _elm_lang$core$Native_List.sortWith;
+}();
+var _elm_lang$core$List$sortWith = _elm_lang$core$Native_List.sortWith;
 var _elm_lang$core$List$sortBy = _elm_lang$core$Native_List.sortBy;
 var _elm_lang$core$List$sort = function (xs) {
 	return A2(_elm_lang$core$List$sortBy, _elm_lang$core$Basics$identity, xs);
@@ -1489,6 +1495,7 @@ var _elm_lang$core$List$repeat = F2(
 			n,
 			value);
 	});
+
 var _elm_lang$core$Result$toMaybe = function (result) {
 	var _p0 = result;
 	if (_p0.ctor === 'Ok') {
@@ -1630,6 +1637,7 @@ var _elm_lang$core$Result$fromMaybe = F2(
 			return _elm_lang$core$Result$Err(err);
 		}
 	});
+
 //import //
 
 var _elm_lang$core$Native_Platform = function() {
@@ -2205,7 +2213,8 @@ return {
 	map: F2(map)
 };
 
-}();//import Native.Utils //
+}();
+//import Native.Utils //
 
 var _elm_lang$core$Native_Scheduler = function() {
 
@@ -2482,13 +2491,15 @@ return {
 	rawSend: rawSend
 };
 
-}();var _elm_lang$core$Platform$hack = _elm_lang$core$Native_Scheduler.succeed;
+}();
+var _elm_lang$core$Platform$hack = _elm_lang$core$Native_Scheduler.succeed;
 var _elm_lang$core$Platform$sendToSelf = _elm_lang$core$Native_Platform.sendToSelf;
 var _elm_lang$core$Platform$sendToApp = _elm_lang$core$Native_Platform.sendToApp;
 var _elm_lang$core$Platform$Program = {ctor: 'Program'};
 var _elm_lang$core$Platform$Task = {ctor: 'Task'};
 var _elm_lang$core$Platform$ProcessId = {ctor: 'ProcessId'};
 var _elm_lang$core$Platform$Router = {ctor: 'Router'};
+
 var _elm_lang$core$Platform_Cmd$batch = _elm_lang$core$Native_Platform.batch;
 var _elm_lang$core$Platform_Cmd$none = _elm_lang$core$Platform_Cmd$batch(
 	_elm_lang$core$Native_List.fromArray(
@@ -2504,12 +2515,14 @@ _elm_lang$core$Platform_Cmd_ops['!'] = F2(
 	});
 var _elm_lang$core$Platform_Cmd$map = _elm_lang$core$Native_Platform.map;
 var _elm_lang$core$Platform_Cmd$Cmd = {ctor: 'Cmd'};
+
 var _elm_lang$core$Platform_Sub$batch = _elm_lang$core$Native_Platform.batch;
 var _elm_lang$core$Platform_Sub$none = _elm_lang$core$Platform_Sub$batch(
 	_elm_lang$core$Native_List.fromArray(
 		[]));
 var _elm_lang$core$Platform_Sub$map = _elm_lang$core$Native_Platform.map;
 var _elm_lang$core$Platform_Sub$Sub = {ctor: 'Sub'};
+
 var _elm_lang$animation_frame$Native_AnimationFrame = function()
 {
 
@@ -2542,6 +2555,7 @@ return {
 };
 
 }();
+
 var _elm_lang$core$Task$onError = _elm_lang$core$Native_Scheduler.onError;
 var _elm_lang$core$Task$andThen = _elm_lang$core$Native_Scheduler.andThen;
 var _elm_lang$core$Task$spawnCmd = F2(
@@ -2774,6 +2788,7 @@ var _elm_lang$core$Task$cmdMap = F2(
 			A2(_elm_lang$core$Task$map, tagger, _p11._0));
 	});
 _elm_lang$core$Native_Platform.effectManagers['Task'] = {pkg: 'elm-lang/core', init: _elm_lang$core$Task$init, onEffects: _elm_lang$core$Task$onEffects, onSelfMsg: _elm_lang$core$Task$onSelfMsg, tag: 'cmd', cmdMap: _elm_lang$core$Task$cmdMap};
+
 //import Maybe, Native.List, Native.Utils, Result //
 
 var _elm_lang$core$Native_String = function() {
@@ -3100,7 +3115,8 @@ return {
 	fromList: fromList
 };
 
-}();//import Native.Utils //
+}();
+//import Native.Utils //
 
 var _elm_lang$core$Native_Char = function() {
 
@@ -3113,7 +3129,8 @@ return {
 	toLocaleLower: function(c) { return _elm_lang$core$Native_Utils.chr(c.toLocaleLowerCase()); }
 };
 
-}();var _elm_lang$core$Char$fromCode = _elm_lang$core$Native_Char.fromCode;
+}();
+var _elm_lang$core$Char$fromCode = _elm_lang$core$Native_Char.fromCode;
 var _elm_lang$core$Char$toCode = _elm_lang$core$Native_Char.toCode;
 var _elm_lang$core$Char$toLocaleLower = _elm_lang$core$Native_Char.toLocaleLower;
 var _elm_lang$core$Char$toLocaleUpper = _elm_lang$core$Native_Char.toLocaleUpper;
@@ -3155,6 +3172,7 @@ var _elm_lang$core$Char$isHexDigit = function ($char) {
 		_elm_lang$core$Native_Utils.chr('F'),
 		$char));
 };
+
 var _elm_lang$core$String$fromList = _elm_lang$core$Native_String.fromList;
 var _elm_lang$core$String$toList = _elm_lang$core$Native_String.toList;
 var _elm_lang$core$String$toFloat = _elm_lang$core$Native_String.toFloat;
@@ -3198,6 +3216,7 @@ var _elm_lang$core$String$fromChar = function ($char) {
 	return A2(_elm_lang$core$String$cons, $char, '');
 };
 var _elm_lang$core$String$isEmpty = _elm_lang$core$Native_String.isEmpty;
+
 var _elm_lang$core$Dict$foldr = F3(
 	function (f, acc, t) {
 		foldr:
@@ -4074,6 +4093,7 @@ var _elm_lang$core$Dict$diff = F2(
 			t1,
 			t2);
 	});
+
 //import Native.Scheduler //
 
 var _elm_lang$core$Native_Time = function() {
@@ -4100,7 +4120,8 @@ return {
 	setInterval_: F2(setInterval_)
 };
 
-}();var _elm_lang$core$Time$setInterval = _elm_lang$core$Native_Time.setInterval_;
+}();
+var _elm_lang$core$Time$setInterval = _elm_lang$core$Native_Time.setInterval_;
 var _elm_lang$core$Time$spawnHelp = F3(
 	function (router, intervals, processes) {
 		var _p0 = intervals;
@@ -4288,9 +4309,11 @@ var _elm_lang$core$Time$subMap = F2(
 			});
 	});
 _elm_lang$core$Native_Platform.effectManagers['Time'] = {pkg: 'elm-lang/core', init: _elm_lang$core$Time$init, onEffects: _elm_lang$core$Time$onEffects, onSelfMsg: _elm_lang$core$Time$onSelfMsg, tag: 'sub', subMap: _elm_lang$core$Time$subMap};
+
 var _elm_lang$core$Process$kill = _elm_lang$core$Native_Scheduler.kill;
 var _elm_lang$core$Process$sleep = _elm_lang$core$Native_Scheduler.sleep;
 var _elm_lang$core$Process$spawn = _elm_lang$core$Native_Scheduler.spawn;
+
 var _elm_lang$animation_frame$AnimationFrame$rAF = _elm_lang$animation_frame$Native_AnimationFrame.rAF;
 var _elm_lang$animation_frame$AnimationFrame$subscription = _elm_lang$core$Native_Platform.leaf('AnimationFrame');
 var _elm_lang$animation_frame$AnimationFrame$State = F3(
@@ -4434,6 +4457,7 @@ var _elm_lang$animation_frame$AnimationFrame$subMap = F2(
 		}
 	});
 _elm_lang$core$Native_Platform.effectManagers['AnimationFrame'] = {pkg: 'elm-lang/animation-frame', init: _elm_lang$animation_frame$AnimationFrame$init, onEffects: _elm_lang$animation_frame$AnimationFrame$onEffects, onSelfMsg: _elm_lang$animation_frame$AnimationFrame$onSelfMsg, tag: 'sub', subMap: _elm_lang$animation_frame$AnimationFrame$subMap};
+
 //import Native.List //
 
 var _elm_lang$core$Native_Array = function() {
@@ -5400,7 +5424,8 @@ return {
 	fromJSArray: fromJSArray
 };
 
-}();var _elm_lang$core$Array$append = _elm_lang$core$Native_Array.append;
+}();
+var _elm_lang$core$Array$append = _elm_lang$core$Native_Array.append;
 var _elm_lang$core$Array$length = _elm_lang$core$Native_Array.length;
 var _elm_lang$core$Array$isEmpty = function (array) {
 	return _elm_lang$core$Native_Utils.eq(
@@ -5453,6 +5478,7 @@ var _elm_lang$core$Array$repeat = F2(
 			_elm_lang$core$Basics$always(e));
 	});
 var _elm_lang$core$Array$Array = {ctor: 'Array'};
+
 var _elm_lang$core$Color$fmod = F2(
 	function (f, n) {
 		var integer = _elm_lang$core$Basics$floor(f);
@@ -5618,6 +5644,7 @@ var _elm_lang$core$Color$Linear = F3(
 		return {ctor: 'Linear', _0: a, _1: b, _2: c};
 	});
 var _elm_lang$core$Color$linear = _elm_lang$core$Color$Linear;
+
 //import Maybe, Native.Array, Native.List, Native.Utils, Result //
 
 var _elm_lang$core$Native_Json = function() {
@@ -6262,6 +6289,7 @@ return {
 };
 
 }();
+
 var _elm_lang$core$Json_Encode$list = _elm_lang$core$Native_Json.encodeList;
 var _elm_lang$core$Json_Encode$array = _elm_lang$core$Native_Json.encodeArray;
 var _elm_lang$core$Json_Encode$object = _elm_lang$core$Native_Json.encodeObject;
@@ -6272,6 +6300,7 @@ var _elm_lang$core$Json_Encode$int = _elm_lang$core$Native_Json.identity;
 var _elm_lang$core$Json_Encode$string = _elm_lang$core$Native_Json.identity;
 var _elm_lang$core$Json_Encode$encode = _elm_lang$core$Native_Json.encode;
 var _elm_lang$core$Json_Encode$Value = {ctor: 'Value'};
+
 var _elm_lang$core$Json_Decode$tuple8 = _elm_lang$core$Native_Json.decodeTuple8;
 var _elm_lang$core$Json_Decode$tuple7 = _elm_lang$core$Native_Json.decodeTuple7;
 var _elm_lang$core$Json_Decode$tuple6 = _elm_lang$core$Native_Json.decodeTuple6;
@@ -6332,6 +6361,7 @@ var _elm_lang$core$Json_Decode$dict = function (decoder) {
 		_elm_lang$core$Json_Decode$keyValuePairs(decoder));
 };
 var _elm_lang$core$Json_Decode$Decoder = {ctor: 'Decoder'};
+
 //import Native.Json //
 
 var _elm_lang$virtual_dom$Native_VirtualDom = function() {
@@ -7340,7 +7370,8 @@ return {
 	programWithFlags: programWithFlags
 };
 
-}();var _elm_lang$virtual_dom$VirtualDom$programWithFlags = _elm_lang$virtual_dom$Native_VirtualDom.programWithFlags;
+}();
+var _elm_lang$virtual_dom$VirtualDom$programWithFlags = _elm_lang$virtual_dom$Native_VirtualDom.programWithFlags;
 var _elm_lang$virtual_dom$VirtualDom$lazy3 = _elm_lang$virtual_dom$Native_VirtualDom.lazy3;
 var _elm_lang$virtual_dom$VirtualDom$lazy2 = _elm_lang$virtual_dom$Native_VirtualDom.lazy2;
 var _elm_lang$virtual_dom$VirtualDom$lazy = _elm_lang$virtual_dom$Native_VirtualDom.lazy;
@@ -7363,6 +7394,7 @@ var _elm_lang$virtual_dom$VirtualDom$Options = F2(
 	});
 var _elm_lang$virtual_dom$VirtualDom$Node = {ctor: 'Node'};
 var _elm_lang$virtual_dom$VirtualDom$Property = {ctor: 'Property'};
+
 var _elm_lang$html$Html$text = _elm_lang$virtual_dom$VirtualDom$text;
 var _elm_lang$html$Html$node = _elm_lang$virtual_dom$VirtualDom$node;
 var _elm_lang$html$Html$body = _elm_lang$html$Html$node('body');
@@ -7464,6 +7496,7 @@ var _elm_lang$html$Html$details = _elm_lang$html$Html$node('details');
 var _elm_lang$html$Html$summary = _elm_lang$html$Html$node('summary');
 var _elm_lang$html$Html$menuitem = _elm_lang$html$Html$node('menuitem');
 var _elm_lang$html$Html$menu = _elm_lang$html$Html$node('menu');
+
 var _elm_lang$html$Html_App$programWithFlags = _elm_lang$virtual_dom$VirtualDom$programWithFlags;
 var _elm_lang$html$Html_App$program = function (app) {
 	return _elm_lang$html$Html_App$programWithFlags(
@@ -7501,6 +7534,7 @@ var _elm_lang$html$Html_App$beginnerProgram = function (_p1) {
 		});
 };
 var _elm_lang$html$Html_App$map = _elm_lang$virtual_dom$VirtualDom$map;
+
 var _elm_lang$html$Html_Attributes$attribute = _elm_lang$virtual_dom$VirtualDom$attribute;
 var _elm_lang$html$Html_Attributes$contextmenu = function (value) {
 	return A2(_elm_lang$html$Html_Attributes$attribute, 'contextmenu', value);
@@ -7852,6 +7886,7 @@ var _elm_lang$html$Html_Attributes$classList = function (list) {
 				A2(_elm_lang$core$List$filter, _elm_lang$core$Basics$snd, list))));
 };
 var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
+
 var _elm_lang$html$Html_Events$keyCode = A2(_elm_lang$core$Json_Decode_ops[':='], 'keyCode', _elm_lang$core$Json_Decode$int);
 var _elm_lang$html$Html_Events$targetChecked = A2(
 	_elm_lang$core$Json_Decode$at,
@@ -7952,6 +7987,7 @@ var _elm_lang$html$Html_Events$Options = F2(
 	function (a, b) {
 		return {stopPropagation: a, preventDefault: b};
 	});
+
 var _elm_lang$svg$Svg$text = _elm_lang$virtual_dom$VirtualDom$text;
 var _elm_lang$svg$Svg$svgNamespace = A2(
 	_elm_lang$virtual_dom$VirtualDom$property,
@@ -8045,6 +8081,7 @@ var _elm_lang$svg$Svg$filter = _elm_lang$svg$Svg$node('filter');
 var _elm_lang$svg$Svg$script = _elm_lang$svg$Svg$node('script');
 var _elm_lang$svg$Svg$style = _elm_lang$svg$Svg$node('style');
 var _elm_lang$svg$Svg$view = _elm_lang$svg$Svg$node('view');
+
 var _elm_lang$svg$Svg_Attributes$writingMode = _elm_lang$virtual_dom$VirtualDom$attribute('writing-mode');
 var _elm_lang$svg$Svg_Attributes$wordSpacing = _elm_lang$virtual_dom$VirtualDom$attribute('word-spacing');
 var _elm_lang$svg$Svg_Attributes$visibility = _elm_lang$virtual_dom$VirtualDom$attribute('visibility');
@@ -8298,7 +8335,8 @@ var _elm_lang$svg$Svg_Attributes$additive = _elm_lang$virtual_dom$VirtualDom$att
 var _elm_lang$svg$Svg_Attributes$accumulate = _elm_lang$virtual_dom$VirtualDom$attribute('accumulate');
 var _elm_lang$svg$Svg_Attributes$accelerate = _elm_lang$virtual_dom$VirtualDom$attribute('accelerate');
 var _elm_lang$svg$Svg_Attributes$accentHeight = _elm_lang$virtual_dom$VirtualDom$attribute('accent-height');
-var _user$project$Style_Properties$alignStartingPoint = function (points) {
+
+var _mdgriffith$elm_style_animation$Style_Properties$alignStartingPoint = function (points) {
 	var sums = A2(
 		_elm_lang$core$List$map,
 		function (_p0) {
@@ -8336,103 +8374,103 @@ var _user$project$Style_Properties$alignStartingPoint = function (points) {
 			A2(_elm_lang$core$List$take, _p4, points));
 	}
 };
-var _user$project$Style_Properties$Stroke = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Stroke = function (a) {
 	return {ctor: 'Stroke', _0: a};
 };
-var _user$project$Style_Properties$Fill = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Fill = function (a) {
 	return {ctor: 'Fill', _0: a};
 };
-var _user$project$Style_Properties$Points = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Points = function (a) {
 	return {ctor: 'Points', _0: a};
 };
-var _user$project$Style_Properties$D = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$D = function (a) {
 	return {ctor: 'D', _0: a};
 };
-var _user$project$Style_Properties$Ry = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Ry = function (a) {
 	return {ctor: 'Ry', _0: a};
 };
-var _user$project$Style_Properties$Rx = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Rx = function (a) {
 	return {ctor: 'Rx', _0: a};
 };
-var _user$project$Style_Properties$R = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$R = function (a) {
 	return {ctor: 'R', _0: a};
 };
-var _user$project$Style_Properties$Cy = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Cy = function (a) {
 	return {ctor: 'Cy', _0: a};
 };
-var _user$project$Style_Properties$Cx = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Cx = function (a) {
 	return {ctor: 'Cx', _0: a};
 };
-var _user$project$Style_Properties$Y = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Y = function (a) {
 	return {ctor: 'Y', _0: a};
 };
-var _user$project$Style_Properties$X = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$X = function (a) {
 	return {ctor: 'X', _0: a};
 };
-var _user$project$Style_Properties$Perspective = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Perspective = function (a) {
 	return {ctor: 'Perspective', _0: a};
 };
-var _user$project$Style_Properties$SkewY = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$SkewY = F2(
 	function (a, b) {
 		return {ctor: 'SkewY', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$SkewX = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$SkewX = F2(
 	function (a, b) {
 		return {ctor: 'SkewX', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Skew = F3(
+var _mdgriffith$elm_style_animation$Style_Properties$Skew = F3(
 	function (a, b, c) {
 		return {ctor: 'Skew', _0: a, _1: b, _2: c};
 	});
-var _user$project$Style_Properties$RotateY = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$RotateY = F2(
 	function (a, b) {
 		return {ctor: 'RotateY', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$RotateX = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$RotateX = F2(
 	function (a, b) {
 		return {ctor: 'RotateX', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Rotate3d = F5(
+var _mdgriffith$elm_style_animation$Style_Properties$Rotate3d = F5(
 	function (a, b, c, d, e) {
 		return {ctor: 'Rotate3d', _0: a, _1: b, _2: c, _3: d, _4: e};
 	});
-var _user$project$Style_Properties$Rotate = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$Rotate = F2(
 	function (a, b) {
 		return {ctor: 'Rotate', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$ScaleZ = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$ScaleZ = function (a) {
 	return {ctor: 'ScaleZ', _0: a};
 };
-var _user$project$Style_Properties$ScaleY = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$ScaleY = function (a) {
 	return {ctor: 'ScaleY', _0: a};
 };
-var _user$project$Style_Properties$ScaleX = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$ScaleX = function (a) {
 	return {ctor: 'ScaleX', _0: a};
 };
-var _user$project$Style_Properties$Scale3d = F3(
+var _mdgriffith$elm_style_animation$Style_Properties$Scale3d = F3(
 	function (a, b, c) {
 		return {ctor: 'Scale3d', _0: a, _1: b, _2: c};
 	});
-var _user$project$Style_Properties$Scale = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Scale = function (a) {
 	return {ctor: 'Scale', _0: a};
 };
-var _user$project$Style_Properties$TranslateY = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$TranslateY = F2(
 	function (a, b) {
 		return {ctor: 'TranslateY', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$TranslateX = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$TranslateX = F2(
 	function (a, b) {
 		return {ctor: 'TranslateX', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Translate3d = F4(
+var _mdgriffith$elm_style_animation$Style_Properties$Translate3d = F4(
 	function (a, b, c, d) {
 		return {ctor: 'Translate3d', _0: a, _1: b, _2: c, _3: d};
 	});
-var _user$project$Style_Properties$Translate = F3(
+var _mdgriffith$elm_style_animation$Style_Properties$Translate = F3(
 	function (a, b, c) {
 		return {ctor: 'Translate', _0: a, _1: b, _2: c};
 	});
-var _user$project$Style_Properties$Matrix3d = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Matrix3d = function (a) {
 	return function (b) {
 		return function (c) {
 			return function (d) {
@@ -8465,243 +8503,244 @@ var _user$project$Style_Properties$Matrix3d = function (a) {
 		};
 	};
 };
-var _user$project$Style_Properties$Matrix = F6(
+var _mdgriffith$elm_style_animation$Style_Properties$Matrix = F6(
 	function (a, b, c, d, e, f) {
 		return {ctor: 'Matrix', _0: a, _1: b, _2: c, _3: d, _4: e, _5: f};
 	});
-var _user$project$Style_Properties$TransformOrigin = F4(
+var _mdgriffith$elm_style_animation$Style_Properties$TransformOrigin = F4(
 	function (a, b, c, d) {
 		return {ctor: 'TransformOrigin', _0: a, _1: b, _2: c, _3: d};
 	});
-var _user$project$Style_Properties$BorderColor = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$BorderColor = function (a) {
 	return {ctor: 'BorderColor', _0: a};
 };
-var _user$project$Style_Properties$BackgroundColor = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$BackgroundColor = function (a) {
 	return {ctor: 'BackgroundColor', _0: a};
 };
-var _user$project$Style_Properties$Color = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Color = function (a) {
 	return {ctor: 'Color', _0: a};
 };
-var _user$project$Style_Properties$BackgroundPosition = F3(
+var _mdgriffith$elm_style_animation$Style_Properties$BackgroundPosition = F3(
 	function (a, b, c) {
 		return {ctor: 'BackgroundPosition', _0: a, _1: b, _2: c};
 	});
-var _user$project$Style_Properties$LineHeight = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$LineHeight = F2(
 	function (a, b) {
 		return {ctor: 'LineHeight', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$LetterSpacing = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$LetterSpacing = F2(
 	function (a, b) {
 		return {ctor: 'LetterSpacing', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$BorderBottomRightRadius = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$BorderBottomRightRadius = F2(
 	function (a, b) {
 		return {ctor: 'BorderBottomRightRadius', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$BorderBottomLeftRadius = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$BorderBottomLeftRadius = F2(
 	function (a, b) {
 		return {ctor: 'BorderBottomLeftRadius', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$BorderTopRightRadius = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$BorderTopRightRadius = F2(
 	function (a, b) {
 		return {ctor: 'BorderTopRightRadius', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$BorderTopLeftRadius = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$BorderTopLeftRadius = F2(
 	function (a, b) {
 		return {ctor: 'BorderTopLeftRadius', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$BorderRadius = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$BorderRadius = F2(
 	function (a, b) {
 		return {ctor: 'BorderRadius', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$BorderWidth = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$BorderWidth = F2(
 	function (a, b) {
 		return {ctor: 'BorderWidth', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$MarginBottom = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$MarginBottom = F2(
 	function (a, b) {
 		return {ctor: 'MarginBottom', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$MarginTop = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$MarginTop = F2(
 	function (a, b) {
 		return {ctor: 'MarginTop', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$MarginRight = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$MarginRight = F2(
 	function (a, b) {
 		return {ctor: 'MarginRight', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$MarginLeft = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$MarginLeft = F2(
 	function (a, b) {
 		return {ctor: 'MarginLeft', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Margin = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$Margin = F2(
 	function (a, b) {
 		return {ctor: 'Margin', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$PaddingBottom = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$PaddingBottom = F2(
 	function (a, b) {
 		return {ctor: 'PaddingBottom', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$PaddingTop = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$PaddingTop = F2(
 	function (a, b) {
 		return {ctor: 'PaddingTop', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$PaddingRight = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$PaddingRight = F2(
 	function (a, b) {
 		return {ctor: 'PaddingRight', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$PaddingLeft = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$PaddingLeft = F2(
 	function (a, b) {
 		return {ctor: 'PaddingLeft', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Padding = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$Padding = F2(
 	function (a, b) {
 		return {ctor: 'Padding', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$MinWidth = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$MinWidth = F2(
 	function (a, b) {
 		return {ctor: 'MinWidth', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$MinHeight = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$MinHeight = F2(
 	function (a, b) {
 		return {ctor: 'MinHeight', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$MaxWidth = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$MaxWidth = F2(
 	function (a, b) {
 		return {ctor: 'MaxWidth', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$MaxHeight = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$MaxHeight = F2(
 	function (a, b) {
 		return {ctor: 'MaxHeight', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Bottom = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$Bottom = F2(
 	function (a, b) {
 		return {ctor: 'Bottom', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Right = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$Right = F2(
 	function (a, b) {
 		return {ctor: 'Right', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Top = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$Top = F2(
 	function (a, b) {
 		return {ctor: 'Top', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Left = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$Left = F2(
 	function (a, b) {
 		return {ctor: 'Left', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Width = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$Width = F2(
 	function (a, b) {
 		return {ctor: 'Width', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Height = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$Height = F2(
 	function (a, b) {
 		return {ctor: 'Height', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Opacity = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Opacity = function (a) {
 	return {ctor: 'Opacity', _0: a};
 };
-var _user$project$Style_Properties$Display = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Display = function (a) {
 	return {ctor: 'Display', _0: a};
 };
-var _user$project$Style_Properties$Pc = {ctor: 'Pc'};
-var _user$project$Style_Properties$Pt = {ctor: 'Pt'};
-var _user$project$Style_Properties$In = {ctor: 'In'};
-var _user$project$Style_Properties$Cm = {ctor: 'Cm'};
-var _user$project$Style_Properties$Mm = {ctor: 'Mm'};
-var _user$project$Style_Properties$Vmax = {ctor: 'Vmax'};
-var _user$project$Style_Properties$Vmin = {ctor: 'Vmin'};
-var _user$project$Style_Properties$Vw = {ctor: 'Vw'};
-var _user$project$Style_Properties$Vh = {ctor: 'Vh'};
-var _user$project$Style_Properties$Ch = {ctor: 'Ch'};
-var _user$project$Style_Properties$Ex = {ctor: 'Ex'};
-var _user$project$Style_Properties$Em = {ctor: 'Em'};
-var _user$project$Style_Properties$Rem = {ctor: 'Rem'};
-var _user$project$Style_Properties$Percent = {ctor: 'Percent'};
-var _user$project$Style_Properties$Px = {ctor: 'Px'};
-var _user$project$Style_Properties$Turn = {ctor: 'Turn'};
-var _user$project$Style_Properties$Rad = {ctor: 'Rad'};
-var _user$project$Style_Properties$Grad = {ctor: 'Grad'};
-var _user$project$Style_Properties$Deg = {ctor: 'Deg'};
-var _user$project$Style_Properties$ListItem = {ctor: 'ListItem'};
-var _user$project$Style_Properties$InlineFlex = {ctor: 'InlineFlex'};
-var _user$project$Style_Properties$Flex = {ctor: 'Flex'};
-var _user$project$Style_Properties$Block = {ctor: 'Block'};
-var _user$project$Style_Properties$InlineBlock = {ctor: 'InlineBlock'};
-var _user$project$Style_Properties$Inline = {ctor: 'Inline'};
-var _user$project$Style_Properties$None = {ctor: 'None'};
-var _user$project$Style_Properties$Close = {ctor: 'Close'};
-var _user$project$Style_Properties$LargeArcTo = F4(
+var _mdgriffith$elm_style_animation$Style_Properties$Pc = {ctor: 'Pc'};
+var _mdgriffith$elm_style_animation$Style_Properties$Pt = {ctor: 'Pt'};
+var _mdgriffith$elm_style_animation$Style_Properties$In = {ctor: 'In'};
+var _mdgriffith$elm_style_animation$Style_Properties$Cm = {ctor: 'Cm'};
+var _mdgriffith$elm_style_animation$Style_Properties$Mm = {ctor: 'Mm'};
+var _mdgriffith$elm_style_animation$Style_Properties$Vmax = {ctor: 'Vmax'};
+var _mdgriffith$elm_style_animation$Style_Properties$Vmin = {ctor: 'Vmin'};
+var _mdgriffith$elm_style_animation$Style_Properties$Vw = {ctor: 'Vw'};
+var _mdgriffith$elm_style_animation$Style_Properties$Vh = {ctor: 'Vh'};
+var _mdgriffith$elm_style_animation$Style_Properties$Ch = {ctor: 'Ch'};
+var _mdgriffith$elm_style_animation$Style_Properties$Ex = {ctor: 'Ex'};
+var _mdgriffith$elm_style_animation$Style_Properties$Em = {ctor: 'Em'};
+var _mdgriffith$elm_style_animation$Style_Properties$Rem = {ctor: 'Rem'};
+var _mdgriffith$elm_style_animation$Style_Properties$Percent = {ctor: 'Percent'};
+var _mdgriffith$elm_style_animation$Style_Properties$Px = {ctor: 'Px'};
+var _mdgriffith$elm_style_animation$Style_Properties$Turn = {ctor: 'Turn'};
+var _mdgriffith$elm_style_animation$Style_Properties$Rad = {ctor: 'Rad'};
+var _mdgriffith$elm_style_animation$Style_Properties$Grad = {ctor: 'Grad'};
+var _mdgriffith$elm_style_animation$Style_Properties$Deg = {ctor: 'Deg'};
+var _mdgriffith$elm_style_animation$Style_Properties$ListItem = {ctor: 'ListItem'};
+var _mdgriffith$elm_style_animation$Style_Properties$InlineFlex = {ctor: 'InlineFlex'};
+var _mdgriffith$elm_style_animation$Style_Properties$Flex = {ctor: 'Flex'};
+var _mdgriffith$elm_style_animation$Style_Properties$Block = {ctor: 'Block'};
+var _mdgriffith$elm_style_animation$Style_Properties$InlineBlock = {ctor: 'InlineBlock'};
+var _mdgriffith$elm_style_animation$Style_Properties$Inline = {ctor: 'Inline'};
+var _mdgriffith$elm_style_animation$Style_Properties$None = {ctor: 'None'};
+var _mdgriffith$elm_style_animation$Style_Properties$Close = {ctor: 'Close'};
+var _mdgriffith$elm_style_animation$Style_Properties$LargeArcTo = F4(
 	function (a, b, c, d) {
 		return {ctor: 'LargeArcTo', _0: a, _1: b, _2: c, _3: d};
 	});
-var _user$project$Style_Properties$LargeArc = F4(
+var _mdgriffith$elm_style_animation$Style_Properties$LargeArc = F4(
 	function (a, b, c, d) {
 		return {ctor: 'LargeArc', _0: a, _1: b, _2: c, _3: d};
 	});
-var _user$project$Style_Properties$ArcTo = F4(
+var _mdgriffith$elm_style_animation$Style_Properties$ArcTo = F4(
 	function (a, b, c, d) {
 		return {ctor: 'ArcTo', _0: a, _1: b, _2: c, _3: d};
 	});
-var _user$project$Style_Properties$Arc = F4(
+var _mdgriffith$elm_style_animation$Style_Properties$Arc = F4(
 	function (a, b, c, d) {
 		return {ctor: 'Arc', _0: a, _1: b, _2: c, _3: d};
 	});
-var _user$project$Style_Properties$SmoothTo = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$SmoothTo = function (a) {
 	return {ctor: 'SmoothTo', _0: a};
 };
-var _user$project$Style_Properties$Smooth = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Smooth = function (a) {
 	return {ctor: 'Smooth', _0: a};
 };
-var _user$project$Style_Properties$SmoothQuadraticTo = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$SmoothQuadraticTo = function (a) {
 	return {ctor: 'SmoothQuadraticTo', _0: a};
 };
-var _user$project$Style_Properties$SmoothQuadratic = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$SmoothQuadratic = function (a) {
 	return {ctor: 'SmoothQuadratic', _0: a};
 };
-var _user$project$Style_Properties$QuadraticTo = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$QuadraticTo = function (a) {
 	return {ctor: 'QuadraticTo', _0: a};
 };
-var _user$project$Style_Properties$Quadratic = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Quadratic = function (a) {
 	return {ctor: 'Quadratic', _0: a};
 };
-var _user$project$Style_Properties$CurveTo = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$CurveTo = function (a) {
 	return {ctor: 'CurveTo', _0: a};
 };
-var _user$project$Style_Properties$Curve = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Curve = function (a) {
 	return {ctor: 'Curve', _0: a};
 };
-var _user$project$Style_Properties$VerticalTo = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$VerticalTo = function (a) {
 	return {ctor: 'VerticalTo', _0: a};
 };
-var _user$project$Style_Properties$Vertical = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Vertical = function (a) {
 	return {ctor: 'Vertical', _0: a};
 };
-var _user$project$Style_Properties$HorizontalTo = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$HorizontalTo = function (a) {
 	return {ctor: 'HorizontalTo', _0: a};
 };
-var _user$project$Style_Properties$Horizontal = function (a) {
+var _mdgriffith$elm_style_animation$Style_Properties$Horizontal = function (a) {
 	return {ctor: 'Horizontal', _0: a};
 };
-var _user$project$Style_Properties$LineTo = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$LineTo = F2(
 	function (a, b) {
 		return {ctor: 'LineTo', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Line = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$Line = F2(
 	function (a, b) {
 		return {ctor: 'Line', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$MoveTo = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$MoveTo = F2(
 	function (a, b) {
 		return {ctor: 'MoveTo', _0: a, _1: b};
 	});
-var _user$project$Style_Properties$Move = F2(
+var _mdgriffith$elm_style_animation$Style_Properties$Move = F2(
 	function (a, b) {
 		return {ctor: 'Move', _0: a, _1: b};
 	});
-var _user$project$Style_Spring$vTolerance = 0.1;
-var _user$project$Style_Spring$tolerance = 1.0e-2;
-var _user$project$Style_Spring$update = F3(
+
+var _mdgriffith$elm_style_animation$Style_Spring$vTolerance = 0.1;
+var _mdgriffith$elm_style_animation$Style_Spring$tolerance = 1.0e-2;
+var _mdgriffith$elm_style_animation$Style_Spring$update = F3(
 	function (dtms, spring, phys) {
 		var fdamper = (0 - spring.damping) * phys.velocity;
 		var fspring = (0 - spring.stiffness) * (phys.position - spring.destination);
@@ -8711,23 +8750,23 @@ var _user$project$Style_Spring$update = F3(
 		var newX = phys.position + (newV * dt);
 		return ((_elm_lang$core$Native_Utils.cmp(
 			_elm_lang$core$Basics$abs(spring.destination - newX),
-			_user$project$Style_Spring$tolerance) < 0) && (_elm_lang$core$Native_Utils.cmp(
+			_mdgriffith$elm_style_animation$Style_Spring$tolerance) < 0) && (_elm_lang$core$Native_Utils.cmp(
 			_elm_lang$core$Basics$abs(newV),
-			_user$project$Style_Spring$vTolerance) < 0)) ? _elm_lang$core$Native_Utils.update(
+			_mdgriffith$elm_style_animation$Style_Spring$vTolerance) < 0)) ? _elm_lang$core$Native_Utils.update(
 			phys,
 			{position: spring.destination, velocity: 0.0}) : _elm_lang$core$Native_Utils.update(
 			phys,
 			{position: newX, velocity: newV});
 	});
-var _user$project$Style_Spring$atRest = F2(
+var _mdgriffith$elm_style_animation$Style_Spring$atRest = F2(
 	function (spring, physical) {
 		return (_elm_lang$core$Native_Utils.cmp(
 			_elm_lang$core$Basics$abs(spring.destination - physical.position),
-			_user$project$Style_Spring$tolerance) < 0) && (_elm_lang$core$Native_Utils.cmp(
+			_mdgriffith$elm_style_animation$Style_Spring$tolerance) < 0) && (_elm_lang$core$Native_Utils.cmp(
 			_elm_lang$core$Basics$abs(physical.velocity),
-			_user$project$Style_Spring$vTolerance) < 0);
+			_mdgriffith$elm_style_animation$Style_Spring$vTolerance) < 0);
 	});
-var _user$project$Style_Spring$duration = F2(
+var _mdgriffith$elm_style_animation$Style_Spring$duration = F2(
 	function (spring, phys) {
 		return _elm_lang$core$Basics$snd(
 			A3(
@@ -8736,24 +8775,25 @@ var _user$project$Style_Spring$duration = F2(
 					function (t, _p0) {
 						var _p1 = _p0;
 						var _p2 = _p1._0;
-						return A2(_user$project$Style_Spring$atRest, spring, _p2) ? {ctor: '_Tuple2', _0: _p2, _1: _p1._1} : {
+						return A2(_mdgriffith$elm_style_animation$Style_Spring$atRest, spring, _p2) ? {ctor: '_Tuple2', _0: _p2, _1: _p1._1} : {
 							ctor: '_Tuple2',
-							_0: A3(_user$project$Style_Spring$update, 1, spring, _p2),
+							_0: A3(_mdgriffith$elm_style_animation$Style_Spring$update, 1, spring, _p2),
 							_1: t
 						};
 					}),
 				{ctor: '_Tuple2', _0: phys, _1: 0},
 				_elm_lang$core$Native_List.range(1, 10000)));
 	});
-var _user$project$Style_Spring$Model = F3(
+var _mdgriffith$elm_style_animation$Style_Spring$Model = F3(
 	function (a, b, c) {
 		return {stiffness: a, damping: b, destination: c};
 	});
-var _user$project$Style_Spring$Physical = F2(
+var _mdgriffith$elm_style_animation$Style_Spring$Physical = F2(
 	function (a, b) {
 		return {position: a, velocity: b};
 	});
-var _user$project$Style_PropertyHelpers$map3Points = F4(
+
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$map3Points = F4(
 	function (fn, points, points2, points3) {
 		return A4(
 			_elm_lang$core$List$map3,
@@ -8772,7 +8812,7 @@ var _user$project$Style_PropertyHelpers$map3Points = F4(
 			points2,
 			points3);
 	});
-var _user$project$Style_PropertyHelpers$map3Cmd = F4(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$map3Cmd = F4(
 	function (fn, cmd, cmd2, cmd3) {
 		var _p6 = cmd;
 		switch (_p6.ctor) {
@@ -8782,7 +8822,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 					var _p8 = cmd3;
 					if (_p8.ctor === 'Move') {
 						return A2(
-							_user$project$Style_Properties$Move,
+							_mdgriffith$elm_style_animation$Style_Properties$Move,
 							A3(fn, _p6._0, _p7._0, _p8._0),
 							A3(fn, _p6._1, _p7._1, _p8._1));
 					} else {
@@ -8797,7 +8837,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 					var _p10 = cmd3;
 					if (_p10.ctor === 'MoveTo') {
 						return A2(
-							_user$project$Style_Properties$MoveTo,
+							_mdgriffith$elm_style_animation$Style_Properties$MoveTo,
 							A3(fn, _p6._0, _p9._0, _p10._0),
 							A3(fn, _p6._1, _p9._1, _p10._1));
 					} else {
@@ -8812,7 +8852,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 					var _p12 = cmd3;
 					if (_p12.ctor === 'Line') {
 						return A2(
-							_user$project$Style_Properties$Line,
+							_mdgriffith$elm_style_animation$Style_Properties$Line,
 							A3(fn, _p6._0, _p11._0, _p12._0),
 							A3(fn, _p6._1, _p11._1, _p12._1));
 					} else {
@@ -8827,7 +8867,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 					var _p14 = cmd3;
 					if (_p14.ctor === 'LineTo') {
 						return A2(
-							_user$project$Style_Properties$LineTo,
+							_mdgriffith$elm_style_animation$Style_Properties$LineTo,
 							A3(fn, _p6._0, _p13._0, _p14._0),
 							A3(fn, _p6._1, _p13._1, _p14._1));
 					} else {
@@ -8841,7 +8881,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p15.ctor === 'Horizontal') {
 					var _p16 = cmd3;
 					if (_p16.ctor === 'Horizontal') {
-						return _user$project$Style_Properties$Horizontal(
+						return _mdgriffith$elm_style_animation$Style_Properties$Horizontal(
 							A3(fn, _p6._0, _p15._0, _p16._0));
 					} else {
 						return cmd3;
@@ -8854,7 +8894,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p17.ctor === 'HorizontalTo') {
 					var _p18 = cmd3;
 					if (_p18.ctor === 'HorizontalTo') {
-						return _user$project$Style_Properties$HorizontalTo(
+						return _mdgriffith$elm_style_animation$Style_Properties$HorizontalTo(
 							A3(fn, _p6._0, _p17._0, _p18._0));
 					} else {
 						return cmd3;
@@ -8867,7 +8907,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p19.ctor === 'Vertical') {
 					var _p20 = cmd3;
 					if (_p20.ctor === 'Vertical') {
-						return _user$project$Style_Properties$Vertical(
+						return _mdgriffith$elm_style_animation$Style_Properties$Vertical(
 							A3(fn, _p6._0, _p19._0, _p20._0));
 					} else {
 						return cmd3;
@@ -8880,7 +8920,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p21.ctor === 'VerticalTo') {
 					var _p22 = cmd3;
 					if (_p22.ctor === 'VerticalTo') {
-						return _user$project$Style_Properties$VerticalTo(
+						return _mdgriffith$elm_style_animation$Style_Properties$VerticalTo(
 							A3(fn, _p6._0, _p21._0, _p22._0));
 					} else {
 						return cmd3;
@@ -8893,8 +8933,8 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p23.ctor === 'Curve') {
 					var _p24 = cmd3;
 					if (_p24.ctor === 'Curve') {
-						return _user$project$Style_Properties$Curve(
-							A4(_user$project$Style_PropertyHelpers$map3Points, fn, _p6._0, _p23._0, _p24._0));
+						return _mdgriffith$elm_style_animation$Style_Properties$Curve(
+							A4(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map3Points, fn, _p6._0, _p23._0, _p24._0));
 					} else {
 						return cmd3;
 					}
@@ -8906,8 +8946,8 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p25.ctor === 'CurveTo') {
 					var _p26 = cmd3;
 					if (_p26.ctor === 'CurveTo') {
-						return _user$project$Style_Properties$CurveTo(
-							A4(_user$project$Style_PropertyHelpers$map3Points, fn, _p6._0, _p25._0, _p26._0));
+						return _mdgriffith$elm_style_animation$Style_Properties$CurveTo(
+							A4(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map3Points, fn, _p6._0, _p25._0, _p26._0));
 					} else {
 						return cmd3;
 					}
@@ -8919,8 +8959,8 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p27.ctor === 'Quadratic') {
 					var _p28 = cmd3;
 					if (_p28.ctor === 'Quadratic') {
-						return _user$project$Style_Properties$Quadratic(
-							A4(_user$project$Style_PropertyHelpers$map3Points, fn, _p6._0, _p27._0, _p28._0));
+						return _mdgriffith$elm_style_animation$Style_Properties$Quadratic(
+							A4(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map3Points, fn, _p6._0, _p27._0, _p28._0));
 					} else {
 						return cmd3;
 					}
@@ -8932,8 +8972,8 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p29.ctor === 'QuadraticTo') {
 					var _p30 = cmd3;
 					if (_p30.ctor === 'QuadraticTo') {
-						return _user$project$Style_Properties$QuadraticTo(
-							A4(_user$project$Style_PropertyHelpers$map3Points, fn, _p6._0, _p29._0, _p30._0));
+						return _mdgriffith$elm_style_animation$Style_Properties$QuadraticTo(
+							A4(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map3Points, fn, _p6._0, _p29._0, _p30._0));
 					} else {
 						return cmd3;
 					}
@@ -8945,8 +8985,8 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p31.ctor === 'SmoothQuadratic') {
 					var _p32 = cmd3;
 					if (_p32.ctor === 'SmoothQuadratic') {
-						return _user$project$Style_Properties$SmoothQuadratic(
-							A4(_user$project$Style_PropertyHelpers$map3Points, fn, _p6._0, _p31._0, _p32._0));
+						return _mdgriffith$elm_style_animation$Style_Properties$SmoothQuadratic(
+							A4(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map3Points, fn, _p6._0, _p31._0, _p32._0));
 					} else {
 						return cmd3;
 					}
@@ -8958,8 +8998,8 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p33.ctor === 'SmoothQuadraticTo') {
 					var _p34 = cmd3;
 					if (_p34.ctor === 'SmoothQuadraticTo') {
-						return _user$project$Style_Properties$SmoothQuadraticTo(
-							A4(_user$project$Style_PropertyHelpers$map3Points, fn, _p6._0, _p33._0, _p34._0));
+						return _mdgriffith$elm_style_animation$Style_Properties$SmoothQuadraticTo(
+							A4(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map3Points, fn, _p6._0, _p33._0, _p34._0));
 					} else {
 						return cmd3;
 					}
@@ -8971,8 +9011,8 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p35.ctor === 'Smooth') {
 					var _p36 = cmd3;
 					if (_p36.ctor === 'Smooth') {
-						return _user$project$Style_Properties$Smooth(
-							A4(_user$project$Style_PropertyHelpers$map3Points, fn, _p6._0, _p35._0, _p36._0));
+						return _mdgriffith$elm_style_animation$Style_Properties$Smooth(
+							A4(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map3Points, fn, _p6._0, _p35._0, _p36._0));
 					} else {
 						return cmd3;
 					}
@@ -8984,8 +9024,8 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p37.ctor === 'SmoothTo') {
 					var _p38 = cmd3;
 					if (_p38.ctor === 'SmoothTo') {
-						return _user$project$Style_Properties$SmoothTo(
-							A4(_user$project$Style_PropertyHelpers$map3Points, fn, _p6._0, _p37._0, _p38._0));
+						return _mdgriffith$elm_style_animation$Style_Properties$SmoothTo(
+							A4(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map3Points, fn, _p6._0, _p37._0, _p38._0));
 					} else {
 						return cmd3;
 					}
@@ -8998,7 +9038,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 					var _p40 = cmd3;
 					if (_p40.ctor === 'Arc') {
 						return A4(
-							_user$project$Style_Properties$Arc,
+							_mdgriffith$elm_style_animation$Style_Properties$Arc,
 							A3(fn, _p6._0, _p39._0, _p40._0),
 							A3(fn, _p6._1, _p39._1, _p40._1),
 							A3(fn, _p6._2, _p39._2, _p40._2),
@@ -9015,7 +9055,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 					var _p42 = cmd3;
 					if (_p42.ctor === 'ArcTo') {
 						return A4(
-							_user$project$Style_Properties$ArcTo,
+							_mdgriffith$elm_style_animation$Style_Properties$ArcTo,
 							A3(fn, _p6._0, _p41._0, _p42._0),
 							A3(fn, _p6._1, _p41._1, _p42._1),
 							A3(fn, _p6._2, _p41._2, _p42._2),
@@ -9032,7 +9072,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 					var _p44 = cmd3;
 					if (_p44.ctor === 'LargeArc') {
 						return A4(
-							_user$project$Style_Properties$LargeArc,
+							_mdgriffith$elm_style_animation$Style_Properties$LargeArc,
 							A3(fn, _p6._0, _p43._0, _p44._0),
 							A3(fn, _p6._1, _p43._1, _p44._1),
 							A3(fn, _p6._2, _p43._2, _p44._2),
@@ -9049,7 +9089,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 					var _p46 = cmd3;
 					if (_p46.ctor === 'LargeArcTo') {
 						return A4(
-							_user$project$Style_Properties$LargeArcTo,
+							_mdgriffith$elm_style_animation$Style_Properties$LargeArcTo,
 							A3(fn, _p6._0, _p45._0, _p46._0),
 							A3(fn, _p6._1, _p45._1, _p46._1),
 							A3(fn, _p6._2, _p45._2, _p46._2),
@@ -9065,7 +9105,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				if (_p47.ctor === 'Close') {
 					var _p48 = cmd3;
 					if (_p48.ctor === 'Close') {
-						return _user$project$Style_Properties$Close;
+						return _mdgriffith$elm_style_animation$Style_Properties$Close;
 					} else {
 						return cmd3;
 					}
@@ -9074,7 +9114,7 @@ var _user$project$Style_PropertyHelpers$map3Cmd = F4(
 				}
 		}
 	});
-var _user$project$Style_PropertyHelpers$map3 = F5(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$map3 = F5(
 	function (fn, colorFn, target, prev, prop) {
 		var _p49 = target;
 		switch (_p49.ctor) {
@@ -9085,7 +9125,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p50.ctor === 'Opacity') {
 					var _p51 = prop;
 					if (_p51.ctor === 'Opacity') {
-						return _user$project$Style_Properties$Opacity(
+						return _mdgriffith$elm_style_animation$Style_Properties$Opacity(
 							A3(fn, _p49._0, _p50._0, _p51._0));
 					} else {
 						return prop;
@@ -9099,7 +9139,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p53 = prop;
 					if (_p53.ctor === 'Height') {
 						return A2(
-							_user$project$Style_Properties$Height,
+							_mdgriffith$elm_style_animation$Style_Properties$Height,
 							A3(fn, _p49._0, _p52._0, _p53._0),
 							_p49._1);
 					} else {
@@ -9114,7 +9154,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p55 = prop;
 					if (_p55.ctor === 'Width') {
 						return A2(
-							_user$project$Style_Properties$Width,
+							_mdgriffith$elm_style_animation$Style_Properties$Width,
 							A3(fn, _p49._0, _p54._0, _p55._0),
 							_p49._1);
 					} else {
@@ -9129,7 +9169,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p57 = prop;
 					if (_p57.ctor === 'Left') {
 						return A2(
-							_user$project$Style_Properties$Left,
+							_mdgriffith$elm_style_animation$Style_Properties$Left,
 							A3(fn, _p49._0, _p56._0, _p57._0),
 							_p49._1);
 					} else {
@@ -9144,7 +9184,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p59 = prop;
 					if (_p59.ctor === 'Top') {
 						return A2(
-							_user$project$Style_Properties$Top,
+							_mdgriffith$elm_style_animation$Style_Properties$Top,
 							A3(fn, _p49._0, _p58._0, _p59._0),
 							_p49._1);
 					} else {
@@ -9159,7 +9199,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p61 = prop;
 					if (_p61.ctor === 'Right') {
 						return A2(
-							_user$project$Style_Properties$Right,
+							_mdgriffith$elm_style_animation$Style_Properties$Right,
 							A3(fn, _p49._0, _p60._0, _p61._0),
 							_p49._1);
 					} else {
@@ -9174,7 +9214,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p63 = prop;
 					if (_p63.ctor === 'Bottom') {
 						return A2(
-							_user$project$Style_Properties$Bottom,
+							_mdgriffith$elm_style_animation$Style_Properties$Bottom,
 							A3(fn, _p49._0, _p62._0, _p63._0),
 							_p49._1);
 					} else {
@@ -9189,7 +9229,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p65 = prop;
 					if (_p65.ctor === 'MaxHeight') {
 						return A2(
-							_user$project$Style_Properties$MaxHeight,
+							_mdgriffith$elm_style_animation$Style_Properties$MaxHeight,
 							A3(fn, _p49._0, _p64._0, _p65._0),
 							_p49._1);
 					} else {
@@ -9204,7 +9244,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p67 = prop;
 					if (_p67.ctor === 'MaxWidth') {
 						return A2(
-							_user$project$Style_Properties$MaxWidth,
+							_mdgriffith$elm_style_animation$Style_Properties$MaxWidth,
 							A3(fn, _p49._0, _p66._0, _p67._0),
 							_p49._1);
 					} else {
@@ -9219,7 +9259,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p69 = prop;
 					if (_p69.ctor === 'MinHeight') {
 						return A2(
-							_user$project$Style_Properties$MinHeight,
+							_mdgriffith$elm_style_animation$Style_Properties$MinHeight,
 							A3(fn, _p49._0, _p68._0, _p69._0),
 							_p49._1);
 					} else {
@@ -9234,7 +9274,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p71 = prop;
 					if (_p71.ctor === 'MinWidth') {
 						return A2(
-							_user$project$Style_Properties$MinWidth,
+							_mdgriffith$elm_style_animation$Style_Properties$MinWidth,
 							A3(fn, _p49._0, _p70._0, _p71._0),
 							_p49._1);
 					} else {
@@ -9249,7 +9289,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p73 = prop;
 					if (_p73.ctor === 'Padding') {
 						return A2(
-							_user$project$Style_Properties$Padding,
+							_mdgriffith$elm_style_animation$Style_Properties$Padding,
 							A3(fn, _p49._0, _p72._0, _p73._0),
 							_p49._1);
 					} else {
@@ -9264,7 +9304,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p75 = prop;
 					if (_p75.ctor === 'PaddingLeft') {
 						return A2(
-							_user$project$Style_Properties$PaddingLeft,
+							_mdgriffith$elm_style_animation$Style_Properties$PaddingLeft,
 							A3(fn, _p49._0, _p74._0, _p75._0),
 							_p49._1);
 					} else {
@@ -9279,7 +9319,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p77 = prop;
 					if (_p77.ctor === 'PaddingRight') {
 						return A2(
-							_user$project$Style_Properties$PaddingRight,
+							_mdgriffith$elm_style_animation$Style_Properties$PaddingRight,
 							A3(fn, _p49._0, _p76._0, _p77._0),
 							_p49._1);
 					} else {
@@ -9294,7 +9334,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p79 = prop;
 					if (_p79.ctor === 'PaddingTop') {
 						return A2(
-							_user$project$Style_Properties$PaddingTop,
+							_mdgriffith$elm_style_animation$Style_Properties$PaddingTop,
 							A3(fn, _p49._0, _p78._0, _p79._0),
 							_p49._1);
 					} else {
@@ -9309,7 +9349,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p81 = prop;
 					if (_p81.ctor === 'PaddingBottom') {
 						return A2(
-							_user$project$Style_Properties$PaddingBottom,
+							_mdgriffith$elm_style_animation$Style_Properties$PaddingBottom,
 							A3(fn, _p49._0, _p80._0, _p81._0),
 							_p49._1);
 					} else {
@@ -9324,7 +9364,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p83 = prop;
 					if (_p83.ctor === 'Margin') {
 						return A2(
-							_user$project$Style_Properties$Margin,
+							_mdgriffith$elm_style_animation$Style_Properties$Margin,
 							A3(fn, _p49._0, _p82._0, _p83._0),
 							_p49._1);
 					} else {
@@ -9339,7 +9379,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p85 = prop;
 					if (_p85.ctor === 'MarginLeft') {
 						return A2(
-							_user$project$Style_Properties$MarginLeft,
+							_mdgriffith$elm_style_animation$Style_Properties$MarginLeft,
 							A3(fn, _p49._0, _p84._0, _p85._0),
 							_p49._1);
 					} else {
@@ -9354,7 +9394,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p87 = prop;
 					if (_p87.ctor === 'MarginRight') {
 						return A2(
-							_user$project$Style_Properties$MarginRight,
+							_mdgriffith$elm_style_animation$Style_Properties$MarginRight,
 							A3(fn, _p49._0, _p86._0, _p87._0),
 							_p49._1);
 					} else {
@@ -9369,7 +9409,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p89 = prop;
 					if (_p89.ctor === 'MarginTop') {
 						return A2(
-							_user$project$Style_Properties$MarginTop,
+							_mdgriffith$elm_style_animation$Style_Properties$MarginTop,
 							A3(fn, _p49._0, _p88._0, _p89._0),
 							_p49._1);
 					} else {
@@ -9384,7 +9424,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p91 = prop;
 					if (_p91.ctor === 'MarginBottom') {
 						return A2(
-							_user$project$Style_Properties$MarginBottom,
+							_mdgriffith$elm_style_animation$Style_Properties$MarginBottom,
 							A3(fn, _p49._0, _p90._0, _p91._0),
 							_p49._1);
 					} else {
@@ -9399,7 +9439,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p93 = prop;
 					if (_p93.ctor === 'BorderWidth') {
 						return A2(
-							_user$project$Style_Properties$BorderWidth,
+							_mdgriffith$elm_style_animation$Style_Properties$BorderWidth,
 							A3(fn, _p49._0, _p92._0, _p93._0),
 							_p49._1);
 					} else {
@@ -9414,7 +9454,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p95 = prop;
 					if (_p95.ctor === 'BorderRadius') {
 						return A2(
-							_user$project$Style_Properties$BorderRadius,
+							_mdgriffith$elm_style_animation$Style_Properties$BorderRadius,
 							A3(fn, _p49._0, _p94._0, _p95._0),
 							_p49._1);
 					} else {
@@ -9429,7 +9469,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p97 = prop;
 					if (_p97.ctor === 'BorderTopLeftRadius') {
 						return A2(
-							_user$project$Style_Properties$BorderTopLeftRadius,
+							_mdgriffith$elm_style_animation$Style_Properties$BorderTopLeftRadius,
 							A3(fn, _p49._0, _p96._0, _p97._0),
 							_p49._1);
 					} else {
@@ -9444,7 +9484,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p99 = prop;
 					if (_p99.ctor === 'BorderTopRightRadius') {
 						return A2(
-							_user$project$Style_Properties$BorderTopRightRadius,
+							_mdgriffith$elm_style_animation$Style_Properties$BorderTopRightRadius,
 							A3(fn, _p49._0, _p98._0, _p99._0),
 							_p49._1);
 					} else {
@@ -9459,7 +9499,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p101 = prop;
 					if (_p101.ctor === 'BorderBottomLeftRadius') {
 						return A2(
-							_user$project$Style_Properties$BorderBottomLeftRadius,
+							_mdgriffith$elm_style_animation$Style_Properties$BorderBottomLeftRadius,
 							A3(fn, _p49._0, _p100._0, _p101._0),
 							_p49._1);
 					} else {
@@ -9474,7 +9514,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p103 = prop;
 					if (_p103.ctor === 'BorderBottomRightRadius') {
 						return A2(
-							_user$project$Style_Properties$BorderBottomRightRadius,
+							_mdgriffith$elm_style_animation$Style_Properties$BorderBottomRightRadius,
 							A3(fn, _p49._0, _p102._0, _p103._0),
 							_p49._1);
 					} else {
@@ -9489,7 +9529,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p105 = prop;
 					if (_p105.ctor === 'LetterSpacing') {
 						return A2(
-							_user$project$Style_Properties$LetterSpacing,
+							_mdgriffith$elm_style_animation$Style_Properties$LetterSpacing,
 							A3(fn, _p49._0, _p104._0, _p105._0),
 							_p49._1);
 					} else {
@@ -9504,7 +9544,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p107 = prop;
 					if (_p107.ctor === 'LineHeight') {
 						return A2(
-							_user$project$Style_Properties$LineHeight,
+							_mdgriffith$elm_style_animation$Style_Properties$LineHeight,
 							A3(fn, _p49._0, _p106._0, _p107._0),
 							_p49._1);
 					} else {
@@ -9519,7 +9559,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p109 = prop;
 					if (_p109.ctor === 'BackgroundPosition') {
 						return A3(
-							_user$project$Style_Properties$BackgroundPosition,
+							_mdgriffith$elm_style_animation$Style_Properties$BackgroundPosition,
 							A3(fn, _p49._0, _p108._0, _p109._0),
 							A3(fn, _p49._1, _p108._1, _p109._1),
 							_p49._2);
@@ -9534,7 +9574,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p110.ctor === 'Color') {
 					var _p111 = prop;
 					if (_p111.ctor === 'Color') {
-						return _user$project$Style_Properties$Color(
+						return _mdgriffith$elm_style_animation$Style_Properties$Color(
 							A3(colorFn, _p49._0, _p110._0, _p111._0));
 					} else {
 						return prop;
@@ -9547,7 +9587,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p112.ctor === 'BackgroundColor') {
 					var _p113 = prop;
 					if (_p113.ctor === 'BackgroundColor') {
-						return _user$project$Style_Properties$BackgroundColor(
+						return _mdgriffith$elm_style_animation$Style_Properties$BackgroundColor(
 							A3(colorFn, _p49._0, _p112._0, _p113._0));
 					} else {
 						return prop;
@@ -9560,7 +9600,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p114.ctor === 'BorderColor') {
 					var _p115 = prop;
 					if (_p115.ctor === 'BorderColor') {
-						return _user$project$Style_Properties$BorderColor(
+						return _mdgriffith$elm_style_animation$Style_Properties$BorderColor(
 							A3(colorFn, _p49._0, _p114._0, _p115._0));
 					} else {
 						return prop;
@@ -9574,7 +9614,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p117 = prop;
 					if (_p117.ctor === 'TransformOrigin') {
 						return A4(
-							_user$project$Style_Properties$TransformOrigin,
+							_mdgriffith$elm_style_animation$Style_Properties$TransformOrigin,
 							A3(fn, _p49._0, _p116._0, _p117._0),
 							A3(fn, _p49._1, _p116._1, _p117._1),
 							A3(fn, _p49._2, _p116._2, _p117._2),
@@ -9591,7 +9631,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p119 = prop;
 					if (_p119.ctor === 'Matrix') {
 						return A6(
-							_user$project$Style_Properties$Matrix,
+							_mdgriffith$elm_style_animation$Style_Properties$Matrix,
 							A3(fn, _p49._0, _p118._0, _p119._0),
 							A3(fn, _p49._1, _p118._1, _p119._1),
 							A3(fn, _p49._2, _p118._2, _p119._2),
@@ -9609,7 +9649,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p120.ctor === 'Matrix3d') {
 					var _p121 = prop;
 					if (_p121.ctor === 'Matrix3d') {
-						return _user$project$Style_Properties$Matrix3d(
+						return _mdgriffith$elm_style_animation$Style_Properties$Matrix3d(
 							A3(fn, _p49._0, _p120._0, _p121._0))(
 							A3(fn, _p49._1, _p120._1, _p121._1))(
 							A3(fn, _p49._2, _p120._2, _p121._2))(
@@ -9638,7 +9678,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p123 = prop;
 					if (_p123.ctor === 'Translate') {
 						return A3(
-							_user$project$Style_Properties$Translate,
+							_mdgriffith$elm_style_animation$Style_Properties$Translate,
 							A3(fn, _p49._0, _p122._0, _p123._0),
 							A3(fn, _p49._1, _p122._1, _p123._1),
 							_p49._2);
@@ -9654,7 +9694,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p125 = prop;
 					if (_p125.ctor === 'Translate3d') {
 						return A4(
-							_user$project$Style_Properties$Translate3d,
+							_mdgriffith$elm_style_animation$Style_Properties$Translate3d,
 							A3(fn, _p49._0, _p124._0, _p125._0),
 							A3(fn, _p49._1, _p124._1, _p125._1),
 							A3(fn, _p49._2, _p124._2, _p125._2),
@@ -9671,7 +9711,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p127 = prop;
 					if (_p127.ctor === 'TranslateX') {
 						return A2(
-							_user$project$Style_Properties$TranslateX,
+							_mdgriffith$elm_style_animation$Style_Properties$TranslateX,
 							A3(fn, _p49._0, _p126._0, _p127._0),
 							_p49._1);
 					} else {
@@ -9686,7 +9726,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p129 = prop;
 					if (_p129.ctor === 'TranslateY') {
 						return A2(
-							_user$project$Style_Properties$TranslateY,
+							_mdgriffith$elm_style_animation$Style_Properties$TranslateY,
 							A3(fn, _p49._0, _p128._0, _p129._0),
 							_p49._1);
 					} else {
@@ -9700,7 +9740,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p130.ctor === 'Scale') {
 					var _p131 = prop;
 					if (_p131.ctor === 'Scale') {
-						return _user$project$Style_Properties$Scale(
+						return _mdgriffith$elm_style_animation$Style_Properties$Scale(
 							A3(fn, _p49._0, _p130._0, _p131._0));
 					} else {
 						return prop;
@@ -9714,7 +9754,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p133 = prop;
 					if (_p133.ctor === 'Scale3d') {
 						return A3(
-							_user$project$Style_Properties$Scale3d,
+							_mdgriffith$elm_style_animation$Style_Properties$Scale3d,
 							A3(fn, _p49._0, _p132._0, _p133._0),
 							A3(fn, _p49._1, _p132._1, _p133._1),
 							A3(fn, _p49._2, _p132._2, _p133._2));
@@ -9729,7 +9769,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p134.ctor === 'ScaleX') {
 					var _p135 = prop;
 					if (_p135.ctor === 'ScaleX') {
-						return _user$project$Style_Properties$ScaleX(
+						return _mdgriffith$elm_style_animation$Style_Properties$ScaleX(
 							A3(fn, _p49._0, _p134._0, _p135._0));
 					} else {
 						return prop;
@@ -9742,7 +9782,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p136.ctor === 'ScaleY') {
 					var _p137 = prop;
 					if (_p137.ctor === 'ScaleY') {
-						return _user$project$Style_Properties$ScaleY(
+						return _mdgriffith$elm_style_animation$Style_Properties$ScaleY(
 							A3(fn, _p49._0, _p136._0, _p137._0));
 					} else {
 						return prop;
@@ -9755,7 +9795,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p138.ctor === 'ScaleZ') {
 					var _p139 = prop;
 					if (_p139.ctor === 'ScaleZ') {
-						return _user$project$Style_Properties$ScaleZ(
+						return _mdgriffith$elm_style_animation$Style_Properties$ScaleZ(
 							A3(fn, _p49._0, _p138._0, _p139._0));
 					} else {
 						return prop;
@@ -9769,7 +9809,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p141 = prop;
 					if (_p141.ctor === 'Rotate') {
 						return A2(
-							_user$project$Style_Properties$Rotate,
+							_mdgriffith$elm_style_animation$Style_Properties$Rotate,
 							A3(fn, _p49._0, _p140._0, _p141._0),
 							_p49._1);
 					} else {
@@ -9784,7 +9824,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p143 = prop;
 					if (_p143.ctor === 'Rotate3d') {
 						return A5(
-							_user$project$Style_Properties$Rotate3d,
+							_mdgriffith$elm_style_animation$Style_Properties$Rotate3d,
 							A3(fn, _p49._0, _p142._0, _p143._0),
 							A3(fn, _p49._1, _p142._1, _p143._1),
 							A3(fn, _p49._2, _p142._2, _p143._2),
@@ -9802,7 +9842,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p145 = prop;
 					if (_p145.ctor === 'RotateX') {
 						return A2(
-							_user$project$Style_Properties$RotateX,
+							_mdgriffith$elm_style_animation$Style_Properties$RotateX,
 							A3(fn, _p49._0, _p144._0, _p145._0),
 							_p49._1);
 					} else {
@@ -9817,7 +9857,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p147 = prop;
 					if (_p147.ctor === 'RotateY') {
 						return A2(
-							_user$project$Style_Properties$RotateY,
+							_mdgriffith$elm_style_animation$Style_Properties$RotateY,
 							A3(fn, _p49._0, _p146._0, _p147._0),
 							_p49._1);
 					} else {
@@ -9832,7 +9872,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p149 = prop;
 					if (_p149.ctor === 'Skew') {
 						return A3(
-							_user$project$Style_Properties$Skew,
+							_mdgriffith$elm_style_animation$Style_Properties$Skew,
 							A3(fn, _p49._0, _p148._0, _p149._0),
 							A3(fn, _p49._1, _p148._1, _p149._1),
 							_p49._2);
@@ -9848,7 +9888,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p151 = prop;
 					if (_p151.ctor === 'SkewX') {
 						return A2(
-							_user$project$Style_Properties$SkewX,
+							_mdgriffith$elm_style_animation$Style_Properties$SkewX,
 							A3(fn, _p49._0, _p150._0, _p151._0),
 							_p49._1);
 					} else {
@@ -9863,7 +9903,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 					var _p153 = prop;
 					if (_p153.ctor === 'SkewY') {
 						return A2(
-							_user$project$Style_Properties$SkewY,
+							_mdgriffith$elm_style_animation$Style_Properties$SkewY,
 							A3(fn, _p49._0, _p152._0, _p153._0),
 							_p49._1);
 					} else {
@@ -9877,7 +9917,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p154.ctor === 'Perspective') {
 					var _p155 = prop;
 					if (_p155.ctor === 'Perspective') {
-						return _user$project$Style_Properties$Perspective(
+						return _mdgriffith$elm_style_animation$Style_Properties$Perspective(
 							A3(fn, _p49._0, _p154._0, _p155._0));
 					} else {
 						return prop;
@@ -9890,7 +9930,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p156.ctor === 'X') {
 					var _p157 = prop;
 					if (_p157.ctor === 'X') {
-						return _user$project$Style_Properties$X(
+						return _mdgriffith$elm_style_animation$Style_Properties$X(
 							A3(fn, _p49._0, _p156._0, _p157._0));
 					} else {
 						return prop;
@@ -9903,7 +9943,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p158.ctor === 'Y') {
 					var _p159 = prop;
 					if (_p159.ctor === 'Y') {
-						return _user$project$Style_Properties$Y(
+						return _mdgriffith$elm_style_animation$Style_Properties$Y(
 							A3(fn, _p49._0, _p158._0, _p159._0));
 					} else {
 						return prop;
@@ -9916,7 +9956,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p160.ctor === 'Cx') {
 					var _p161 = prop;
 					if (_p161.ctor === 'Cx') {
-						return _user$project$Style_Properties$Cx(
+						return _mdgriffith$elm_style_animation$Style_Properties$Cx(
 							A3(fn, _p49._0, _p160._0, _p161._0));
 					} else {
 						return prop;
@@ -9929,7 +9969,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p162.ctor === 'Cy') {
 					var _p163 = prop;
 					if (_p163.ctor === 'Cy') {
-						return _user$project$Style_Properties$Cy(
+						return _mdgriffith$elm_style_animation$Style_Properties$Cy(
 							A3(fn, _p49._0, _p162._0, _p163._0));
 					} else {
 						return prop;
@@ -9942,7 +9982,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p164.ctor === 'R') {
 					var _p165 = prop;
 					if (_p165.ctor === 'R') {
-						return _user$project$Style_Properties$R(
+						return _mdgriffith$elm_style_animation$Style_Properties$R(
 							A3(fn, _p49._0, _p164._0, _p165._0));
 					} else {
 						return prop;
@@ -9955,7 +9995,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p166.ctor === 'Rx') {
 					var _p167 = prop;
 					if (_p167.ctor === 'Rx') {
-						return _user$project$Style_Properties$Rx(
+						return _mdgriffith$elm_style_animation$Style_Properties$Rx(
 							A3(fn, _p49._0, _p166._0, _p167._0));
 					} else {
 						return prop;
@@ -9968,7 +10008,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p168.ctor === 'Ry') {
 					var _p169 = prop;
 					if (_p169.ctor === 'Ry') {
-						return _user$project$Style_Properties$Ry(
+						return _mdgriffith$elm_style_animation$Style_Properties$Ry(
 							A3(fn, _p49._0, _p168._0, _p169._0));
 					} else {
 						return prop;
@@ -9981,10 +10021,10 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p170.ctor === 'D') {
 					var _p171 = prop;
 					if (_p171.ctor === 'D') {
-						return _user$project$Style_Properties$D(
+						return _mdgriffith$elm_style_animation$Style_Properties$D(
 							A4(
 								_elm_lang$core$List$map3,
-								_user$project$Style_PropertyHelpers$map3Cmd(fn),
+								_mdgriffith$elm_style_animation$Style_PropertyHelpers$map3Cmd(fn),
 								_p49._0,
 								_p170._0,
 								_p171._0));
@@ -9999,7 +10039,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p172.ctor === 'Points') {
 					var _p173 = prop;
 					if (_p173.ctor === 'Points') {
-						return _user$project$Style_Properties$Points(
+						return _mdgriffith$elm_style_animation$Style_Properties$Points(
 							A4(
 								_elm_lang$core$List$map3,
 								F3(
@@ -10027,7 +10067,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p180.ctor === 'Fill') {
 					var _p181 = prop;
 					if (_p181.ctor === 'Fill') {
-						return _user$project$Style_Properties$Fill(
+						return _mdgriffith$elm_style_animation$Style_Properties$Fill(
 							A3(colorFn, _p49._0, _p180._0, _p181._0));
 					} else {
 						return prop;
@@ -10040,7 +10080,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				if (_p182.ctor === 'Stroke') {
 					var _p183 = prop;
 					if (_p183.ctor === 'Stroke') {
-						return _user$project$Style_Properties$Stroke(
+						return _mdgriffith$elm_style_animation$Style_Properties$Stroke(
 							A3(colorFn, _p49._0, _p182._0, _p183._0));
 					} else {
 						return prop;
@@ -10050,7 +10090,7 @@ var _user$project$Style_PropertyHelpers$map3 = F5(
 				}
 		}
 	});
-var _user$project$Style_PropertyHelpers$map2Points = F3(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$map2Points = F3(
 	function (fn, points, points2) {
 		return A3(
 			_elm_lang$core$List$map2,
@@ -10067,7 +10107,7 @@ var _user$project$Style_PropertyHelpers$map2Points = F3(
 			points,
 			points2);
 	});
-var _user$project$Style_PropertyHelpers$map2Cmd = F3(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$map2Cmd = F3(
 	function (fn, cmd, cmd2) {
 		var _p188 = cmd;
 		switch (_p188.ctor) {
@@ -10075,7 +10115,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 				var _p189 = cmd2;
 				if (_p189.ctor === 'Move') {
 					return A2(
-						_user$project$Style_Properties$Move,
+						_mdgriffith$elm_style_animation$Style_Properties$Move,
 						A2(fn, _p188._0, _p189._0),
 						A2(fn, _p188._1, _p189._1));
 				} else {
@@ -10085,7 +10125,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 				var _p190 = cmd2;
 				if (_p190.ctor === 'MoveTo') {
 					return A2(
-						_user$project$Style_Properties$MoveTo,
+						_mdgriffith$elm_style_animation$Style_Properties$MoveTo,
 						A2(fn, _p188._0, _p190._0),
 						A2(fn, _p188._1, _p190._1));
 				} else {
@@ -10095,7 +10135,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 				var _p191 = cmd2;
 				if (_p191.ctor === 'Line') {
 					return A2(
-						_user$project$Style_Properties$Line,
+						_mdgriffith$elm_style_animation$Style_Properties$Line,
 						A2(fn, _p188._0, _p191._0),
 						A2(fn, _p188._1, _p191._1));
 				} else {
@@ -10105,7 +10145,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 				var _p192 = cmd2;
 				if (_p192.ctor === 'LineTo') {
 					return A2(
-						_user$project$Style_Properties$LineTo,
+						_mdgriffith$elm_style_animation$Style_Properties$LineTo,
 						A2(fn, _p188._0, _p192._0),
 						A2(fn, _p188._1, _p192._1));
 				} else {
@@ -10114,7 +10154,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 			case 'Horizontal':
 				var _p193 = cmd2;
 				if (_p193.ctor === 'Horizontal') {
-					return _user$project$Style_Properties$Horizontal(
+					return _mdgriffith$elm_style_animation$Style_Properties$Horizontal(
 						A2(fn, _p188._0, _p193._0));
 				} else {
 					return cmd2;
@@ -10122,7 +10162,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 			case 'HorizontalTo':
 				var _p194 = cmd2;
 				if (_p194.ctor === 'HorizontalTo') {
-					return _user$project$Style_Properties$HorizontalTo(
+					return _mdgriffith$elm_style_animation$Style_Properties$HorizontalTo(
 						A2(fn, _p188._0, _p194._0));
 				} else {
 					return cmd2;
@@ -10130,7 +10170,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 			case 'Vertical':
 				var _p195 = cmd2;
 				if (_p195.ctor === 'Vertical') {
-					return _user$project$Style_Properties$Vertical(
+					return _mdgriffith$elm_style_animation$Style_Properties$Vertical(
 						A2(fn, _p188._0, _p195._0));
 				} else {
 					return cmd2;
@@ -10138,7 +10178,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 			case 'VerticalTo':
 				var _p196 = cmd2;
 				if (_p196.ctor === 'VerticalTo') {
-					return _user$project$Style_Properties$VerticalTo(
+					return _mdgriffith$elm_style_animation$Style_Properties$VerticalTo(
 						A2(fn, _p188._0, _p196._0));
 				} else {
 					return cmd2;
@@ -10146,64 +10186,64 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 			case 'Curve':
 				var _p197 = cmd2;
 				if (_p197.ctor === 'Curve') {
-					return _user$project$Style_Properties$Curve(
-						A3(_user$project$Style_PropertyHelpers$map2Points, fn, _p188._0, _p197._0));
+					return _mdgriffith$elm_style_animation$Style_Properties$Curve(
+						A3(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map2Points, fn, _p188._0, _p197._0));
 				} else {
 					return cmd2;
 				}
 			case 'CurveTo':
 				var _p198 = cmd2;
 				if (_p198.ctor === 'Curve') {
-					return _user$project$Style_Properties$CurveTo(
-						A3(_user$project$Style_PropertyHelpers$map2Points, fn, _p188._0, _p198._0));
+					return _mdgriffith$elm_style_animation$Style_Properties$CurveTo(
+						A3(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map2Points, fn, _p188._0, _p198._0));
 				} else {
 					return cmd2;
 				}
 			case 'Quadratic':
 				var _p199 = cmd2;
 				if (_p199.ctor === 'Quadratic') {
-					return _user$project$Style_Properties$Quadratic(
-						A3(_user$project$Style_PropertyHelpers$map2Points, fn, _p188._0, _p199._0));
+					return _mdgriffith$elm_style_animation$Style_Properties$Quadratic(
+						A3(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map2Points, fn, _p188._0, _p199._0));
 				} else {
 					return cmd2;
 				}
 			case 'QuadraticTo':
 				var _p200 = cmd2;
 				if (_p200.ctor === 'QuadraticTo') {
-					return _user$project$Style_Properties$QuadraticTo(
-						A3(_user$project$Style_PropertyHelpers$map2Points, fn, _p188._0, _p200._0));
+					return _mdgriffith$elm_style_animation$Style_Properties$QuadraticTo(
+						A3(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map2Points, fn, _p188._0, _p200._0));
 				} else {
 					return cmd2;
 				}
 			case 'SmoothQuadratic':
 				var _p201 = cmd2;
 				if (_p201.ctor === 'SmoothQuadratic') {
-					return _user$project$Style_Properties$SmoothQuadratic(
-						A3(_user$project$Style_PropertyHelpers$map2Points, fn, _p188._0, _p201._0));
+					return _mdgriffith$elm_style_animation$Style_Properties$SmoothQuadratic(
+						A3(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map2Points, fn, _p188._0, _p201._0));
 				} else {
 					return cmd2;
 				}
 			case 'SmoothQuadraticTo':
 				var _p202 = cmd2;
 				if (_p202.ctor === 'SmoothQuadraticTo') {
-					return _user$project$Style_Properties$SmoothQuadraticTo(
-						A3(_user$project$Style_PropertyHelpers$map2Points, fn, _p188._0, _p202._0));
+					return _mdgriffith$elm_style_animation$Style_Properties$SmoothQuadraticTo(
+						A3(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map2Points, fn, _p188._0, _p202._0));
 				} else {
 					return cmd2;
 				}
 			case 'Smooth':
 				var _p203 = cmd2;
 				if (_p203.ctor === 'Smooth') {
-					return _user$project$Style_Properties$Smooth(
-						A3(_user$project$Style_PropertyHelpers$map2Points, fn, _p188._0, _p203._0));
+					return _mdgriffith$elm_style_animation$Style_Properties$Smooth(
+						A3(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map2Points, fn, _p188._0, _p203._0));
 				} else {
 					return cmd2;
 				}
 			case 'SmoothTo':
 				var _p204 = cmd2;
 				if (_p204.ctor === 'SmoothTo') {
-					return _user$project$Style_Properties$SmoothTo(
-						A3(_user$project$Style_PropertyHelpers$map2Points, fn, _p188._0, _p204._0));
+					return _mdgriffith$elm_style_animation$Style_Properties$SmoothTo(
+						A3(_mdgriffith$elm_style_animation$Style_PropertyHelpers$map2Points, fn, _p188._0, _p204._0));
 				} else {
 					return cmd2;
 				}
@@ -10211,7 +10251,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 				var _p205 = cmd2;
 				if (_p205.ctor === 'Arc') {
 					return A4(
-						_user$project$Style_Properties$Arc,
+						_mdgriffith$elm_style_animation$Style_Properties$Arc,
 						A2(fn, _p188._0, _p205._0),
 						A2(fn, _p188._1, _p205._1),
 						A2(fn, _p188._2, _p205._2),
@@ -10223,7 +10263,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 				var _p206 = cmd2;
 				if (_p206.ctor === 'ArcTo') {
 					return A4(
-						_user$project$Style_Properties$ArcTo,
+						_mdgriffith$elm_style_animation$Style_Properties$ArcTo,
 						A2(fn, _p188._0, _p206._0),
 						A2(fn, _p188._1, _p206._1),
 						A2(fn, _p188._2, _p206._2),
@@ -10235,7 +10275,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 				var _p207 = cmd2;
 				if (_p207.ctor === 'LargeArc') {
 					return A4(
-						_user$project$Style_Properties$LargeArc,
+						_mdgriffith$elm_style_animation$Style_Properties$LargeArc,
 						A2(fn, _p188._0, _p207._0),
 						A2(fn, _p188._1, _p207._1),
 						A2(fn, _p188._2, _p207._2),
@@ -10247,7 +10287,7 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 				var _p208 = cmd2;
 				if (_p208.ctor === 'LargeArcTo') {
 					return A4(
-						_user$project$Style_Properties$LargeArcTo,
+						_mdgriffith$elm_style_animation$Style_Properties$LargeArcTo,
 						A2(fn, _p188._0, _p208._0),
 						A2(fn, _p188._1, _p208._1),
 						A2(fn, _p188._2, _p208._2),
@@ -10256,10 +10296,10 @@ var _user$project$Style_PropertyHelpers$map2Cmd = F3(
 					return cmd2;
 				}
 			default:
-				return _user$project$Style_Properties$Close;
+				return _mdgriffith$elm_style_animation$Style_Properties$Close;
 		}
 	});
-var _user$project$Style_PropertyHelpers$map2 = F4(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$map2 = F4(
 	function (fn, colorFn, prev, prop) {
 		var _p209 = prev;
 		switch (_p209.ctor) {
@@ -10268,7 +10308,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Opacity':
 				var _p210 = prop;
 				if (_p210.ctor === 'Opacity') {
-					return _user$project$Style_Properties$Opacity(
+					return _mdgriffith$elm_style_animation$Style_Properties$Opacity(
 						A2(fn, _p209._0, _p210._0));
 				} else {
 					return prop;
@@ -10277,7 +10317,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p211 = prop;
 				if (_p211.ctor === 'Height') {
 					return A2(
-						_user$project$Style_Properties$Height,
+						_mdgriffith$elm_style_animation$Style_Properties$Height,
 						A2(fn, _p209._0, _p211._0),
 						_p209._1);
 				} else {
@@ -10287,7 +10327,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p212 = prop;
 				if (_p212.ctor === 'Width') {
 					return A2(
-						_user$project$Style_Properties$Width,
+						_mdgriffith$elm_style_animation$Style_Properties$Width,
 						A2(fn, _p209._0, _p212._0),
 						_p209._1);
 				} else {
@@ -10297,7 +10337,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p213 = prop;
 				if (_p213.ctor === 'Left') {
 					return A2(
-						_user$project$Style_Properties$Left,
+						_mdgriffith$elm_style_animation$Style_Properties$Left,
 						A2(fn, _p209._0, _p213._0),
 						_p209._1);
 				} else {
@@ -10307,7 +10347,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p214 = prop;
 				if (_p214.ctor === 'Top') {
 					return A2(
-						_user$project$Style_Properties$Top,
+						_mdgriffith$elm_style_animation$Style_Properties$Top,
 						A2(fn, _p209._0, _p214._0),
 						_p209._1);
 				} else {
@@ -10317,7 +10357,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p215 = prop;
 				if (_p215.ctor === 'Right') {
 					return A2(
-						_user$project$Style_Properties$Right,
+						_mdgriffith$elm_style_animation$Style_Properties$Right,
 						A2(fn, _p209._0, _p215._0),
 						_p209._1);
 				} else {
@@ -10327,7 +10367,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p216 = prop;
 				if (_p216.ctor === 'Bottom') {
 					return A2(
-						_user$project$Style_Properties$Bottom,
+						_mdgriffith$elm_style_animation$Style_Properties$Bottom,
 						A2(fn, _p209._0, _p216._0),
 						_p209._1);
 				} else {
@@ -10337,7 +10377,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p217 = prop;
 				if (_p217.ctor === 'MaxHeight') {
 					return A2(
-						_user$project$Style_Properties$MaxHeight,
+						_mdgriffith$elm_style_animation$Style_Properties$MaxHeight,
 						A2(fn, _p209._0, _p217._0),
 						_p209._1);
 				} else {
@@ -10347,7 +10387,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p218 = prop;
 				if (_p218.ctor === 'MaxWidth') {
 					return A2(
-						_user$project$Style_Properties$MaxWidth,
+						_mdgriffith$elm_style_animation$Style_Properties$MaxWidth,
 						A2(fn, _p209._0, _p218._0),
 						_p209._1);
 				} else {
@@ -10357,7 +10397,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p219 = prop;
 				if (_p219.ctor === 'MinHeight') {
 					return A2(
-						_user$project$Style_Properties$MinHeight,
+						_mdgriffith$elm_style_animation$Style_Properties$MinHeight,
 						A2(fn, _p209._0, _p219._0),
 						_p209._1);
 				} else {
@@ -10367,7 +10407,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p220 = prop;
 				if (_p220.ctor === 'MinWidth') {
 					return A2(
-						_user$project$Style_Properties$MinWidth,
+						_mdgriffith$elm_style_animation$Style_Properties$MinWidth,
 						A2(fn, _p209._0, _p220._0),
 						_p209._1);
 				} else {
@@ -10377,7 +10417,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p221 = prop;
 				if (_p221.ctor === 'Padding') {
 					return A2(
-						_user$project$Style_Properties$Padding,
+						_mdgriffith$elm_style_animation$Style_Properties$Padding,
 						A2(fn, _p209._0, _p221._0),
 						_p209._1);
 				} else {
@@ -10387,7 +10427,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p222 = prop;
 				if (_p222.ctor === 'PaddingLeft') {
 					return A2(
-						_user$project$Style_Properties$PaddingLeft,
+						_mdgriffith$elm_style_animation$Style_Properties$PaddingLeft,
 						A2(fn, _p209._0, _p222._0),
 						_p209._1);
 				} else {
@@ -10397,7 +10437,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p223 = prop;
 				if (_p223.ctor === 'PaddingRight') {
 					return A2(
-						_user$project$Style_Properties$PaddingRight,
+						_mdgriffith$elm_style_animation$Style_Properties$PaddingRight,
 						A2(fn, _p209._0, _p223._0),
 						_p209._1);
 				} else {
@@ -10407,7 +10447,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p224 = prop;
 				if (_p224.ctor === 'PaddingTop') {
 					return A2(
-						_user$project$Style_Properties$PaddingTop,
+						_mdgriffith$elm_style_animation$Style_Properties$PaddingTop,
 						A2(fn, _p209._0, _p224._0),
 						_p209._1);
 				} else {
@@ -10417,7 +10457,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p225 = prop;
 				if (_p225.ctor === 'PaddingBottom') {
 					return A2(
-						_user$project$Style_Properties$PaddingBottom,
+						_mdgriffith$elm_style_animation$Style_Properties$PaddingBottom,
 						A2(fn, _p209._0, _p225._0),
 						_p209._1);
 				} else {
@@ -10427,7 +10467,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p226 = prop;
 				if (_p226.ctor === 'Margin') {
 					return A2(
-						_user$project$Style_Properties$Margin,
+						_mdgriffith$elm_style_animation$Style_Properties$Margin,
 						A2(fn, _p209._0, _p226._0),
 						_p209._1);
 				} else {
@@ -10437,7 +10477,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p227 = prop;
 				if (_p227.ctor === 'MarginLeft') {
 					return A2(
-						_user$project$Style_Properties$MarginLeft,
+						_mdgriffith$elm_style_animation$Style_Properties$MarginLeft,
 						A2(fn, _p209._0, _p227._0),
 						_p209._1);
 				} else {
@@ -10447,7 +10487,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p228 = prop;
 				if (_p228.ctor === 'MarginRight') {
 					return A2(
-						_user$project$Style_Properties$MarginRight,
+						_mdgriffith$elm_style_animation$Style_Properties$MarginRight,
 						A2(fn, _p209._0, _p228._0),
 						_p209._1);
 				} else {
@@ -10457,7 +10497,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p229 = prop;
 				if (_p229.ctor === 'MarginTop') {
 					return A2(
-						_user$project$Style_Properties$MarginTop,
+						_mdgriffith$elm_style_animation$Style_Properties$MarginTop,
 						A2(fn, _p209._0, _p229._0),
 						_p209._1);
 				} else {
@@ -10467,7 +10507,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p230 = prop;
 				if (_p230.ctor === 'MarginBottom') {
 					return A2(
-						_user$project$Style_Properties$MarginBottom,
+						_mdgriffith$elm_style_animation$Style_Properties$MarginBottom,
 						A2(fn, _p209._0, _p230._0),
 						_p209._1);
 				} else {
@@ -10477,7 +10517,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p231 = prop;
 				if (_p231.ctor === 'BorderWidth') {
 					return A2(
-						_user$project$Style_Properties$BorderWidth,
+						_mdgriffith$elm_style_animation$Style_Properties$BorderWidth,
 						A2(fn, _p209._0, _p231._0),
 						_p209._1);
 				} else {
@@ -10487,7 +10527,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p232 = prop;
 				if (_p232.ctor === 'BorderRadius') {
 					return A2(
-						_user$project$Style_Properties$BorderRadius,
+						_mdgriffith$elm_style_animation$Style_Properties$BorderRadius,
 						A2(fn, _p209._0, _p232._0),
 						_p209._1);
 				} else {
@@ -10497,7 +10537,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p233 = prop;
 				if (_p233.ctor === 'BorderTopLeftRadius') {
 					return A2(
-						_user$project$Style_Properties$BorderTopLeftRadius,
+						_mdgriffith$elm_style_animation$Style_Properties$BorderTopLeftRadius,
 						A2(fn, _p209._0, _p233._0),
 						_p209._1);
 				} else {
@@ -10507,7 +10547,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p234 = prop;
 				if (_p234.ctor === 'BorderTopRightRadius') {
 					return A2(
-						_user$project$Style_Properties$BorderTopRightRadius,
+						_mdgriffith$elm_style_animation$Style_Properties$BorderTopRightRadius,
 						A2(fn, _p209._0, _p234._0),
 						_p209._1);
 				} else {
@@ -10517,7 +10557,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p235 = prop;
 				if (_p235.ctor === 'BorderBottomLeftRadius') {
 					return A2(
-						_user$project$Style_Properties$BorderBottomLeftRadius,
+						_mdgriffith$elm_style_animation$Style_Properties$BorderBottomLeftRadius,
 						A2(fn, _p209._0, _p235._0),
 						_p209._1);
 				} else {
@@ -10527,7 +10567,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p236 = prop;
 				if (_p236.ctor === 'BorderBottomRightRadius') {
 					return A2(
-						_user$project$Style_Properties$BorderBottomRightRadius,
+						_mdgriffith$elm_style_animation$Style_Properties$BorderBottomRightRadius,
 						A2(fn, _p209._0, _p236._0),
 						_p209._1);
 				} else {
@@ -10537,7 +10577,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p237 = prop;
 				if (_p237.ctor === 'LetterSpacing') {
 					return A2(
-						_user$project$Style_Properties$LetterSpacing,
+						_mdgriffith$elm_style_animation$Style_Properties$LetterSpacing,
 						A2(fn, _p209._0, _p237._0),
 						_p209._1);
 				} else {
@@ -10547,7 +10587,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p238 = prop;
 				if (_p238.ctor === 'LineHeight') {
 					return A2(
-						_user$project$Style_Properties$LineHeight,
+						_mdgriffith$elm_style_animation$Style_Properties$LineHeight,
 						A2(fn, _p209._0, _p238._0),
 						_p209._1);
 				} else {
@@ -10557,7 +10597,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p239 = prop;
 				if (_p239.ctor === 'BackgroundPosition') {
 					return A3(
-						_user$project$Style_Properties$BackgroundPosition,
+						_mdgriffith$elm_style_animation$Style_Properties$BackgroundPosition,
 						A2(fn, _p209._0, _p239._0),
 						A2(fn, _p209._1, _p239._1),
 						_p209._2);
@@ -10567,7 +10607,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Color':
 				var _p240 = prop;
 				if (_p240.ctor === 'Color') {
-					return _user$project$Style_Properties$Color(
+					return _mdgriffith$elm_style_animation$Style_Properties$Color(
 						A2(colorFn, _p209._0, _p240._0));
 				} else {
 					return prop;
@@ -10575,7 +10615,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'BorderColor':
 				var _p241 = prop;
 				if (_p241.ctor === 'BorderColor') {
-					return _user$project$Style_Properties$BorderColor(
+					return _mdgriffith$elm_style_animation$Style_Properties$BorderColor(
 						A2(colorFn, _p209._0, _p241._0));
 				} else {
 					return prop;
@@ -10583,7 +10623,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'BackgroundColor':
 				var _p242 = prop;
 				if (_p242.ctor === 'BackgroundColor') {
-					return _user$project$Style_Properties$BackgroundColor(
+					return _mdgriffith$elm_style_animation$Style_Properties$BackgroundColor(
 						A2(colorFn, _p209._0, _p242._0));
 				} else {
 					return prop;
@@ -10592,7 +10632,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p243 = prop;
 				if (_p243.ctor === 'TransformOrigin') {
 					return A4(
-						_user$project$Style_Properties$TransformOrigin,
+						_mdgriffith$elm_style_animation$Style_Properties$TransformOrigin,
 						A2(fn, _p209._0, _p243._0),
 						A2(fn, _p209._1, _p243._1),
 						A2(fn, _p209._2, _p243._2),
@@ -10604,7 +10644,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p244 = prop;
 				if (_p244.ctor === 'Translate') {
 					return A3(
-						_user$project$Style_Properties$Translate,
+						_mdgriffith$elm_style_animation$Style_Properties$Translate,
 						A2(fn, _p209._0, _p244._0),
 						A2(fn, _p209._1, _p244._1),
 						_p209._2);
@@ -10615,7 +10655,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p245 = prop;
 				if (_p245.ctor === 'Translate3d') {
 					return A4(
-						_user$project$Style_Properties$Translate3d,
+						_mdgriffith$elm_style_animation$Style_Properties$Translate3d,
 						A2(fn, _p209._0, _p245._0),
 						A2(fn, _p209._1, _p245._1),
 						A2(fn, _p209._2, _p245._2),
@@ -10627,7 +10667,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p246 = prop;
 				if (_p246.ctor === 'TranslateX') {
 					return A2(
-						_user$project$Style_Properties$TranslateX,
+						_mdgriffith$elm_style_animation$Style_Properties$TranslateX,
 						A2(fn, _p209._0, _p246._0),
 						_p209._1);
 				} else {
@@ -10637,7 +10677,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p247 = prop;
 				if (_p247.ctor === 'TranslateY') {
 					return A2(
-						_user$project$Style_Properties$TranslateY,
+						_mdgriffith$elm_style_animation$Style_Properties$TranslateY,
 						A2(fn, _p209._0, _p247._0),
 						_p209._1);
 				} else {
@@ -10646,7 +10686,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Scale':
 				var _p248 = prop;
 				if (_p248.ctor === 'Scale') {
-					return _user$project$Style_Properties$Scale(
+					return _mdgriffith$elm_style_animation$Style_Properties$Scale(
 						A2(fn, _p209._0, _p248._0));
 				} else {
 					return prop;
@@ -10655,7 +10695,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p249 = prop;
 				if (_p249.ctor === 'Scale3d') {
 					return A3(
-						_user$project$Style_Properties$Scale3d,
+						_mdgriffith$elm_style_animation$Style_Properties$Scale3d,
 						A2(fn, _p209._0, _p249._0),
 						A2(fn, _p209._1, _p249._1),
 						A2(fn, _p209._2, _p249._2));
@@ -10665,7 +10705,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'ScaleX':
 				var _p250 = prop;
 				if (_p250.ctor === 'ScaleX') {
-					return _user$project$Style_Properties$ScaleX(
+					return _mdgriffith$elm_style_animation$Style_Properties$ScaleX(
 						A2(fn, _p209._0, _p250._0));
 				} else {
 					return prop;
@@ -10673,7 +10713,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'ScaleY':
 				var _p251 = prop;
 				if (_p251.ctor === 'ScaleY') {
-					return _user$project$Style_Properties$ScaleY(
+					return _mdgriffith$elm_style_animation$Style_Properties$ScaleY(
 						A2(fn, _p209._0, _p251._0));
 				} else {
 					return prop;
@@ -10681,7 +10721,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'ScaleZ':
 				var _p252 = prop;
 				if (_p252.ctor === 'ScaleZ') {
-					return _user$project$Style_Properties$ScaleZ(
+					return _mdgriffith$elm_style_animation$Style_Properties$ScaleZ(
 						A2(fn, _p209._0, _p252._0));
 				} else {
 					return prop;
@@ -10690,7 +10730,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p253 = prop;
 				if (_p253.ctor === 'Rotate') {
 					return A2(
-						_user$project$Style_Properties$Rotate,
+						_mdgriffith$elm_style_animation$Style_Properties$Rotate,
 						A2(fn, _p209._0, _p253._0),
 						_p209._1);
 				} else {
@@ -10700,7 +10740,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p254 = prop;
 				if (_p254.ctor === 'Rotate3d') {
 					return A5(
-						_user$project$Style_Properties$Rotate3d,
+						_mdgriffith$elm_style_animation$Style_Properties$Rotate3d,
 						A2(fn, _p209._0, _p254._0),
 						A2(fn, _p209._1, _p254._1),
 						A2(fn, _p209._2, _p254._2),
@@ -10713,7 +10753,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p255 = prop;
 				if (_p255.ctor === 'RotateX') {
 					return A2(
-						_user$project$Style_Properties$RotateX,
+						_mdgriffith$elm_style_animation$Style_Properties$RotateX,
 						A2(fn, _p209._0, _p255._0),
 						_p209._1);
 				} else {
@@ -10723,7 +10763,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p256 = prop;
 				if (_p256.ctor === 'RotateY') {
 					return A2(
-						_user$project$Style_Properties$RotateY,
+						_mdgriffith$elm_style_animation$Style_Properties$RotateY,
 						A2(fn, _p209._0, _p256._0),
 						_p209._1);
 				} else {
@@ -10733,7 +10773,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p257 = prop;
 				if (_p257.ctor === 'Skew') {
 					return A3(
-						_user$project$Style_Properties$Skew,
+						_mdgriffith$elm_style_animation$Style_Properties$Skew,
 						A2(fn, _p209._0, _p257._0),
 						A2(fn, _p209._1, _p257._1),
 						_p209._2);
@@ -10744,7 +10784,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p258 = prop;
 				if (_p258.ctor === 'SkewX') {
 					return A2(
-						_user$project$Style_Properties$SkewX,
+						_mdgriffith$elm_style_animation$Style_Properties$SkewX,
 						A2(fn, _p209._0, _p258._0),
 						_p209._1);
 				} else {
@@ -10754,7 +10794,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p259 = prop;
 				if (_p259.ctor === 'SkewY') {
 					return A2(
-						_user$project$Style_Properties$SkewY,
+						_mdgriffith$elm_style_animation$Style_Properties$SkewY,
 						A2(fn, _p209._0, _p259._0),
 						_p209._1);
 				} else {
@@ -10763,7 +10803,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Perspective':
 				var _p260 = prop;
 				if (_p260.ctor === 'Perspective') {
-					return _user$project$Style_Properties$Perspective(
+					return _mdgriffith$elm_style_animation$Style_Properties$Perspective(
 						A2(fn, _p209._0, _p260._0));
 				} else {
 					return prop;
@@ -10772,7 +10812,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 				var _p261 = prop;
 				if (_p261.ctor === 'Matrix') {
 					return A6(
-						_user$project$Style_Properties$Matrix,
+						_mdgriffith$elm_style_animation$Style_Properties$Matrix,
 						A2(fn, _p209._0, _p261._0),
 						A2(fn, _p209._1, _p261._1),
 						A2(fn, _p209._2, _p261._2),
@@ -10785,7 +10825,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Matrix3d':
 				var _p262 = prop;
 				if (_p262.ctor === 'Matrix3d') {
-					return _user$project$Style_Properties$Matrix3d(
+					return _mdgriffith$elm_style_animation$Style_Properties$Matrix3d(
 						A2(fn, _p209._0, _p262._0))(
 						A2(fn, _p209._1, _p262._1))(
 						A2(fn, _p209._2, _p262._2))(
@@ -10808,7 +10848,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'X':
 				var _p263 = prop;
 				if (_p263.ctor === 'X') {
-					return _user$project$Style_Properties$X(
+					return _mdgriffith$elm_style_animation$Style_Properties$X(
 						A2(fn, _p209._0, _p263._0));
 				} else {
 					return prop;
@@ -10816,7 +10856,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Y':
 				var _p264 = prop;
 				if (_p264.ctor === 'Y') {
-					return _user$project$Style_Properties$Y(
+					return _mdgriffith$elm_style_animation$Style_Properties$Y(
 						A2(fn, _p209._0, _p264._0));
 				} else {
 					return prop;
@@ -10824,7 +10864,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Cx':
 				var _p265 = prop;
 				if (_p265.ctor === 'Cx') {
-					return _user$project$Style_Properties$Cx(
+					return _mdgriffith$elm_style_animation$Style_Properties$Cx(
 						A2(fn, _p209._0, _p265._0));
 				} else {
 					return prop;
@@ -10832,7 +10872,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Cy':
 				var _p266 = prop;
 				if (_p266.ctor === 'Cy') {
-					return _user$project$Style_Properties$Cy(
+					return _mdgriffith$elm_style_animation$Style_Properties$Cy(
 						A2(fn, _p209._0, _p266._0));
 				} else {
 					return prop;
@@ -10840,7 +10880,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'R':
 				var _p267 = prop;
 				if (_p267.ctor === 'R') {
-					return _user$project$Style_Properties$R(
+					return _mdgriffith$elm_style_animation$Style_Properties$R(
 						A2(fn, _p209._0, _p267._0));
 				} else {
 					return prop;
@@ -10848,7 +10888,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Rx':
 				var _p268 = prop;
 				if (_p268.ctor === 'Rx') {
-					return _user$project$Style_Properties$Rx(
+					return _mdgriffith$elm_style_animation$Style_Properties$Rx(
 						A2(fn, _p209._0, _p268._0));
 				} else {
 					return prop;
@@ -10856,7 +10896,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Ry':
 				var _p269 = prop;
 				if (_p269.ctor === 'Ry') {
-					return _user$project$Style_Properties$Ry(
+					return _mdgriffith$elm_style_animation$Style_Properties$Ry(
 						A2(fn, _p209._0, _p269._0));
 				} else {
 					return prop;
@@ -10864,10 +10904,10 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'D':
 				var _p270 = prop;
 				if (_p270.ctor === 'D') {
-					return _user$project$Style_Properties$D(
+					return _mdgriffith$elm_style_animation$Style_Properties$D(
 						A3(
 							_elm_lang$core$List$map2,
-							_user$project$Style_PropertyHelpers$map2Cmd(fn),
+							_mdgriffith$elm_style_animation$Style_PropertyHelpers$map2Cmd(fn),
 							_p209._0,
 							_p270._0));
 				} else {
@@ -10876,7 +10916,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Points':
 				var _p271 = prop;
 				if (_p271.ctor === 'Points') {
-					return _user$project$Style_Properties$Points(
+					return _mdgriffith$elm_style_animation$Style_Properties$Points(
 						A3(
 							_elm_lang$core$List$map2,
 							F2(
@@ -10897,7 +10937,7 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			case 'Fill':
 				var _p276 = prop;
 				if (_p276.ctor === 'Fill') {
-					return _user$project$Style_Properties$Fill(
+					return _mdgriffith$elm_style_animation$Style_Properties$Fill(
 						A2(colorFn, _p209._0, _p276._0));
 				} else {
 					return prop;
@@ -10905,19 +10945,19 @@ var _user$project$Style_PropertyHelpers$map2 = F4(
 			default:
 				var _p277 = prop;
 				if (_p277.ctor === 'Stroke') {
-					return _user$project$Style_Properties$Stroke(
+					return _mdgriffith$elm_style_animation$Style_Properties$Stroke(
 						A2(colorFn, _p209._0, _p277._0));
 				} else {
 					return prop;
 				}
 		}
 	});
-var _user$project$Style_PropertyHelpers$isColor = F2(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$isColor = F2(
 	function (pred, color) {
 		var _p278 = color;
 		return pred(_p278._0) && (pred(_p278._1) && (pred(_p278._2) && pred(_p278._3)));
 	});
-var _user$project$Style_PropertyHelpers$isPoints = F2(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$isPoints = F2(
 	function (pred, points) {
 		return A2(
 			_elm_lang$core$List$all,
@@ -10927,7 +10967,7 @@ var _user$project$Style_PropertyHelpers$isPoints = F2(
 			},
 			points);
 	});
-var _user$project$Style_PropertyHelpers$isCmd = F2(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$isCmd = F2(
 	function (pred, cmd) {
 		var _p281 = cmd;
 		switch (_p281.ctor) {
@@ -10948,21 +10988,21 @@ var _user$project$Style_PropertyHelpers$isCmd = F2(
 			case 'VerticalTo':
 				return pred(_p281._0);
 			case 'Curve':
-				return A2(_user$project$Style_PropertyHelpers$isPoints, pred, _p281._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isPoints, pred, _p281._0);
 			case 'CurveTo':
-				return A2(_user$project$Style_PropertyHelpers$isPoints, pred, _p281._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isPoints, pred, _p281._0);
 			case 'Quadratic':
-				return A2(_user$project$Style_PropertyHelpers$isPoints, pred, _p281._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isPoints, pred, _p281._0);
 			case 'QuadraticTo':
-				return A2(_user$project$Style_PropertyHelpers$isPoints, pred, _p281._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isPoints, pred, _p281._0);
 			case 'SmoothQuadratic':
-				return A2(_user$project$Style_PropertyHelpers$isPoints, pred, _p281._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isPoints, pred, _p281._0);
 			case 'SmoothQuadraticTo':
-				return A2(_user$project$Style_PropertyHelpers$isPoints, pred, _p281._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isPoints, pred, _p281._0);
 			case 'Smooth':
-				return A2(_user$project$Style_PropertyHelpers$isPoints, pred, _p281._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isPoints, pred, _p281._0);
 			case 'SmoothTo':
-				return A2(_user$project$Style_PropertyHelpers$isPoints, pred, _p281._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isPoints, pred, _p281._0);
 			case 'Arc':
 				return pred(_p281._0) && (pred(_p281._1) && (pred(_p281._2) && pred(_p281._3)));
 			case 'ArcTo':
@@ -10975,7 +11015,7 @@ var _user$project$Style_PropertyHelpers$isCmd = F2(
 				return true;
 		}
 	});
-var _user$project$Style_PropertyHelpers$is = F2(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$is = F2(
 	function (pred, prop) {
 		var _p282 = prop;
 		switch (_p282.ctor) {
@@ -11044,11 +11084,11 @@ var _user$project$Style_PropertyHelpers$is = F2(
 			case 'TransformOrigin':
 				return pred(_p282._0) && (pred(_p282._1) && pred(_p282._2));
 			case 'Color':
-				return A2(_user$project$Style_PropertyHelpers$isColor, pred, _p282._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isColor, pred, _p282._0);
 			case 'BackgroundColor':
-				return A2(_user$project$Style_PropertyHelpers$isColor, pred, _p282._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isColor, pred, _p282._0);
 			case 'BorderColor':
-				return A2(_user$project$Style_PropertyHelpers$isColor, pred, _p282._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isColor, pred, _p282._0);
 			case 'Translate':
 				return pred(_p282._0) && pred(_p282._1);
 			case 'Translate3d':
@@ -11112,7 +11152,7 @@ var _user$project$Style_PropertyHelpers$is = F2(
 			case 'D':
 				return A2(
 					_elm_lang$core$List$all,
-					_user$project$Style_PropertyHelpers$isCmd(pred),
+					_mdgriffith$elm_style_animation$Style_PropertyHelpers$isCmd(pred),
 					_p282._0);
 			case 'Points':
 				return A2(
@@ -11123,12 +11163,12 @@ var _user$project$Style_PropertyHelpers$is = F2(
 					},
 					_p282._0);
 			case 'Fill':
-				return A2(_user$project$Style_PropertyHelpers$isColor, pred, _p282._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isColor, pred, _p282._0);
 			default:
-				return A2(_user$project$Style_PropertyHelpers$isColor, pred, _p282._0);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$isColor, pred, _p282._0);
 		}
 	});
-var _user$project$Style_PropertyHelpers$matchPoints = F2(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$matchPoints = F2(
 	function (points, matchTo) {
 		var _p285 = points;
 		if (_p285.ctor === 'Points') {
@@ -11146,7 +11186,7 @@ var _user$project$Style_PropertyHelpers$matchPoints = F2(
 					if (_p287.ctor === 'Nothing') {
 						return points;
 					} else {
-						return _user$project$Style_Properties$Points(
+						return _mdgriffith$elm_style_animation$Style_Properties$Points(
 							A2(
 								_elm_lang$core$Basics_ops['++'],
 								_p288,
@@ -11162,7 +11202,7 @@ var _user$project$Style_PropertyHelpers$matchPoints = F2(
 			return points;
 		}
 	});
-var _user$project$Style_PropertyHelpers$mapPoints = F2(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$mapPoints = F2(
 	function (fn, points) {
 		return A2(
 			_elm_lang$core$List$map,
@@ -11176,318 +11216,318 @@ var _user$project$Style_PropertyHelpers$mapPoints = F2(
 			},
 			points);
 	});
-var _user$project$Style_PropertyHelpers$mapCmd = F2(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$mapCmd = F2(
 	function (fn, cmd) {
 		var _p291 = cmd;
 		switch (_p291.ctor) {
 			case 'Move':
 				return A2(
-					_user$project$Style_Properties$Move,
+					_mdgriffith$elm_style_animation$Style_Properties$Move,
 					fn(_p291._0),
 					fn(_p291._1));
 			case 'MoveTo':
 				return A2(
-					_user$project$Style_Properties$MoveTo,
+					_mdgriffith$elm_style_animation$Style_Properties$MoveTo,
 					fn(_p291._0),
 					fn(_p291._1));
 			case 'Line':
 				return A2(
-					_user$project$Style_Properties$Line,
+					_mdgriffith$elm_style_animation$Style_Properties$Line,
 					fn(_p291._0),
 					fn(_p291._1));
 			case 'LineTo':
 				return A2(
-					_user$project$Style_Properties$LineTo,
+					_mdgriffith$elm_style_animation$Style_Properties$LineTo,
 					fn(_p291._0),
 					fn(_p291._1));
 			case 'Horizontal':
-				return _user$project$Style_Properties$Horizontal(
+				return _mdgriffith$elm_style_animation$Style_Properties$Horizontal(
 					fn(_p291._0));
 			case 'HorizontalTo':
-				return _user$project$Style_Properties$HorizontalTo(
+				return _mdgriffith$elm_style_animation$Style_Properties$HorizontalTo(
 					fn(_p291._0));
 			case 'Vertical':
-				return _user$project$Style_Properties$Vertical(
+				return _mdgriffith$elm_style_animation$Style_Properties$Vertical(
 					fn(_p291._0));
 			case 'VerticalTo':
-				return _user$project$Style_Properties$VerticalTo(
+				return _mdgriffith$elm_style_animation$Style_Properties$VerticalTo(
 					fn(_p291._0));
 			case 'Curve':
-				return _user$project$Style_Properties$Curve(
-					A2(_user$project$Style_PropertyHelpers$mapPoints, fn, _p291._0));
+				return _mdgriffith$elm_style_animation$Style_Properties$Curve(
+					A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$mapPoints, fn, _p291._0));
 			case 'CurveTo':
-				return _user$project$Style_Properties$CurveTo(
-					A2(_user$project$Style_PropertyHelpers$mapPoints, fn, _p291._0));
+				return _mdgriffith$elm_style_animation$Style_Properties$CurveTo(
+					A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$mapPoints, fn, _p291._0));
 			case 'Quadratic':
-				return _user$project$Style_Properties$Quadratic(
-					A2(_user$project$Style_PropertyHelpers$mapPoints, fn, _p291._0));
+				return _mdgriffith$elm_style_animation$Style_Properties$Quadratic(
+					A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$mapPoints, fn, _p291._0));
 			case 'QuadraticTo':
-				return _user$project$Style_Properties$QuadraticTo(
-					A2(_user$project$Style_PropertyHelpers$mapPoints, fn, _p291._0));
+				return _mdgriffith$elm_style_animation$Style_Properties$QuadraticTo(
+					A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$mapPoints, fn, _p291._0));
 			case 'SmoothQuadratic':
-				return _user$project$Style_Properties$SmoothQuadratic(
-					A2(_user$project$Style_PropertyHelpers$mapPoints, fn, _p291._0));
+				return _mdgriffith$elm_style_animation$Style_Properties$SmoothQuadratic(
+					A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$mapPoints, fn, _p291._0));
 			case 'SmoothQuadraticTo':
-				return _user$project$Style_Properties$SmoothQuadraticTo(
-					A2(_user$project$Style_PropertyHelpers$mapPoints, fn, _p291._0));
+				return _mdgriffith$elm_style_animation$Style_Properties$SmoothQuadraticTo(
+					A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$mapPoints, fn, _p291._0));
 			case 'Smooth':
-				return _user$project$Style_Properties$Smooth(
-					A2(_user$project$Style_PropertyHelpers$mapPoints, fn, _p291._0));
+				return _mdgriffith$elm_style_animation$Style_Properties$Smooth(
+					A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$mapPoints, fn, _p291._0));
 			case 'SmoothTo':
-				return _user$project$Style_Properties$SmoothTo(
-					A2(_user$project$Style_PropertyHelpers$mapPoints, fn, _p291._0));
+				return _mdgriffith$elm_style_animation$Style_Properties$SmoothTo(
+					A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$mapPoints, fn, _p291._0));
 			case 'Arc':
 				return A4(
-					_user$project$Style_Properties$Arc,
+					_mdgriffith$elm_style_animation$Style_Properties$Arc,
 					fn(_p291._0),
 					fn(_p291._1),
 					fn(_p291._2),
 					fn(_p291._3));
 			case 'ArcTo':
 				return A4(
-					_user$project$Style_Properties$ArcTo,
+					_mdgriffith$elm_style_animation$Style_Properties$ArcTo,
 					fn(_p291._0),
 					fn(_p291._1),
 					fn(_p291._2),
 					fn(_p291._3));
 			case 'LargeArc':
 				return A4(
-					_user$project$Style_Properties$LargeArc,
+					_mdgriffith$elm_style_animation$Style_Properties$LargeArc,
 					fn(_p291._0),
 					fn(_p291._1),
 					fn(_p291._2),
 					fn(_p291._3));
 			case 'LargeArcTo':
 				return A4(
-					_user$project$Style_Properties$LargeArcTo,
+					_mdgriffith$elm_style_animation$Style_Properties$LargeArcTo,
 					fn(_p291._0),
 					fn(_p291._1),
 					fn(_p291._2),
 					fn(_p291._3));
 			default:
-				return _user$project$Style_Properties$Close;
+				return _mdgriffith$elm_style_animation$Style_Properties$Close;
 		}
 	});
-var _user$project$Style_PropertyHelpers$map = F3(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$map = F3(
 	function (fn, colorFn, prop) {
 		var _p292 = prop;
 		switch (_p292.ctor) {
 			case 'Display':
-				return _user$project$Style_Properties$Display(_p292._0);
+				return _mdgriffith$elm_style_animation$Style_Properties$Display(_p292._0);
 			case 'Opacity':
-				return _user$project$Style_Properties$Opacity(
+				return _mdgriffith$elm_style_animation$Style_Properties$Opacity(
 					fn(_p292._0));
 			case 'Height':
 				return A2(
-					_user$project$Style_Properties$Height,
+					_mdgriffith$elm_style_animation$Style_Properties$Height,
 					fn(_p292._0),
 					_p292._1);
 			case 'Width':
 				return A2(
-					_user$project$Style_Properties$Width,
+					_mdgriffith$elm_style_animation$Style_Properties$Width,
 					fn(_p292._0),
 					_p292._1);
 			case 'Left':
 				return A2(
-					_user$project$Style_Properties$Left,
+					_mdgriffith$elm_style_animation$Style_Properties$Left,
 					fn(_p292._0),
 					_p292._1);
 			case 'Top':
 				return A2(
-					_user$project$Style_Properties$Top,
+					_mdgriffith$elm_style_animation$Style_Properties$Top,
 					fn(_p292._0),
 					_p292._1);
 			case 'Right':
 				return A2(
-					_user$project$Style_Properties$Right,
+					_mdgriffith$elm_style_animation$Style_Properties$Right,
 					fn(_p292._0),
 					_p292._1);
 			case 'Bottom':
 				return A2(
-					_user$project$Style_Properties$Bottom,
+					_mdgriffith$elm_style_animation$Style_Properties$Bottom,
 					fn(_p292._0),
 					_p292._1);
 			case 'MaxHeight':
 				return A2(
-					_user$project$Style_Properties$MaxHeight,
+					_mdgriffith$elm_style_animation$Style_Properties$MaxHeight,
 					fn(_p292._0),
 					_p292._1);
 			case 'MaxWidth':
 				return A2(
-					_user$project$Style_Properties$MaxWidth,
+					_mdgriffith$elm_style_animation$Style_Properties$MaxWidth,
 					fn(_p292._0),
 					_p292._1);
 			case 'MinHeight':
 				return A2(
-					_user$project$Style_Properties$MinHeight,
+					_mdgriffith$elm_style_animation$Style_Properties$MinHeight,
 					fn(_p292._0),
 					_p292._1);
 			case 'MinWidth':
 				return A2(
-					_user$project$Style_Properties$MinWidth,
+					_mdgriffith$elm_style_animation$Style_Properties$MinWidth,
 					fn(_p292._0),
 					_p292._1);
 			case 'Padding':
 				return A2(
-					_user$project$Style_Properties$Padding,
+					_mdgriffith$elm_style_animation$Style_Properties$Padding,
 					fn(_p292._0),
 					_p292._1);
 			case 'PaddingLeft':
 				return A2(
-					_user$project$Style_Properties$PaddingLeft,
+					_mdgriffith$elm_style_animation$Style_Properties$PaddingLeft,
 					fn(_p292._0),
 					_p292._1);
 			case 'PaddingRight':
 				return A2(
-					_user$project$Style_Properties$PaddingRight,
+					_mdgriffith$elm_style_animation$Style_Properties$PaddingRight,
 					fn(_p292._0),
 					_p292._1);
 			case 'PaddingTop':
 				return A2(
-					_user$project$Style_Properties$PaddingTop,
+					_mdgriffith$elm_style_animation$Style_Properties$PaddingTop,
 					fn(_p292._0),
 					_p292._1);
 			case 'PaddingBottom':
 				return A2(
-					_user$project$Style_Properties$PaddingBottom,
+					_mdgriffith$elm_style_animation$Style_Properties$PaddingBottom,
 					fn(_p292._0),
 					_p292._1);
 			case 'Margin':
 				return A2(
-					_user$project$Style_Properties$Margin,
+					_mdgriffith$elm_style_animation$Style_Properties$Margin,
 					fn(_p292._0),
 					_p292._1);
 			case 'MarginLeft':
 				return A2(
-					_user$project$Style_Properties$MarginLeft,
+					_mdgriffith$elm_style_animation$Style_Properties$MarginLeft,
 					fn(_p292._0),
 					_p292._1);
 			case 'MarginRight':
 				return A2(
-					_user$project$Style_Properties$MarginRight,
+					_mdgriffith$elm_style_animation$Style_Properties$MarginRight,
 					fn(_p292._0),
 					_p292._1);
 			case 'MarginTop':
 				return A2(
-					_user$project$Style_Properties$MarginTop,
+					_mdgriffith$elm_style_animation$Style_Properties$MarginTop,
 					fn(_p292._0),
 					_p292._1);
 			case 'MarginBottom':
 				return A2(
-					_user$project$Style_Properties$MarginBottom,
+					_mdgriffith$elm_style_animation$Style_Properties$MarginBottom,
 					fn(_p292._0),
 					_p292._1);
 			case 'BorderWidth':
 				return A2(
-					_user$project$Style_Properties$BorderWidth,
+					_mdgriffith$elm_style_animation$Style_Properties$BorderWidth,
 					fn(_p292._0),
 					_p292._1);
 			case 'BorderRadius':
 				return A2(
-					_user$project$Style_Properties$BorderRadius,
+					_mdgriffith$elm_style_animation$Style_Properties$BorderRadius,
 					fn(_p292._0),
 					_p292._1);
 			case 'BorderTopLeftRadius':
 				return A2(
-					_user$project$Style_Properties$BorderTopLeftRadius,
+					_mdgriffith$elm_style_animation$Style_Properties$BorderTopLeftRadius,
 					fn(_p292._0),
 					_p292._1);
 			case 'BorderTopRightRadius':
 				return A2(
-					_user$project$Style_Properties$BorderTopRightRadius,
+					_mdgriffith$elm_style_animation$Style_Properties$BorderTopRightRadius,
 					fn(_p292._0),
 					_p292._1);
 			case 'BorderBottomLeftRadius':
 				return A2(
-					_user$project$Style_Properties$BorderBottomLeftRadius,
+					_mdgriffith$elm_style_animation$Style_Properties$BorderBottomLeftRadius,
 					fn(_p292._0),
 					_p292._1);
 			case 'BorderBottomRightRadius':
 				return A2(
-					_user$project$Style_Properties$BorderBottomRightRadius,
+					_mdgriffith$elm_style_animation$Style_Properties$BorderBottomRightRadius,
 					fn(_p292._0),
 					_p292._1);
 			case 'LetterSpacing':
 				return A2(
-					_user$project$Style_Properties$LetterSpacing,
+					_mdgriffith$elm_style_animation$Style_Properties$LetterSpacing,
 					fn(_p292._0),
 					_p292._1);
 			case 'LineHeight':
 				return A2(
-					_user$project$Style_Properties$LineHeight,
+					_mdgriffith$elm_style_animation$Style_Properties$LineHeight,
 					fn(_p292._0),
 					_p292._1);
 			case 'BackgroundPosition':
 				return A3(
-					_user$project$Style_Properties$BackgroundPosition,
+					_mdgriffith$elm_style_animation$Style_Properties$BackgroundPosition,
 					fn(_p292._0),
 					fn(_p292._1),
 					_p292._2);
 			case 'TransformOrigin':
 				return A4(
-					_user$project$Style_Properties$TransformOrigin,
+					_mdgriffith$elm_style_animation$Style_Properties$TransformOrigin,
 					fn(_p292._0),
 					fn(_p292._1),
 					fn(_p292._2),
 					_p292._3);
 			case 'Color':
-				return _user$project$Style_Properties$Color(
+				return _mdgriffith$elm_style_animation$Style_Properties$Color(
 					colorFn(_p292._0));
 			case 'BackgroundColor':
-				return _user$project$Style_Properties$BackgroundColor(
+				return _mdgriffith$elm_style_animation$Style_Properties$BackgroundColor(
 					colorFn(_p292._0));
 			case 'BorderColor':
-				return _user$project$Style_Properties$BorderColor(
+				return _mdgriffith$elm_style_animation$Style_Properties$BorderColor(
 					colorFn(_p292._0));
 			case 'Translate':
 				return A3(
-					_user$project$Style_Properties$Translate,
+					_mdgriffith$elm_style_animation$Style_Properties$Translate,
 					fn(_p292._0),
 					fn(_p292._1),
 					_p292._2);
 			case 'Translate3d':
 				return A4(
-					_user$project$Style_Properties$Translate3d,
+					_mdgriffith$elm_style_animation$Style_Properties$Translate3d,
 					fn(_p292._0),
 					fn(_p292._1),
 					fn(_p292._2),
 					_p292._3);
 			case 'TranslateX':
 				return A2(
-					_user$project$Style_Properties$TranslateX,
+					_mdgriffith$elm_style_animation$Style_Properties$TranslateX,
 					fn(_p292._0),
 					_p292._1);
 			case 'TranslateY':
 				return A2(
-					_user$project$Style_Properties$TranslateY,
+					_mdgriffith$elm_style_animation$Style_Properties$TranslateY,
 					fn(_p292._0),
 					_p292._1);
 			case 'Scale':
-				return _user$project$Style_Properties$Scale(
+				return _mdgriffith$elm_style_animation$Style_Properties$Scale(
 					fn(_p292._0));
 			case 'Scale3d':
 				return A3(
-					_user$project$Style_Properties$Scale3d,
+					_mdgriffith$elm_style_animation$Style_Properties$Scale3d,
 					fn(_p292._0),
 					fn(_p292._1),
 					fn(_p292._2));
 			case 'ScaleX':
-				return _user$project$Style_Properties$ScaleX(
+				return _mdgriffith$elm_style_animation$Style_Properties$ScaleX(
 					fn(_p292._0));
 			case 'ScaleY':
-				return _user$project$Style_Properties$ScaleY(
+				return _mdgriffith$elm_style_animation$Style_Properties$ScaleY(
 					fn(_p292._0));
 			case 'ScaleZ':
-				return _user$project$Style_Properties$ScaleZ(
+				return _mdgriffith$elm_style_animation$Style_Properties$ScaleZ(
 					fn(_p292._0));
 			case 'Rotate':
 				return A2(
-					_user$project$Style_Properties$Rotate,
+					_mdgriffith$elm_style_animation$Style_Properties$Rotate,
 					fn(_p292._0),
 					_p292._1);
 			case 'Rotate3d':
 				return A5(
-					_user$project$Style_Properties$Rotate3d,
+					_mdgriffith$elm_style_animation$Style_Properties$Rotate3d,
 					fn(_p292._0),
 					fn(_p292._1),
 					fn(_p292._2),
@@ -11495,36 +11535,36 @@ var _user$project$Style_PropertyHelpers$map = F3(
 					_p292._4);
 			case 'RotateX':
 				return A2(
-					_user$project$Style_Properties$RotateX,
+					_mdgriffith$elm_style_animation$Style_Properties$RotateX,
 					fn(_p292._0),
 					_p292._1);
 			case 'RotateY':
 				return A2(
-					_user$project$Style_Properties$RotateY,
+					_mdgriffith$elm_style_animation$Style_Properties$RotateY,
 					fn(_p292._0),
 					_p292._1);
 			case 'Skew':
 				return A3(
-					_user$project$Style_Properties$Skew,
+					_mdgriffith$elm_style_animation$Style_Properties$Skew,
 					fn(_p292._0),
 					fn(_p292._1),
 					_p292._2);
 			case 'SkewX':
 				return A2(
-					_user$project$Style_Properties$SkewX,
+					_mdgriffith$elm_style_animation$Style_Properties$SkewX,
 					fn(_p292._0),
 					_p292._1);
 			case 'SkewY':
 				return A2(
-					_user$project$Style_Properties$SkewY,
+					_mdgriffith$elm_style_animation$Style_Properties$SkewY,
 					fn(_p292._0),
 					_p292._1);
 			case 'Perspective':
-				return _user$project$Style_Properties$Perspective(
+				return _mdgriffith$elm_style_animation$Style_Properties$Perspective(
 					fn(_p292._0));
 			case 'Matrix':
 				return A6(
-					_user$project$Style_Properties$Matrix,
+					_mdgriffith$elm_style_animation$Style_Properties$Matrix,
 					fn(_p292._0),
 					fn(_p292._1),
 					fn(_p292._2),
@@ -11532,7 +11572,7 @@ var _user$project$Style_PropertyHelpers$map = F3(
 					fn(_p292._4),
 					fn(_p292._5));
 			case 'Matrix3d':
-				return _user$project$Style_Properties$Matrix3d(
+				return _mdgriffith$elm_style_animation$Style_Properties$Matrix3d(
 					fn(_p292._0))(
 					fn(_p292._1))(
 					fn(_p292._2))(
@@ -11550,34 +11590,34 @@ var _user$project$Style_PropertyHelpers$map = F3(
 					fn(_p292._14))(
 					fn(_p292._15));
 			case 'X':
-				return _user$project$Style_Properties$X(
+				return _mdgriffith$elm_style_animation$Style_Properties$X(
 					fn(_p292._0));
 			case 'Y':
-				return _user$project$Style_Properties$Y(
+				return _mdgriffith$elm_style_animation$Style_Properties$Y(
 					fn(_p292._0));
 			case 'Cx':
-				return _user$project$Style_Properties$Cx(
+				return _mdgriffith$elm_style_animation$Style_Properties$Cx(
 					fn(_p292._0));
 			case 'Cy':
-				return _user$project$Style_Properties$Cy(
+				return _mdgriffith$elm_style_animation$Style_Properties$Cy(
 					fn(_p292._0));
 			case 'R':
-				return _user$project$Style_Properties$R(
+				return _mdgriffith$elm_style_animation$Style_Properties$R(
 					fn(_p292._0));
 			case 'Rx':
-				return _user$project$Style_Properties$Rx(
+				return _mdgriffith$elm_style_animation$Style_Properties$Rx(
 					fn(_p292._0));
 			case 'Ry':
-				return _user$project$Style_Properties$Ry(
+				return _mdgriffith$elm_style_animation$Style_Properties$Ry(
 					fn(_p292._0));
 			case 'D':
-				return _user$project$Style_Properties$D(
+				return _mdgriffith$elm_style_animation$Style_Properties$D(
 					A2(
 						_elm_lang$core$List$map,
-						_user$project$Style_PropertyHelpers$mapCmd(fn),
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$mapCmd(fn),
 						_p292._0));
 			case 'Points':
-				return _user$project$Style_Properties$Points(
+				return _mdgriffith$elm_style_animation$Style_Properties$Points(
 					A2(
 						_elm_lang$core$List$map,
 						function (_p293) {
@@ -11590,14 +11630,14 @@ var _user$project$Style_PropertyHelpers$map = F3(
 						},
 						_p292._0));
 			case 'Fill':
-				return _user$project$Style_Properties$Fill(
+				return _mdgriffith$elm_style_animation$Style_Properties$Fill(
 					colorFn(_p292._0));
 			default:
-				return _user$project$Style_Properties$Stroke(
+				return _mdgriffith$elm_style_animation$Style_Properties$Stroke(
 					colorFn(_p292._0));
 		}
 	});
-var _user$project$Style_PropertyHelpers$toStaticColor = function (dynamic) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$toStaticColor = function (dynamic) {
 	var _p295 = dynamic;
 	return A4(
 		_elm_lang$core$Color$rgba,
@@ -11606,16 +11646,16 @@ var _user$project$Style_PropertyHelpers$toStaticColor = function (dynamic) {
 		_elm_lang$core$Basics$round(_p295._2.physical.position),
 		_p295._3.physical.position);
 };
-var _user$project$Style_PropertyHelpers$toStatic = function (prop) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$toStatic = function (prop) {
 	return A3(
-		_user$project$Style_PropertyHelpers$map,
+		_mdgriffith$elm_style_animation$Style_PropertyHelpers$map,
 		function (phys) {
 			return phys.physical.position;
 		},
-		_user$project$Style_PropertyHelpers$toStaticColor,
+		_mdgriffith$elm_style_animation$Style_PropertyHelpers$toStaticColor,
 		prop);
 };
-var _user$project$Style_PropertyHelpers$displayMode = function (mode) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$displayMode = function (mode) {
 	var _p296 = mode;
 	switch (_p296.ctor) {
 		case 'None':
@@ -11634,7 +11674,7 @@ var _user$project$Style_PropertyHelpers$displayMode = function (mode) {
 			return 'list-item';
 	}
 };
-var _user$project$Style_PropertyHelpers$angleUnit = function (unit) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$angleUnit = function (unit) {
 	var _p297 = unit;
 	switch (_p297.ctor) {
 		case 'Deg':
@@ -11647,7 +11687,7 @@ var _user$project$Style_PropertyHelpers$angleUnit = function (unit) {
 			return 'turn';
 	}
 };
-var _user$project$Style_PropertyHelpers$lenUnit = function (unit) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit = function (unit) {
 	var _p298 = unit;
 	switch (_p298.ctor) {
 		case 'Px':
@@ -11682,7 +11722,7 @@ var _user$project$Style_PropertyHelpers$lenUnit = function (unit) {
 			return 'pc';
 	}
 };
-var _user$project$Style_PropertyHelpers$id = function (prop) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$id = function (prop) {
 	var _p299 = prop;
 	switch (_p299.ctor) {
 		case 'Opacity':
@@ -11693,147 +11733,147 @@ var _user$project$Style_PropertyHelpers$id = function (prop) {
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'height in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'Width':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'width in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'Left':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'left in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'Right':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'right in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'Bottom':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'bottom in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'Top':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'top in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'MaxHeight':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'max-height in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'MaxWidth':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'max-width in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'MinHeight':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'min-height in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'MinWidth':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'min-width in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'Padding':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'padding in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'PaddingLeft':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'padding-left in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'PaddingRight':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'padding-right in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'PaddingTop':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'padding-top in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'PaddingBottom':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'padding-bottom in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'Margin':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'margin in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'MarginLeft':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'margin-left in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'MarginRight':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'margin-right in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'MarginTop':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'margin-top in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'MarginBottom':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'margin-bottom in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'BorderWidth':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'border-width in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'BorderRadius':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'border-radius in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'BorderTopLeftRadius':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'border-top-left-radius in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'BorderTopRightRadius':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'border-top-right-radius in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'BorderBottomLeftRadius':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'border-bottom-left-radius in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'BorderBottomRightRadius':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'border-bottom-right-radius in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'LetterSpacing':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'letter-spacing in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'LineHeight':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'line-height in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'BackgroundPosition':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'background-position in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._2));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._2));
 		case 'Color':
 			return 'color';
 		case 'BackgroundColor':
@@ -11844,7 +11884,7 @@ var _user$project$Style_PropertyHelpers$id = function (prop) {
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'transform-origin in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._3));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._3));
 		case 'Matrix':
 			return 'matrix';
 		case 'Matrix3d':
@@ -11853,22 +11893,22 @@ var _user$project$Style_PropertyHelpers$id = function (prop) {
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'translate in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._2));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._2));
 		case 'Translate3d':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'translate3d in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._3));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._3));
 		case 'TranslateX':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'translatex in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'TranslateY':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'translatey in ',
-				_user$project$Style_PropertyHelpers$lenUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(_p299._1));
 		case 'Scale':
 			return 'scale';
 		case 'Scale3d':
@@ -11883,37 +11923,37 @@ var _user$project$Style_PropertyHelpers$id = function (prop) {
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'rotate in ',
-				_user$project$Style_PropertyHelpers$angleUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$angleUnit(_p299._1));
 		case 'Rotate3d':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'rotate3d in ',
-				_user$project$Style_PropertyHelpers$angleUnit(_p299._4));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$angleUnit(_p299._4));
 		case 'RotateX':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'rotatex in ',
-				_user$project$Style_PropertyHelpers$angleUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$angleUnit(_p299._1));
 		case 'RotateY':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'rotatey in ',
-				_user$project$Style_PropertyHelpers$angleUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$angleUnit(_p299._1));
 		case 'Skew':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'skew in ',
-				_user$project$Style_PropertyHelpers$angleUnit(_p299._2));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$angleUnit(_p299._2));
 		case 'SkewX':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'skewx in ',
-				_user$project$Style_PropertyHelpers$angleUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$angleUnit(_p299._1));
 		case 'SkewY':
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'skewy in ',
-				_user$project$Style_PropertyHelpers$angleUnit(_p299._1));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$angleUnit(_p299._1));
 		case 'Perspective':
 			return 'perspective';
 		case 'X':
@@ -11940,7 +11980,7 @@ var _user$project$Style_PropertyHelpers$id = function (prop) {
 			return 'stroke';
 	}
 };
-var _user$project$Style_PropertyHelpers$baseName = function (prop) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$baseName = function (prop) {
 	var _p300 = prop;
 	switch (_p300.ctor) {
 		case 'Display':
@@ -12075,9 +12115,9 @@ var _user$project$Style_PropertyHelpers$baseName = function (prop) {
 			return 'stroke';
 	}
 };
-var _user$project$Style_PropertyHelpers$webkitPrefix = '-webkit-';
-var _user$project$Style_PropertyHelpers$iePrefix = '-ms-';
-var _user$project$Style_PropertyHelpers$prefix = function (stylePair) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$webkitPrefix = '-webkit-';
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$iePrefix = '-ms-';
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$prefix = function (stylePair) {
 	var propValue = _elm_lang$core$Basics$snd(stylePair);
 	var propName = _elm_lang$core$Basics$fst(stylePair);
 	var _p301 = propName;
@@ -12088,12 +12128,12 @@ var _user$project$Style_PropertyHelpers$prefix = function (stylePair) {
 					stylePair,
 					{
 					ctor: '_Tuple2',
-					_0: A2(_elm_lang$core$Basics_ops['++'], _user$project$Style_PropertyHelpers$iePrefix, propName),
+					_0: A2(_elm_lang$core$Basics_ops['++'], _mdgriffith$elm_style_animation$Style_PropertyHelpers$iePrefix, propName),
 					_1: propValue
 				},
 					{
 					ctor: '_Tuple2',
-					_0: A2(_elm_lang$core$Basics_ops['++'], _user$project$Style_PropertyHelpers$webkitPrefix, propName),
+					_0: A2(_elm_lang$core$Basics_ops['++'], _mdgriffith$elm_style_animation$Style_PropertyHelpers$webkitPrefix, propName),
 					_1: propValue
 				}
 				]);
@@ -12103,12 +12143,12 @@ var _user$project$Style_PropertyHelpers$prefix = function (stylePair) {
 					stylePair,
 					{
 					ctor: '_Tuple2',
-					_0: A2(_elm_lang$core$Basics_ops['++'], _user$project$Style_PropertyHelpers$iePrefix, propName),
+					_0: A2(_elm_lang$core$Basics_ops['++'], _mdgriffith$elm_style_animation$Style_PropertyHelpers$iePrefix, propName),
 					_1: propValue
 				},
 					{
 					ctor: '_Tuple2',
-					_0: A2(_elm_lang$core$Basics_ops['++'], _user$project$Style_PropertyHelpers$webkitPrefix, propName),
+					_0: A2(_elm_lang$core$Basics_ops['++'], _mdgriffith$elm_style_animation$Style_PropertyHelpers$webkitPrefix, propName),
 					_1: propValue
 				}
 				]);
@@ -12117,7 +12157,7 @@ var _user$project$Style_PropertyHelpers$prefix = function (stylePair) {
 				[stylePair]);
 	}
 };
-var _user$project$Style_PropertyHelpers$renderColor = function (color) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderColor = function (color) {
 	var rgba = _elm_lang$core$Color$toRgb(color);
 	return A2(
 		_elm_lang$core$Basics_ops['++'],
@@ -12145,7 +12185,7 @@ var _user$project$Style_PropertyHelpers$renderColor = function (color) {
 									_elm_lang$core$Basics$toString(rgba.alpha),
 									')'))))))));
 };
-var _user$project$Style_PropertyHelpers$name = function (styleProp) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$name = function (styleProp) {
 	var _p302 = styleProp;
 	switch (_p302.ctor) {
 		case 'Display':
@@ -12280,7 +12320,7 @@ var _user$project$Style_PropertyHelpers$name = function (styleProp) {
 			return 'stroke';
 	}
 };
-var _user$project$Style_PropertyHelpers$renderPoints = function (points) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPoints = function (points) {
 	return _elm_lang$core$String$concat(
 		A2(
 			_elm_lang$core$List$intersperse,
@@ -12300,7 +12340,7 @@ var _user$project$Style_PropertyHelpers$renderPoints = function (points) {
 				},
 				points)));
 };
-var _user$project$Style_PropertyHelpers$renderPath = function (commands) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPath = function (commands) {
 	var renderCommand = function (cmd) {
 		var _p303 = cmd;
 		switch (_p303.ctor) {
@@ -12372,42 +12412,42 @@ var _user$project$Style_PropertyHelpers$renderPath = function (commands) {
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
 					'c ',
-					_user$project$Style_PropertyHelpers$renderPoints(_p303._0));
+					_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPoints(_p303._0));
 			case 'CurveTo':
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
 					'C ',
-					_user$project$Style_PropertyHelpers$renderPoints(_p303._0));
+					_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPoints(_p303._0));
 			case 'Quadratic':
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
 					'q ',
-					_user$project$Style_PropertyHelpers$renderPoints(_p303._0));
+					_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPoints(_p303._0));
 			case 'QuadraticTo':
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
 					'Q ',
-					_user$project$Style_PropertyHelpers$renderPoints(_p303._0));
+					_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPoints(_p303._0));
 			case 'SmoothQuadratic':
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
 					't ',
-					_user$project$Style_PropertyHelpers$renderPoints(_p303._0));
+					_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPoints(_p303._0));
 			case 'SmoothQuadraticTo':
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
 					'T ',
-					_user$project$Style_PropertyHelpers$renderPoints(_p303._0));
+					_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPoints(_p303._0));
 			case 'Smooth':
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
 					's ',
-					_user$project$Style_PropertyHelpers$renderPoints(_p303._0));
+					_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPoints(_p303._0));
 			case 'SmoothTo':
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
 					'S ',
-					_user$project$Style_PropertyHelpers$renderPoints(_p303._0));
+					_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPoints(_p303._0));
 			case 'Arc':
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
@@ -12510,7 +12550,7 @@ var _user$project$Style_PropertyHelpers$renderPath = function (commands) {
 			' ',
 			A2(_elm_lang$core$List$map, renderCommand, commands)));
 };
-var _user$project$Style_PropertyHelpers$value = function (prop) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$value = function (prop) {
 	var renderList = function (xs) {
 		return A2(
 			_elm_lang$core$Basics_ops['++'],
@@ -12532,19 +12572,19 @@ var _user$project$Style_PropertyHelpers$value = function (prop) {
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				val(a),
-				_user$project$Style_PropertyHelpers$lenUnit(unit));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$lenUnit(unit));
 		});
 	var renderAngle = F2(
 		function (a, unit) {
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				val(a),
-				_user$project$Style_PropertyHelpers$angleUnit(unit));
+				_mdgriffith$elm_style_animation$Style_PropertyHelpers$angleUnit(unit));
 		});
 	var _p304 = prop;
 	switch (_p304.ctor) {
 		case 'Display':
-			return _user$project$Style_PropertyHelpers$displayMode(_p304._0);
+			return _mdgriffith$elm_style_animation$Style_PropertyHelpers$displayMode(_p304._0);
 		case 'Opacity':
 			return val(_p304._0);
 		case 'Height':
@@ -12628,11 +12668,11 @@ var _user$project$Style_PropertyHelpers$value = function (prop) {
 							' ',
 							A2(renderLength, _p304._2, _p306)))));
 		case 'Color':
-			return _user$project$Style_PropertyHelpers$renderColor(_p304._0);
+			return _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderColor(_p304._0);
 		case 'BackgroundColor':
-			return _user$project$Style_PropertyHelpers$renderColor(_p304._0);
+			return _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderColor(_p304._0);
 		case 'BorderColor':
-			return _user$project$Style_PropertyHelpers$renderColor(_p304._0);
+			return _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderColor(_p304._0);
 		case 'Translate':
 			var _p307 = _p304._2;
 			return A2(
@@ -12855,16 +12895,16 @@ var _user$project$Style_PropertyHelpers$value = function (prop) {
 		case 'Ry':
 			return _elm_lang$core$Basics$toString(_p304._0);
 		case 'D':
-			return _user$project$Style_PropertyHelpers$renderPath(_p304._0);
+			return _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPath(_p304._0);
 		case 'Points':
 			return renderList(_p304._0);
 		case 'Fill':
-			return _user$project$Style_PropertyHelpers$renderColor(_p304._0);
+			return _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderColor(_p304._0);
 		default:
-			return _user$project$Style_PropertyHelpers$renderColor(_p304._0);
+			return _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderColor(_p304._0);
 	}
 };
-var _user$project$Style_PropertyHelpers$renderAttr = function (styles) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderAttr = function (styles) {
 	var toAttr = function (prop) {
 		var _p310 = prop;
 		switch (_p310.ctor) {
@@ -12899,11 +12939,11 @@ var _user$project$Style_PropertyHelpers$renderAttr = function (styles) {
 			case 'D':
 				return _elm_lang$core$Maybe$Just(
 					_elm_lang$svg$Svg_Attributes$d(
-						_user$project$Style_PropertyHelpers$renderPath(_p310._0)));
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPath(_p310._0)));
 			case 'Points':
 				return _elm_lang$core$Maybe$Just(
 					_elm_lang$svg$Svg_Attributes$points(
-						_user$project$Style_PropertyHelpers$renderPoints(_p310._0)));
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderPoints(_p310._0)));
 			case 'Width':
 				return _elm_lang$core$Maybe$Just(
 					_elm_lang$svg$Svg_Attributes$width(
@@ -12915,25 +12955,25 @@ var _user$project$Style_PropertyHelpers$renderAttr = function (styles) {
 			case 'Fill':
 				return _elm_lang$core$Maybe$Just(
 					_elm_lang$svg$Svg_Attributes$fill(
-						_user$project$Style_PropertyHelpers$renderColor(_p310._0)));
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderColor(_p310._0)));
 			case 'Stroke':
 				return _elm_lang$core$Maybe$Just(
 					_elm_lang$svg$Svg_Attributes$stroke(
-						_user$project$Style_PropertyHelpers$renderColor(_p310._0)));
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$renderColor(_p310._0)));
 			default:
 				return _elm_lang$core$Maybe$Nothing;
 		}
 	};
 	return A2(_elm_lang$core$List$filterMap, toAttr, styles);
 };
-var _user$project$Style_PropertyHelpers$render = function (styleProps) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$render = function (styleProps) {
 	var rendered = A2(
 		_elm_lang$core$List$map,
 		function (prop) {
 			return {
 				ctor: '_Tuple2',
-				_0: _user$project$Style_PropertyHelpers$name(prop),
-				_1: _user$project$Style_PropertyHelpers$value(prop)
+				_0: _mdgriffith$elm_style_animation$Style_PropertyHelpers$name(prop),
+				_1: _mdgriffith$elm_style_animation$Style_PropertyHelpers$value(prop)
 			};
 		},
 		styleProps);
@@ -12968,57 +13008,57 @@ var _user$project$Style_PropertyHelpers$render = function (styleProps) {
 		]);
 	return A2(
 		_elm_lang$core$List$concatMap,
-		_user$project$Style_PropertyHelpers$prefix,
+		_mdgriffith$elm_style_animation$Style_PropertyHelpers$prefix,
 		A2(_elm_lang$core$Basics_ops['++'], props, combinedTransforms));
 };
-var _user$project$Style_PropertyHelpers$defaultEasing = function (x) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$defaultEasing = function (x) {
 	return (1 - _elm_lang$core$Basics$cos(_elm_lang$core$Basics$pi * x)) / 2;
 };
-var _user$project$Style_PropertyHelpers$defaultDuration = 0.35 * _elm_lang$core$Time$second;
-var _user$project$Style_PropertyHelpers$emptyEasing = {
-	ease: _user$project$Style_PropertyHelpers$defaultEasing,
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$defaultDuration = 0.35 * _elm_lang$core$Time$second;
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$emptyEasing = {
+	ease: _mdgriffith$elm_style_animation$Style_PropertyHelpers$defaultEasing,
 	counterForce: {stiffness: 170, damping: 26, destination: 1},
 	counterForcePhys: _elm_lang$core$Maybe$Nothing,
-	duration: _user$project$Style_PropertyHelpers$defaultDuration
+	duration: _mdgriffith$elm_style_animation$Style_PropertyHelpers$defaultDuration
 };
-var _user$project$Style_PropertyHelpers$emptyPhysics = {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$emptyPhysics = {
 	physical: {position: 0, velocity: 0},
 	spring: {stiffness: 170, damping: 26, destination: 1},
 	easing: _elm_lang$core$Maybe$Nothing
 };
-var _user$project$Style_PropertyHelpers$Physics = F3(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$Physics = F3(
 	function (a, b, c) {
 		return {physical: a, spring: b, easing: c};
 	});
-var _user$project$Style_PropertyHelpers$Easing = F4(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$Easing = F4(
 	function (a, b, c, d) {
 		return {ease: a, counterForce: b, counterForcePhys: c, duration: d};
 	});
-var _user$project$Style_PropertyHelpers$RGBA = F4(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$RGBA = F4(
 	function (a, b, c, d) {
 		return {ctor: 'RGBA', _0: a, _1: b, _2: c, _3: d};
 	});
-var _user$project$Style_PropertyHelpers$emptyDynamicColor = A4(_user$project$Style_PropertyHelpers$RGBA, _user$project$Style_PropertyHelpers$emptyPhysics, _user$project$Style_PropertyHelpers$emptyPhysics, _user$project$Style_PropertyHelpers$emptyPhysics, _user$project$Style_PropertyHelpers$emptyPhysics);
-var _user$project$Style_PropertyHelpers$toDynamic = function (prop) {
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$emptyDynamicColor = A4(_mdgriffith$elm_style_animation$Style_PropertyHelpers$RGBA, _mdgriffith$elm_style_animation$Style_PropertyHelpers$emptyPhysics, _mdgriffith$elm_style_animation$Style_PropertyHelpers$emptyPhysics, _mdgriffith$elm_style_animation$Style_PropertyHelpers$emptyPhysics, _mdgriffith$elm_style_animation$Style_PropertyHelpers$emptyPhysics);
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$toDynamic = function (prop) {
 	return A3(
-		_user$project$Style_PropertyHelpers$map,
+		_mdgriffith$elm_style_animation$Style_PropertyHelpers$map,
 		function (_p315) {
-			return _user$project$Style_PropertyHelpers$emptyPhysics;
+			return _mdgriffith$elm_style_animation$Style_PropertyHelpers$emptyPhysics;
 		},
 		function (_p316) {
-			return _user$project$Style_PropertyHelpers$emptyDynamicColor;
+			return _mdgriffith$elm_style_animation$Style_PropertyHelpers$emptyDynamicColor;
 		},
 		prop);
 };
-var _user$project$Style_PropertyHelpers$update = F2(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$update = F2(
 	function (fn, prop) {
 		return A3(
-			_user$project$Style_PropertyHelpers$map,
+			_mdgriffith$elm_style_animation$Style_PropertyHelpers$map,
 			fn,
 			function (dynamicColor) {
 				var _p317 = dynamicColor;
 				return A4(
-					_user$project$Style_PropertyHelpers$RGBA,
+					_mdgriffith$elm_style_animation$Style_PropertyHelpers$RGBA,
 					fn(_p317._0),
 					fn(_p317._1),
 					fn(_p317._2),
@@ -13026,17 +13066,17 @@ var _user$project$Style_PropertyHelpers$update = F2(
 			},
 			prop);
 	});
-var _user$project$Style_PropertyHelpers$updateFrom = F3(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$updateFrom = F3(
 	function (fn, prev, prop) {
 		return A4(
-			_user$project$Style_PropertyHelpers$map2,
+			_mdgriffith$elm_style_animation$Style_PropertyHelpers$map2,
 			fn,
 			F2(
 				function (prevDColor, currentDColor) {
 					var _p318 = prevDColor;
 					var _p319 = currentDColor;
 					return A4(
-						_user$project$Style_PropertyHelpers$RGBA,
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$RGBA,
 						A2(fn, _p318._0, _p319._0),
 						A2(fn, _p318._1, _p319._1),
 						A2(fn, _p318._2, _p319._2),
@@ -13045,10 +13085,10 @@ var _user$project$Style_PropertyHelpers$updateFrom = F3(
 			prev,
 			prop);
 	});
-var _user$project$Style_PropertyHelpers$updateOver = F4(
+var _mdgriffith$elm_style_animation$Style_PropertyHelpers$updateOver = F4(
 	function (fn, target, prev, prop) {
 		return A5(
-			_user$project$Style_PropertyHelpers$map3,
+			_mdgriffith$elm_style_animation$Style_PropertyHelpers$map3,
 			fn,
 			F3(
 				function (targetColor, prevColor, currentDColor) {
@@ -13056,7 +13096,7 @@ var _user$project$Style_PropertyHelpers$updateOver = F4(
 					var t = _elm_lang$core$Color$toRgb(targetColor);
 					var _p320 = currentDColor;
 					return A4(
-						_user$project$Style_PropertyHelpers$RGBA,
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$RGBA,
 						A3(
 							fn,
 							_elm_lang$core$Basics$toFloat(t.red),
@@ -13078,15 +13118,17 @@ var _user$project$Style_PropertyHelpers$updateOver = F4(
 			prev,
 			prop);
 	});
-var _user$project$Style_Spring_Presets$stiff = {stiffness: 210, damping: 20};
-var _user$project$Style_Spring_Presets$wobbly = {stiffness: 180, damping: 12};
-var _user$project$Style_Spring_Presets$gentle = {stiffness: 120, damping: 14};
-var _user$project$Style_Spring_Presets$noWobble = {stiffness: 170, damping: 26};
-var _user$project$Style_Spring_Presets$SpringProps = F2(
+
+var _mdgriffith$elm_style_animation$Style_Spring_Presets$stiff = {stiffness: 210, damping: 20};
+var _mdgriffith$elm_style_animation$Style_Spring_Presets$wobbly = {stiffness: 180, damping: 12};
+var _mdgriffith$elm_style_animation$Style_Spring_Presets$gentle = {stiffness: 120, damping: 14};
+var _mdgriffith$elm_style_animation$Style_Spring_Presets$noWobble = {stiffness: 170, damping: 26};
+var _mdgriffith$elm_style_animation$Style_Spring_Presets$SpringProps = F2(
 	function (a, b) {
 		return {stiffness: a, damping: b};
 	});
-var _user$project$Style_Core$zipWith = F3(
+
+var _mdgriffith$elm_style_animation$Style_Core$zipWith = F3(
 	function (fn, listA, listB) {
 		return _elm_lang$core$Basics$fst(
 			A3(
@@ -13128,7 +13170,7 @@ var _user$project$Style_Core$zipWith = F3(
 				},
 				listA));
 	});
-var _user$project$Style_Core$fill = F2(
+var _mdgriffith$elm_style_animation$Style_Core$fill = F2(
 	function (existing, $new) {
 		return A2(
 			_elm_lang$core$List$map,
@@ -13137,29 +13179,29 @@ var _user$project$Style_Core$fill = F2(
 				return A2(_elm_lang$core$Maybe$withDefault, _p4._0, _p4._1);
 			},
 			A3(
-				_user$project$Style_Core$zipWith,
+				_mdgriffith$elm_style_animation$Style_Core$zipWith,
 				F2(
 					function (a, b) {
 						return _elm_lang$core$Native_Utils.eq(
-							_user$project$Style_PropertyHelpers$id(a),
-							_user$project$Style_PropertyHelpers$id(b));
+							_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(a),
+							_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(b));
 					}),
 				existing,
 				$new));
 	});
-var _user$project$Style_Core$bake = F2(
+var _mdgriffith$elm_style_animation$Style_Core$bake = F2(
 	function (frame, style) {
 		return A2(
-			_user$project$Style_Core$fill,
+			_mdgriffith$elm_style_animation$Style_Core$fill,
 			style,
 			A2(
 				_elm_lang$core$List$map,
 				function (prop) {
-					return _user$project$Style_PropertyHelpers$toStatic(prop.current);
+					return _mdgriffith$elm_style_animation$Style_PropertyHelpers$toStatic(prop.current);
 				},
 				frame.properties));
 	});
-var _user$project$Style_Core$mapTo = F3(
+var _mdgriffith$elm_style_animation$Style_Core$mapTo = F3(
 	function (i, fn, xs) {
 		var update = F2(
 			function (j, x) {
@@ -13167,11 +13209,11 @@ var _user$project$Style_Core$mapTo = F3(
 			});
 		return A2(_elm_lang$core$List$indexedMap, update, xs);
 	});
-var _user$project$Style_Core$velocity = F3(
+var _mdgriffith$elm_style_animation$Style_Core$velocity = F3(
 	function (oldPos, newPos, dt) {
 		return (newPos - oldPos) / dt;
 	});
-var _user$project$Style_Core$applyStep = F5(
+var _mdgriffith$elm_style_animation$Style_Core$applyStep = F5(
 	function (current, dt, target, from, physics) {
 		var _p5 = physics.easing;
 		if (_p5.ctor === 'Nothing') {
@@ -13180,7 +13222,7 @@ var _user$project$Style_Core$applyStep = F5(
 				newSpring,
 				{destination: target});
 			var positioned = (_elm_lang$core$Native_Utils.eq(current, 0.0) && _elm_lang$core$Native_Utils.eq(dt, 0.0)) ? {position: from, velocity: physics.physical.velocity} : physics.physical;
-			var finalPhysical = A3(_user$project$Style_Spring$update, dt, targeted, positioned);
+			var finalPhysical = A3(_mdgriffith$elm_style_animation$Style_Spring$update, dt, targeted, positioned);
 			return _elm_lang$core$Native_Utils.update(
 				physics,
 				{physical: finalPhysical, spring: targeted});
@@ -13191,8 +13233,8 @@ var _user$project$Style_Core$applyStep = F5(
 				if (_p6.ctor === 'Nothing') {
 					return _elm_lang$core$Maybe$Just(_p7);
 				} else {
-					var newCounterSpring = A3(_user$project$Style_Spring$update, dt, _p7.counterForce, _p6._0);
-					return A2(_user$project$Style_Spring$atRest, _p7.counterForce, newCounterSpring) ? _elm_lang$core$Maybe$Just(
+					var newCounterSpring = A3(_mdgriffith$elm_style_animation$Style_Spring$update, dt, _p7.counterForce, _p6._0);
+					return A2(_mdgriffith$elm_style_animation$Style_Spring$atRest, _p7.counterForce, newCounterSpring) ? _elm_lang$core$Maybe$Just(
 						_elm_lang$core$Native_Utils.update(
 							_p7,
 							{counterForcePhys: _elm_lang$core$Maybe$Nothing})) : _elm_lang$core$Maybe$Just(
@@ -13210,14 +13252,14 @@ var _user$project$Style_Core$applyStep = F5(
 				physical,
 				{
 					position: currentPos,
-					velocity: A3(_user$project$Style_Core$velocity, physics.physical.position, currentPos, dt)
+					velocity: A3(_mdgriffith$elm_style_animation$Style_Core$velocity, physics.physical.position, currentPos, dt)
 				});
 			return _elm_lang$core$Native_Utils.update(
 				physics,
 				{physical: finalPhysical, easing: counterSpring});
 		}
 	});
-var _user$project$Style_Core$step = F4(
+var _mdgriffith$elm_style_animation$Style_Core$step = F4(
 	function (time, dt, style, frame) {
 		var newProperties = A2(
 			_elm_lang$core$List$map,
@@ -13232,8 +13274,8 @@ var _user$project$Style_Core$step = F4(
 						_p11,
 						{
 							current: A4(
-								_user$project$Style_PropertyHelpers$updateOver,
-								A2(_user$project$Style_Core$applyStep, time, dt),
+								_mdgriffith$elm_style_animation$Style_PropertyHelpers$updateOver,
+								A2(_mdgriffith$elm_style_animation$Style_Core$applyStep, time, dt),
 								_p11.target,
 								_p10._0,
 								_p11.current)
@@ -13241,12 +13283,12 @@ var _user$project$Style_Core$step = F4(
 				}
 			},
 			A3(
-				_user$project$Style_Core$zipWith,
+				_mdgriffith$elm_style_animation$Style_Core$zipWith,
 				F2(
 					function (a, b) {
 						return _elm_lang$core$Native_Utils.eq(
-							_user$project$Style_PropertyHelpers$id(a.current),
-							_user$project$Style_PropertyHelpers$id(b));
+							_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(a.current),
+							_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(b));
 					}),
 				frame.properties,
 				style));
@@ -13254,7 +13296,7 @@ var _user$project$Style_Core$step = F4(
 			frame,
 			{properties: newProperties});
 	});
-var _user$project$Style_Core$transferVelocityProp = F2(
+var _mdgriffith$elm_style_animation$Style_Core$transferVelocityProp = F2(
 	function (old, target) {
 		var newPhys = target.physical;
 		var newV = _elm_lang$core$Native_Utils.update(
@@ -13269,7 +13311,7 @@ var _user$project$Style_Core$transferVelocityProp = F2(
 			var _p13 = _p12._0;
 			var sampleSize = 16.0;
 			var eased = (_elm_lang$core$Native_Utils.cmp(_p13.duration, 0) < 1) ? 1.0 : _p13.ease(sampleSize / _p13.duration);
-			var easeV = A3(_user$project$Style_Core$velocity, 0, eased, sampleSize);
+			var easeV = A3(_mdgriffith$elm_style_animation$Style_Core$velocity, 0, eased, sampleSize);
 			var deltaV = old.physical.velocity - easeV;
 			var newEasing = _elm_lang$core$Maybe$Just(
 				_elm_lang$core$Native_Utils.update(
@@ -13283,15 +13325,15 @@ var _user$project$Style_Core$transferVelocityProp = F2(
 				{easing: newEasing, physical: newV});
 		}
 	});
-var _user$project$Style_Core$transferVelocity = F2(
+var _mdgriffith$elm_style_animation$Style_Core$transferVelocity = F2(
 	function (old, $new) {
 		var matched = A3(
-			_user$project$Style_Core$zipWith,
+			_mdgriffith$elm_style_animation$Style_Core$zipWith,
 			F2(
 				function (a, b) {
 					return _elm_lang$core$Native_Utils.eq(
-						_user$project$Style_PropertyHelpers$id(a.current),
-						_user$project$Style_PropertyHelpers$id(b.current));
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(a.current),
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(b.current));
 				}),
 			old.properties,
 			$new.properties);
@@ -13305,7 +13347,7 @@ var _user$project$Style_Core$transferVelocity = F2(
 					return _p18;
 				} else {
 					var _p17 = _p16._0;
-					var newCurrent = A3(_user$project$Style_PropertyHelpers$updateFrom, _user$project$Style_Core$transferVelocityProp, _p18.current, _p17.current);
+					var newCurrent = A3(_mdgriffith$elm_style_animation$Style_PropertyHelpers$updateFrom, _mdgriffith$elm_style_animation$Style_Core$transferVelocityProp, _p18.current, _p17.current);
 					return _elm_lang$core$Native_Utils.update(
 						_p17,
 						{current: newCurrent});
@@ -13316,12 +13358,12 @@ var _user$project$Style_Core$transferVelocity = F2(
 			$new,
 			{properties: newProperties});
 	});
-var _user$project$Style_Core$done = F2(
+var _mdgriffith$elm_style_animation$Style_Core$done = F2(
 	function (time, frame) {
 		var finished = function (prop) {
 			var _p19 = prop.easing;
 			if (_p19.ctor === 'Nothing') {
-				return A2(_user$project$Style_Spring$atRest, prop.spring, prop.physical);
+				return A2(_mdgriffith$elm_style_animation$Style_Spring$atRest, prop.spring, prop.physical);
 			} else {
 				var _p20 = _p19._0;
 				return (_elm_lang$core$Native_Utils.cmp(time, _p20.duration) > -1) && _elm_lang$core$Native_Utils.eq(_p20.counterForcePhys, _elm_lang$core$Maybe$Nothing);
@@ -13330,19 +13372,19 @@ var _user$project$Style_Core$done = F2(
 		return A2(
 			_elm_lang$core$List$all,
 			function (p) {
-				return A2(_user$project$Style_PropertyHelpers$is, finished, p.current);
+				return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$is, finished, p.current);
 			},
 			frame.properties);
 	});
-var _user$project$Style_Core$matchPoints = F2(
+var _mdgriffith$elm_style_animation$Style_Core$matchPoints = F2(
 	function (frame, lastTargetStyle) {
 		var paired = A3(
-			_user$project$Style_Core$zipWith,
+			_mdgriffith$elm_style_animation$Style_Core$zipWith,
 			F2(
 				function (a, b) {
 					return _elm_lang$core$Native_Utils.eq(
-						_user$project$Style_PropertyHelpers$id(a.target),
-						_user$project$Style_PropertyHelpers$id(b));
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(a.target),
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(b));
 				}),
 			frame.properties,
 			lastTargetStyle);
@@ -13358,38 +13400,38 @@ var _user$project$Style_Core$matchPoints = F2(
 						if (_p23.ctor === 'Nothing') {
 							return _p24;
 						} else {
-							var matched = A2(_user$project$Style_PropertyHelpers$matchPoints, _p24.target, _p23._0);
+							var matched = A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$matchPoints, _p24.target, _p23._0);
 							return _elm_lang$core$Native_Utils.update(
 								_p24,
 								{
 									target: matched,
-									current: _user$project$Style_PropertyHelpers$toDynamic(matched)
+									current: _mdgriffith$elm_style_animation$Style_PropertyHelpers$toDynamic(matched)
 								});
 						}
 					},
 					paired)
 			});
 	});
-var _user$project$Style_Core$getPropCount = F2(
+var _mdgriffith$elm_style_animation$Style_Core$getPropCount = F2(
 	function (x, list) {
 		return A3(
 			_elm_lang$core$List$foldl,
 			F2(
 				function (y, acc) {
 					return _elm_lang$core$Native_Utils.eq(
-						_user$project$Style_PropertyHelpers$id(x),
-						_user$project$Style_PropertyHelpers$id(y)) ? (acc + 1) : acc;
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(x),
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(y)) ? (acc + 1) : acc;
 				}),
 			1,
 			list);
 	});
-var _user$project$Style_Core$mapWithCount = F2(
+var _mdgriffith$elm_style_animation$Style_Core$mapWithCount = F2(
 	function (fn, list) {
 		var mapped = A3(
 			_elm_lang$core$List$foldl,
 			F2(
 				function (x, acc) {
-					var count = A2(_user$project$Style_Core$getPropCount, x, acc.past);
+					var count = A2(_mdgriffith$elm_style_animation$Style_Core$getPropCount, x, acc.past);
 					return {
 						current: A2(
 							_elm_lang$core$Basics_ops['++'],
@@ -13414,7 +13456,7 @@ var _user$project$Style_Core$mapWithCount = F2(
 			list);
 		return mapped.current;
 	});
-var _user$project$Style_Core$retargetIfNecessary = F2(
+var _mdgriffith$elm_style_animation$Style_Core$retargetIfNecessary = F2(
 	function (frame, lastTargetStyle) {
 		var _p25 = frame.retarget;
 		if (_p25.ctor === 'Nothing') {
@@ -13424,26 +13466,26 @@ var _user$project$Style_Core$retargetIfNecessary = F2(
 				function (i, prop) {
 					return {
 						target: A2(_p25._0, 1, prop),
-						current: _user$project$Style_PropertyHelpers$toDynamic(prop)
+						current: _mdgriffith$elm_style_animation$Style_PropertyHelpers$toDynamic(prop)
 					};
 				});
 			return _elm_lang$core$Native_Utils.update(
 				frame,
 				{
-					properties: A2(_user$project$Style_Core$mapWithCount, applyRetarget, lastTargetStyle)
+					properties: A2(_mdgriffith$elm_style_animation$Style_Core$mapWithCount, applyRetarget, lastTargetStyle)
 				});
 		}
 	});
-var _user$project$Style_Core$initializeFrame = F3(
+var _mdgriffith$elm_style_animation$Style_Core$initializeFrame = F3(
 	function (style, prevTargetStyle, frame) {
-		var retargeted = A2(_user$project$Style_Core$retargetIfNecessary, frame, prevTargetStyle);
+		var retargeted = A2(_mdgriffith$elm_style_animation$Style_Core$retargetIfNecessary, frame, prevTargetStyle);
 		var matched = A3(
-			_user$project$Style_Core$zipWith,
+			_mdgriffith$elm_style_animation$Style_Core$zipWith,
 			F2(
 				function (a, b) {
 					return _elm_lang$core$Native_Utils.eq(
-						_user$project$Style_PropertyHelpers$baseName(a.current),
-						_user$project$Style_PropertyHelpers$baseName(b));
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$baseName(a.current),
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$baseName(b));
 				}),
 			frame.properties,
 			style);
@@ -13462,20 +13504,20 @@ var _user$project$Style_Core$initializeFrame = F3(
 							'There is no initial value for \'',
 							A2(
 								_elm_lang$core$Basics_ops['++'],
-								_user$project$Style_PropertyHelpers$id(_p30.current),
+								_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(_p30.current),
 								A2(
 									_elm_lang$core$Basics_ops['++'],
 									'\', though it is queued to be animated.  Define an initial value for \'',
 									A2(
 										_elm_lang$core$Basics_ops['++'],
-										_user$project$Style_PropertyHelpers$id(_p30.current),
+										_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(_p30.current),
 										'\'')))));
 					return _elm_lang$core$Maybe$Just(warn);
 				} else {
 					var _p29 = _p28._0;
 					if (_elm_lang$core$Native_Utils.eq(
-						_user$project$Style_PropertyHelpers$id(_p30.current),
-						_user$project$Style_PropertyHelpers$id(_p29))) {
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(_p30.current),
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(_p29))) {
 						return _elm_lang$core$Maybe$Nothing;
 					} else {
 						var warn = A2(
@@ -13489,13 +13531,13 @@ var _user$project$Style_Core$initializeFrame = F3(
 									'An initial value was given as \'',
 									A2(
 										_elm_lang$core$Basics_ops['++'],
-										_user$project$Style_PropertyHelpers$id(_p29),
+										_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(_p29),
 										A2(
 											_elm_lang$core$Basics_ops['++'],
 											'\' versus the animation which was given as \'',
 											A2(
 												_elm_lang$core$Basics_ops['++'],
-												_user$project$Style_PropertyHelpers$id(_p30.current),
+												_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(_p30.current),
 												'\'.'))))));
 						return _elm_lang$core$Maybe$Just(warn);
 					}
@@ -13503,21 +13545,21 @@ var _user$project$Style_Core$initializeFrame = F3(
 			},
 			matched);
 		return A4(
-			_user$project$Style_Core$step,
+			_mdgriffith$elm_style_animation$Style_Core$step,
 			0.0,
 			0.0,
 			style,
-			A2(_user$project$Style_Core$matchPoints, retargeted, prevTargetStyle));
+			A2(_mdgriffith$elm_style_animation$Style_Core$matchPoints, retargeted, prevTargetStyle));
 	});
-var _user$project$Style_Core$amend = F2(
+var _mdgriffith$elm_style_animation$Style_Core$amend = F2(
 	function (style, frame) {
 		var paired = A3(
-			_user$project$Style_Core$zipWith,
+			_mdgriffith$elm_style_animation$Style_Core$zipWith,
 			F2(
 				function (a, b) {
 					return _elm_lang$core$Native_Utils.eq(
-						_user$project$Style_PropertyHelpers$id(a),
-						_user$project$Style_PropertyHelpers$id(b.target));
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(a),
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(b.target));
 				}),
 			style,
 			frame.properties);
@@ -13530,12 +13572,12 @@ var _user$project$Style_Core$amend = F2(
 				if (_p33.ctor === 'Nothing') {
 					return _p34;
 				} else {
-					return A2(_user$project$Style_PropertyHelpers$matchPoints, _p34, _p33._0.target);
+					return A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$matchPoints, _p34, _p33._0.target);
 				}
 			},
 			paired);
 	});
-var _user$project$Style_Core$getTarget = function (frame) {
+var _mdgriffith$elm_style_animation$Style_Core$getTarget = function (frame) {
 	return A2(
 		_elm_lang$core$List$map,
 		function (prop) {
@@ -13543,7 +13585,7 @@ var _user$project$Style_Core$getTarget = function (frame) {
 		},
 		frame.properties);
 };
-var _user$project$Style_Core$interrupt = F4(
+var _mdgriffith$elm_style_animation$Style_Core$interrupt = F4(
 	function (now, model, interruption, remaining) {
 		var _p35 = function () {
 			var _p36 = _elm_lang$core$List$head(model.frames);
@@ -13553,13 +13595,13 @@ var _user$project$Style_Core$interrupt = F4(
 				var _p37 = _p36._0;
 				return {
 					ctor: '_Tuple3',
-					_0: A2(_user$project$Style_Core$bake, _p37, model.previous),
-					_1: _user$project$Style_Core$getTarget(_p37),
+					_0: A2(_mdgriffith$elm_style_animation$Style_Core$bake, _p37, model.previous),
+					_1: _mdgriffith$elm_style_animation$Style_Core$getTarget(_p37),
 					_2: A3(
-						_user$project$Style_Core$mapTo,
+						_mdgriffith$elm_style_animation$Style_Core$mapTo,
 						0,
 						function (newFrame) {
-							return A2(_user$project$Style_Core$transferVelocity, _p37, newFrame);
+							return A2(_mdgriffith$elm_style_animation$Style_Core$transferVelocity, _p37, newFrame);
 						},
 						interruption)
 				};
@@ -13573,7 +13615,7 @@ var _user$project$Style_Core$interrupt = F4(
 			if (_p38.ctor === 'Nothing') {
 				return previous;
 			} else {
-				return A2(_user$project$Style_Core$amend, previous, _p38._0);
+				return A2(_mdgriffith$elm_style_animation$Style_Core$amend, previous, _p38._0);
 			}
 		}();
 		var amendedTarget = function () {
@@ -13581,19 +13623,19 @@ var _user$project$Style_Core$interrupt = F4(
 			if (_p39.ctor === 'Nothing') {
 				return prevTarget;
 			} else {
-				return A2(_user$project$Style_Core$amend, prevTarget, _p39._0);
+				return A2(_mdgriffith$elm_style_animation$Style_Core$amend, prevTarget, _p39._0);
 			}
 		}();
 		var initialized = A3(
-			_user$project$Style_Core$mapTo,
+			_mdgriffith$elm_style_animation$Style_Core$mapTo,
 			0,
-			A2(_user$project$Style_Core$initializeFrame, amended, amendedTarget),
+			A2(_mdgriffith$elm_style_animation$Style_Core$initializeFrame, amended, amendedTarget),
 			newFrames);
 		return _elm_lang$core$Native_Utils.update(
 			model,
 			{frames: initialized, elapsed: 0.0, start: _elm_lang$core$Maybe$Nothing, previous: amended, interruption: remaining});
 	});
-var _user$project$Style_Core$getTimes = F2(
+var _mdgriffith$elm_style_animation$Style_Core$getTimes = F2(
 	function (now, model) {
 		var prelimStart = function () {
 			var _p40 = model.start;
@@ -13607,7 +13649,7 @@ var _user$project$Style_Core$getTimes = F2(
 		var prelimDt = prelimElapsed - model.elapsed;
 		return (_elm_lang$core$Native_Utils.cmp(prelimDt, 300) > 0) ? {ctor: '_Tuple3', _0: now - model.elapsed, _1: model.elapsed, _2: 0} : {ctor: '_Tuple3', _0: prelimStart, _1: prelimElapsed, _2: prelimDt};
 	});
-var _user$project$Style_Core$continue = F3(
+var _mdgriffith$elm_style_animation$Style_Core$continue = F3(
 	function (model, elapsed, start) {
 		return _elm_lang$core$Native_Utils.update(
 			model,
@@ -13616,13 +13658,13 @@ var _user$project$Style_Core$continue = F3(
 				start: _elm_lang$core$Maybe$Just(start)
 			});
 	});
-var _user$project$Style_Core$tick = F6(
+var _mdgriffith$elm_style_animation$Style_Core$tick = F6(
 	function (model, current, totalElapsed, dt, start, now) {
 		var elapsed = totalElapsed - current.delay;
 		if (_elm_lang$core$Native_Utils.eq(dt, 0) || (_elm_lang$core$Native_Utils.cmp(elapsed, 0) < 0)) {
-			return A3(_user$project$Style_Core$continue, model, totalElapsed, start);
+			return A3(_mdgriffith$elm_style_animation$Style_Core$continue, model, totalElapsed, start);
 		} else {
-			if (A2(_user$project$Style_Core$done, elapsed, current)) {
+			if (A2(_mdgriffith$elm_style_animation$Style_Core$done, elapsed, current)) {
 				var interruption = A2(
 					_elm_lang$core$List$map,
 					function (inter) {
@@ -13631,20 +13673,20 @@ var _user$project$Style_Core$tick = F6(
 							{at: inter.at - totalElapsed});
 					},
 					model.interruption);
-				var previous = A2(_user$project$Style_Core$bake, current, model.previous);
+				var previous = A2(_mdgriffith$elm_style_animation$Style_Core$bake, current, model.previous);
 				var frames = A2(_elm_lang$core$List$drop, 1, model.frames);
 				var amended = function () {
 					var _p41 = _elm_lang$core$List$head(frames);
 					if (_p41.ctor === 'Nothing') {
 						return previous;
 					} else {
-						return A2(_user$project$Style_Core$amend, previous, _p41._0);
+						return A2(_mdgriffith$elm_style_animation$Style_Core$amend, previous, _p41._0);
 					}
 				}();
 				var initialized = A3(
-					_user$project$Style_Core$mapTo,
+					_mdgriffith$elm_style_animation$Style_Core$mapTo,
 					0,
-					A2(_user$project$Style_Core$initializeFrame, amended, amended),
+					A2(_mdgriffith$elm_style_animation$Style_Core$initializeFrame, amended, amended),
 					frames);
 				return _elm_lang$core$Native_Utils.update(
 					model,
@@ -13662,15 +13704,15 @@ var _user$project$Style_Core$tick = F6(
 						elapsed: elapsed,
 						start: _elm_lang$core$Maybe$Just(start),
 						frames: A3(
-							_user$project$Style_Core$mapTo,
+							_mdgriffith$elm_style_animation$Style_Core$mapTo,
 							0,
-							A3(_user$project$Style_Core$step, elapsed, dt, model.previous),
+							A3(_mdgriffith$elm_style_animation$Style_Core$step, elapsed, dt, model.previous),
 							model.frames)
 					});
 			}
 		}
 	});
-var _user$project$Style_Core$update = F2(
+var _mdgriffith$elm_style_animation$Style_Core$update = F2(
 	function (action, model) {
 		var _p42 = action;
 		switch (_p42.ctor) {
@@ -13683,13 +13725,13 @@ var _user$project$Style_Core$update = F2(
 						if (_p44.ctor === 'Nothing') {
 							return model.previous;
 						} else {
-							return A2(_user$project$Style_Core$amend, model.previous, _p44._0);
+							return A2(_mdgriffith$elm_style_animation$Style_Core$amend, model.previous, _p44._0);
 						}
 					}();
 					var initialized = A3(
-						_user$project$Style_Core$mapTo,
+						_mdgriffith$elm_style_animation$Style_Core$mapTo,
 						0,
-						A2(_user$project$Style_Core$initializeFrame, amended, amended),
+						A2(_mdgriffith$elm_style_animation$Style_Core$initializeFrame, amended, amended),
 						_p45);
 					return _elm_lang$core$Native_Utils.update(
 						model,
@@ -13754,7 +13796,7 @@ var _user$project$Style_Core$update = F2(
 				}
 			default:
 				var _p56 = _p42._0;
-				var _p51 = A2(_user$project$Style_Core$getTimes, _p56, model);
+				var _p51 = A2(_mdgriffith$elm_style_animation$Style_Core$getTimes, _p56, model);
 				var start = _p51._0;
 				var elapsed = _p51._1;
 				var dt = _p51._2;
@@ -13763,7 +13805,7 @@ var _user$project$Style_Core$update = F2(
 					var _p54 = _p52._0;
 					if (_elm_lang$core$Native_Utils.cmp(elapsed, _p54.at) > -1) {
 						return A4(
-							_user$project$Style_Core$interrupt,
+							_mdgriffith$elm_style_animation$Style_Core$interrupt,
 							_p56,
 							model,
 							_p54.frame,
@@ -13771,9 +13813,9 @@ var _user$project$Style_Core$update = F2(
 					} else {
 						var _p53 = _elm_lang$core$List$head(model.frames);
 						if (_p53.ctor === 'Nothing') {
-							return A3(_user$project$Style_Core$continue, model, elapsed, start);
+							return A3(_mdgriffith$elm_style_animation$Style_Core$continue, model, elapsed, start);
 						} else {
-							return A6(_user$project$Style_Core$tick, model, _p53._0, elapsed, dt, start, _p56);
+							return A6(_mdgriffith$elm_style_animation$Style_Core$tick, model, _p53._0, elapsed, dt, start, _p56);
 						}
 					}
 				} else {
@@ -13788,18 +13830,18 @@ var _user$project$Style_Core$update = F2(
 									[])
 							});
 					} else {
-						return A6(_user$project$Style_Core$tick, model, _p55._0, elapsed, dt, start, _p56);
+						return A6(_mdgriffith$elm_style_animation$Style_Core$tick, model, _p55._0, elapsed, dt, start, _p56);
 					}
 				}
 		}
 	});
-var _user$project$Style_Core$emptyKeyframe = {
+var _mdgriffith$elm_style_animation$Style_Core$emptyKeyframe = {
 	properties: _elm_lang$core$Native_List.fromArray(
 		[]),
 	delay: 0.0,
 	retarget: _elm_lang$core$Maybe$Nothing
 };
-var _user$project$Style_Core$empty = {
+var _mdgriffith$elm_style_animation$Style_Core$empty = {
 	elapsed: 0.0,
 	start: _elm_lang$core$Maybe$Nothing,
 	frames: _elm_lang$core$Native_List.fromArray(
@@ -13809,61 +13851,62 @@ var _user$project$Style_Core$empty = {
 	interruption: _elm_lang$core$Native_List.fromArray(
 		[])
 };
-var _user$project$Style_Core$Model = F5(
+var _mdgriffith$elm_style_animation$Style_Core$Model = F5(
 	function (a, b, c, d, e) {
 		return {start: a, elapsed: b, frames: c, previous: d, interruption: e};
 	});
-var _user$project$Style_Core$Interruption = F2(
+var _mdgriffith$elm_style_animation$Style_Core$Interruption = F2(
 	function (a, b) {
 		return {at: a, frame: b};
 	});
-var _user$project$Style_Core$Keyframe = F3(
+var _mdgriffith$elm_style_animation$Style_Core$Keyframe = F3(
 	function (a, b, c) {
 		return {properties: a, delay: b, retarget: c};
 	});
-var _user$project$Style_Core$Targeted = F2(
+var _mdgriffith$elm_style_animation$Style_Core$Targeted = F2(
 	function (a, b) {
 		return {current: a, target: b};
 	});
-var _user$project$Style_Core$Tick = function (a) {
+var _mdgriffith$elm_style_animation$Style_Core$Tick = function (a) {
 	return {ctor: 'Tick', _0: a};
 };
-var _user$project$Style_Core$Interrupt = function (a) {
+var _mdgriffith$elm_style_animation$Style_Core$Interrupt = function (a) {
 	return {ctor: 'Interrupt', _0: a};
 };
-var _user$project$Style_Core$Queue = function (a) {
+var _mdgriffith$elm_style_animation$Style_Core$Queue = function (a) {
 	return {ctor: 'Queue', _0: a};
 };
-var _user$project$Style$renderAttr = function (_p0) {
+
+var _mdgriffith$elm_style_animation$Style$renderAttr = function (_p0) {
 	var _p1 = _p0;
 	var _p3 = _p1._0;
 	var _p2 = _elm_lang$core$List$head(_p3.frames);
 	if (_p2.ctor === 'Nothing') {
-		return _user$project$Style_PropertyHelpers$renderAttr(_p3.previous);
+		return _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderAttr(_p3.previous);
 	} else {
-		return _user$project$Style_PropertyHelpers$renderAttr(
-			A2(_user$project$Style_Core$bake, _p2._0, _p3.previous));
+		return _mdgriffith$elm_style_animation$Style_PropertyHelpers$renderAttr(
+			A2(_mdgriffith$elm_style_animation$Style_Core$bake, _p2._0, _p3.previous));
 	}
 };
-var _user$project$Style$render = function (_p4) {
+var _mdgriffith$elm_style_animation$Style$render = function (_p4) {
 	var _p5 = _p4;
 	var _p7 = _p5._0;
 	var _p6 = _elm_lang$core$List$head(_p7.frames);
 	if (_p6.ctor === 'Nothing') {
-		return _user$project$Style_PropertyHelpers$render(_p7.previous);
+		return _mdgriffith$elm_style_animation$Style_PropertyHelpers$render(_p7.previous);
 	} else {
-		return _user$project$Style_PropertyHelpers$render(
-			A2(_user$project$Style_Core$bake, _p6._0, _p7.previous));
+		return _mdgriffith$elm_style_animation$Style_PropertyHelpers$render(
+			A2(_mdgriffith$elm_style_animation$Style_Core$bake, _p6._0, _p7.previous));
 	}
 };
-var _user$project$Style$applyKeyframeOptions = function (options) {
+var _mdgriffith$elm_style_animation$Style$applyKeyframeOptions = function (options) {
 	var applyOpt = function (prop) {
 		var addOptions = function (a) {
 			var withEase = A2(
 				_elm_lang$core$Maybe$map,
 				function (ease) {
 					return _elm_lang$core$Native_Utils.update(
-						_user$project$Style_PropertyHelpers$emptyEasing,
+						_mdgriffith$elm_style_animation$Style_PropertyHelpers$emptyEasing,
 						{ease: ease});
 				},
 				options.easing);
@@ -13877,7 +13920,7 @@ var _user$project$Style$applyKeyframeOptions = function (options) {
 					if (_p9.ctor === 'Nothing') {
 						return _elm_lang$core$Maybe$Just(
 							_elm_lang$core$Native_Utils.update(
-								_user$project$Style_PropertyHelpers$emptyEasing,
+								_mdgriffith$elm_style_animation$Style_PropertyHelpers$emptyEasing,
 								{duration: _p10}));
 					} else {
 						return _elm_lang$core$Maybe$Just(
@@ -13906,7 +13949,7 @@ var _user$project$Style$applyKeyframeOptions = function (options) {
 		return _elm_lang$core$Native_Utils.update(
 			prop,
 			{
-				current: A2(_user$project$Style_PropertyHelpers$update, addOptions, prop.current)
+				current: A2(_mdgriffith$elm_style_animation$Style_PropertyHelpers$update, addOptions, prop.current)
 			});
 	};
 	var frame = options.frame;
@@ -13915,18 +13958,18 @@ var _user$project$Style$applyKeyframeOptions = function (options) {
 		frame,
 		{properties: newProperties});
 };
-var _user$project$Style$queue = {
+var _mdgriffith$elm_style_animation$Style$queue = {
 	frames: _elm_lang$core$Native_List.fromArray(
 		[]),
-	action: _user$project$Style_Core$Queue
+	action: _mdgriffith$elm_style_animation$Style_Core$Queue
 };
-var _user$project$Style$animate = {
+var _mdgriffith$elm_style_animation$Style$animate = {
 	frames: _elm_lang$core$Native_List.fromArray(
 		[]),
-	action: _user$project$Style_Core$Interrupt
+	action: _mdgriffith$elm_style_animation$Style_Core$Interrupt
 };
-var _user$project$Style$emptyKeyframeWithOptions = {frame: _user$project$Style_Core$emptyKeyframe, duration: _elm_lang$core$Maybe$Nothing, easing: _elm_lang$core$Maybe$Nothing, spring: _elm_lang$core$Maybe$Nothing};
-var _user$project$Style$andThen = function (preaction) {
+var _mdgriffith$elm_style_animation$Style$emptyKeyframeWithOptions = {frame: _mdgriffith$elm_style_animation$Style_Core$emptyKeyframe, duration: _elm_lang$core$Maybe$Nothing, easing: _elm_lang$core$Maybe$Nothing, spring: _elm_lang$core$Maybe$Nothing};
+var _mdgriffith$elm_style_animation$Style$andThen = function (preaction) {
 	return _elm_lang$core$Native_Utils.update(
 		preaction,
 		{
@@ -13934,10 +13977,10 @@ var _user$project$Style$andThen = function (preaction) {
 				_elm_lang$core$Basics_ops['++'],
 				preaction.frames,
 				_elm_lang$core$Native_List.fromArray(
-					[_user$project$Style$emptyKeyframeWithOptions]))
+					[_mdgriffith$elm_style_animation$Style$emptyKeyframeWithOptions]))
 		});
 };
-var _user$project$Style$updateOrCreate = F2(
+var _mdgriffith$elm_style_animation$Style$updateOrCreate = F2(
 	function (preaction, fn) {
 		return _elm_lang$core$Native_Utils.update(
 			preaction,
@@ -13947,7 +13990,7 @@ var _user$project$Style$updateOrCreate = F2(
 					if (_p13.ctor === '[]') {
 						return _elm_lang$core$Native_List.fromArray(
 							[
-								fn(_user$project$Style$emptyKeyframeWithOptions)
+								fn(_mdgriffith$elm_style_animation$Style$emptyKeyframeWithOptions)
 							]);
 					} else {
 						return _elm_lang$core$List$reverse(
@@ -13959,12 +14002,12 @@ var _user$project$Style$updateOrCreate = F2(
 				}()
 			});
 	});
-var _user$project$Style$spring = F2(
+var _mdgriffith$elm_style_animation$Style$spring = F2(
 	function (spring, action) {
 		var newSpring = _elm_lang$core$Maybe$Just(
 			{destination: 1.0, damping: spring.damping, stiffness: spring.stiffness});
 		return A2(
-			_user$project$Style$updateOrCreate,
+			_mdgriffith$elm_style_animation$Style$updateOrCreate,
 			action,
 			function (a) {
 				return _elm_lang$core$Native_Utils.update(
@@ -13972,10 +14015,10 @@ var _user$project$Style$spring = F2(
 					{spring: newSpring});
 			});
 	});
-var _user$project$Style$update = F2(
+var _mdgriffith$elm_style_animation$Style$update = F2(
 	function (styleUpdate, action) {
 		return A2(
-			_user$project$Style$updateOrCreate,
+			_mdgriffith$elm_style_animation$Style$updateOrCreate,
 			action,
 			function (kfWithOptions) {
 				var frame = kfWithOptions.frame;
@@ -13989,10 +14032,10 @@ var _user$project$Style$update = F2(
 					{frame: updatedFrame});
 			});
 	});
-var _user$project$Style$duration = F2(
+var _mdgriffith$elm_style_animation$Style$duration = F2(
 	function (dur, action) {
 		return A2(
-			_user$project$Style$updateOrCreate,
+			_mdgriffith$elm_style_animation$Style$updateOrCreate,
 			action,
 			function (a) {
 				return _elm_lang$core$Native_Utils.update(
@@ -14002,10 +14045,10 @@ var _user$project$Style$duration = F2(
 					});
 			});
 	});
-var _user$project$Style$delay = F2(
+var _mdgriffith$elm_style_animation$Style$delay = F2(
 	function (delay, action) {
 		return A2(
-			_user$project$Style$updateOrCreate,
+			_mdgriffith$elm_style_animation$Style$updateOrCreate,
 			action,
 			function (a) {
 				var frame = a.frame;
@@ -14017,10 +14060,10 @@ var _user$project$Style$delay = F2(
 					{frame: updatedFrame});
 			});
 	});
-var _user$project$Style$easing = F2(
+var _mdgriffith$elm_style_animation$Style$easing = F2(
 	function (ease, action) {
 		return A2(
-			_user$project$Style$updateOrCreate,
+			_mdgriffith$elm_style_animation$Style$updateOrCreate,
 			action,
 			function (a) {
 				return _elm_lang$core$Native_Utils.update(
@@ -14030,7 +14073,7 @@ var _user$project$Style$easing = F2(
 					});
 			});
 	});
-var _user$project$Style$to = F2(
+var _mdgriffith$elm_style_animation$Style$to = F2(
 	function (sty, action) {
 		var deduped = A3(
 			_elm_lang$core$List$foldr,
@@ -14040,9 +14083,9 @@ var _user$project$Style$to = F2(
 						_elm_lang$core$List$any,
 						function (y) {
 							return _elm_lang$core$Native_Utils.eq(
-								_user$project$Style_PropertyHelpers$id(x),
-								_user$project$Style_PropertyHelpers$id(y)) && (!_elm_lang$core$Native_Utils.eq(
-								_user$project$Style_PropertyHelpers$id(x),
+								_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(x),
+								_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(y)) && (!_elm_lang$core$Native_Utils.eq(
+								_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(x),
 								'transform'));
 						},
 						acc) ? acc : A2(_elm_lang$core$List_ops['::'], x, acc);
@@ -14055,12 +14098,12 @@ var _user$project$Style$to = F2(
 			function (prop) {
 				return {
 					target: prop,
-					current: _user$project$Style_PropertyHelpers$toDynamic(prop)
+					current: _mdgriffith$elm_style_animation$Style_PropertyHelpers$toDynamic(prop)
 				};
 			},
 			deduped);
 		return A2(
-			_user$project$Style$updateOrCreate,
+			_mdgriffith$elm_style_animation$Style$updateOrCreate,
 			action,
 			function (kfWithOptions) {
 				var frame = kfWithOptions.frame;
@@ -14072,11 +14115,11 @@ var _user$project$Style$to = F2(
 					{frame: updatedFrame});
 			});
 	});
-var _user$project$Style$set = F2(
+var _mdgriffith$elm_style_animation$Style$set = F2(
 	function (staticProps, action) {
-		var actionWithProps = A2(_user$project$Style$to, staticProps, action);
+		var actionWithProps = A2(_mdgriffith$elm_style_animation$Style$to, staticProps, action);
 		return A2(
-			_user$project$Style$updateOrCreate,
+			_mdgriffith$elm_style_animation$Style$updateOrCreate,
 			actionWithProps,
 			function (kfWithOpts) {
 				return _elm_lang$core$Native_Utils.update(
@@ -14090,19 +14133,19 @@ var _user$project$Style$set = F2(
 					});
 			});
 	});
-var _user$project$Style$KeyframeWithOptions = F4(
+var _mdgriffith$elm_style_animation$Style$KeyframeWithOptions = F4(
 	function (a, b, c, d) {
 		return {frame: a, duration: b, easing: c, spring: d};
 	});
-var _user$project$Style$PreAction = F2(
+var _mdgriffith$elm_style_animation$Style$PreAction = F2(
 	function (a, b) {
 		return {frames: a, action: b};
 	});
-var _user$project$Style$A = function (a) {
+var _mdgriffith$elm_style_animation$Style$A = function (a) {
 	return {ctor: 'A', _0: a};
 };
-var _user$project$Style$init = function (sty) {
-	var empty = _user$project$Style_Core$empty;
+var _mdgriffith$elm_style_animation$Style$init = function (sty) {
+	var empty = _mdgriffith$elm_style_animation$Style_Core$empty;
 	var deduped = A3(
 		_elm_lang$core$List$foldr,
 		F2(
@@ -14111,9 +14154,9 @@ var _user$project$Style$init = function (sty) {
 					_elm_lang$core$List$any,
 					function (y) {
 						return _elm_lang$core$Native_Utils.eq(
-							_user$project$Style_PropertyHelpers$id(x),
-							_user$project$Style_PropertyHelpers$id(y)) && (!_elm_lang$core$Native_Utils.eq(
-							_user$project$Style_PropertyHelpers$name(x),
+							_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(x),
+							_mdgriffith$elm_style_animation$Style_PropertyHelpers$id(y)) && (!_elm_lang$core$Native_Utils.eq(
+							_mdgriffith$elm_style_animation$Style_PropertyHelpers$name(x),
 							'transform'));
 					},
 					acc) ? acc : A2(_elm_lang$core$List_ops['::'], x, acc);
@@ -14121,223 +14164,350 @@ var _user$project$Style$init = function (sty) {
 		_elm_lang$core$Native_List.fromArray(
 			[]),
 		sty);
-	return _user$project$Style$A(
+	return _mdgriffith$elm_style_animation$Style$A(
 		_elm_lang$core$Native_Utils.update(
 			empty,
 			{previous: deduped}));
 };
-var _user$project$Style$on = F2(
+var _mdgriffith$elm_style_animation$Style$on = F2(
 	function (_p14, preaction) {
 		var _p15 = _p14;
 		var action = preaction.action(
-			A2(_elm_lang$core$List$map, _user$project$Style$applyKeyframeOptions, preaction.frames));
-		return _user$project$Style$A(
-			A2(_user$project$Style_Core$update, action, _p15._0));
+			A2(_elm_lang$core$List$map, _mdgriffith$elm_style_animation$Style$applyKeyframeOptions, preaction.frames));
+		return _mdgriffith$elm_style_animation$Style$A(
+			A2(_mdgriffith$elm_style_animation$Style_Core$update, action, _p15._0));
 	});
-var _user$project$Style$tick = F2(
+var _mdgriffith$elm_style_animation$Style$tick = F2(
 	function (time, _p16) {
 		var _p17 = _p16;
-		return _user$project$Style$A(
+		return _mdgriffith$elm_style_animation$Style$A(
 			A2(
-				_user$project$Style_Core$update,
-				_user$project$Style_Core$Tick(time),
+				_mdgriffith$elm_style_animation$Style_Core$update,
+				_mdgriffith$elm_style_animation$Style_Core$Tick(time),
 				_p17._0));
+	});
+
+var _user$project$Main$iconCache = _elm_lang$core$Native_List.fromArray(
+	['pencil', 'at', 'camera', 'bell', 'comment', 'bolt', 'ban', 'code']);
+var _user$project$Main$icons = A2(_elm_lang$core$List$take, 5, _user$project$Main$iconCache);
+var _user$project$Main$fanAngle = 0.11;
+var _user$project$Main$createSubmenu = F3(
+	function (icon, total, i) {
+		var adjustment = 0.5 - (((_elm_lang$core$Basics$toFloat(total) - 1) / 2.0) * _user$project$Main$fanAngle);
+		var angle = (_elm_lang$core$Basics$toFloat(i) * _user$project$Main$fanAngle) + adjustment;
+		return {
+			icon: icon,
+			style: _mdgriffith$elm_style_animation$Style$init(
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(_mdgriffith$elm_style_animation$Style_Properties$Rotate, angle, _mdgriffith$elm_style_animation$Style_Properties$Turn),
+						A2(_mdgriffith$elm_style_animation$Style_Properties$TranslateY, 0, _mdgriffith$elm_style_animation$Style_Properties$Px),
+						A2(_mdgriffith$elm_style_animation$Style_Properties$Rotate, -1 * angle, _mdgriffith$elm_style_animation$Style_Properties$Turn)
+					]))
+		};
 	});
 var _user$project$Main$init = {
 	ctor: '_Tuple2',
 	_0: {
-		style: A2(
-			_elm_lang$core$Debug$log,
-			'initial style',
-			_user$project$Style$init(
-				_elm_lang$core$Native_List.fromArray(
-					[
-						A2(_user$project$Style_Properties$Rotate, 0.0, _user$project$Style_Properties$Deg),
-						A2(_user$project$Style_Properties$TranslateY, 0.0, _user$project$Style_Properties$Px),
-						A2(_user$project$Style_Properties$TranslateX, 0.0, _user$project$Style_Properties$Px),
-						A2(_user$project$Style_Properties$Rotate, 0.0, _user$project$Style_Properties$Deg)
-					])))
+		open: false,
+		submenus: A2(
+			_elm_lang$core$List$indexedMap,
+			F2(
+				function (i, icon) {
+					return A3(
+						_user$project$Main$createSubmenu,
+						icon,
+						_elm_lang$core$List$length(_user$project$Main$icons),
+						i);
+				}),
+			_user$project$Main$icons),
+		style: _mdgriffith$elm_style_animation$Style$init(
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(_mdgriffith$elm_style_animation$Style_Properties$Rotate, -0.125, _mdgriffith$elm_style_animation$Style_Properties$Turn)
+				])),
+		message: _elm_lang$core$Maybe$Nothing
 	},
 	_1: _elm_lang$core$Platform_Cmd$none
 };
+var _user$project$Main$viewMessage = function (msg) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('message'),
+				_elm_lang$html$Html_Attributes$style(
+				_mdgriffith$elm_style_animation$Style$render(msg.style))
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html$text(msg.label)
+			]));
+};
 var _user$project$Main$update = F2(
-	function (action, model) {
-		var _p0 = action;
-		if (_p0.ctor === 'Transform') {
-			var style = A2(
-				_user$project$Style$on,
-				model.style,
-				A2(
-					_user$project$Style$to,
-					_elm_lang$core$Native_List.fromArray(
-						[
-							A2(_user$project$Style_Properties$Rotate, 0.0, _user$project$Style_Properties$Deg),
-							A2(_user$project$Style_Properties$TranslateY, 0.0, _user$project$Style_Properties$Px),
-							A2(_user$project$Style_Properties$Rotate, 0.0, _user$project$Style_Properties$Deg)
-						]),
-					A2(
-						_user$project$Style$delay,
-						1 * _elm_lang$core$Time$second,
-						_user$project$Style$andThen(
+	function (message, model) {
+		var _p0 = message;
+		switch (_p0.ctor) {
+			case 'Toggle':
+				if (model.open) {
+					var submenus = A2(
+						_elm_lang$core$List$indexedMap,
+						F2(
+							function (i, submenu) {
+								return _elm_lang$core$Native_Utils.update(
+									submenu,
+									{
+										style: A2(
+											_mdgriffith$elm_style_animation$Style$on,
+											submenu.style,
+											A2(
+												_mdgriffith$elm_style_animation$Style$to,
+												_elm_lang$core$Native_List.fromArray(
+													[
+														A2(_mdgriffith$elm_style_animation$Style_Properties$TranslateY, 0, _mdgriffith$elm_style_animation$Style_Properties$Px)
+													]),
+												A2(
+													_mdgriffith$elm_style_animation$Style$spring,
+													{stiffness: 400, damping: 28},
+													A2(
+														_mdgriffith$elm_style_animation$Style$delay,
+														(_elm_lang$core$Basics$toFloat(i) * 5.0e-2) * _elm_lang$core$Time$second,
+														_mdgriffith$elm_style_animation$Style$animate))))
+									});
+							}),
+						model.submenus);
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								submenus: submenus,
+								open: false,
+								style: A2(
+									_mdgriffith$elm_style_animation$Style$on,
+									model.style,
+									A2(
+										_mdgriffith$elm_style_animation$Style$to,
+										_elm_lang$core$Native_List.fromArray(
+											[
+												A2(_mdgriffith$elm_style_animation$Style_Properties$Rotate, -0.125, _mdgriffith$elm_style_animation$Style_Properties$Turn)
+											]),
+										A2(
+											_mdgriffith$elm_style_animation$Style$spring,
+											{stiffness: 500, damping: 30},
+											_mdgriffith$elm_style_animation$Style$animate)))
+							}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				} else {
+					var parentStyle = A2(
+						_mdgriffith$elm_style_animation$Style$on,
+						model.style,
+						A2(
+							_mdgriffith$elm_style_animation$Style$to,
+							_elm_lang$core$Native_List.fromArray(
+								[
+									A2(_mdgriffith$elm_style_animation$Style_Properties$Rotate, 0, _mdgriffith$elm_style_animation$Style_Properties$Turn)
+								]),
 							A2(
-								_user$project$Style$to,
+								_mdgriffith$elm_style_animation$Style$spring,
+								{stiffness: 500, damping: 30},
+								_mdgriffith$elm_style_animation$Style$animate)));
+					var submenus = A2(
+						_elm_lang$core$List$indexedMap,
+						F2(
+							function (i, submenu) {
+								return _elm_lang$core$Native_Utils.update(
+									submenu,
+									{
+										style: A2(
+											_mdgriffith$elm_style_animation$Style$on,
+											submenu.style,
+											A2(
+												_mdgriffith$elm_style_animation$Style$to,
+												_elm_lang$core$Native_List.fromArray(
+													[
+														A2(_mdgriffith$elm_style_animation$Style_Properties$TranslateY, 100, _mdgriffith$elm_style_animation$Style_Properties$Px)
+													]),
+												A2(
+													_mdgriffith$elm_style_animation$Style$spring,
+													{stiffness: 400, damping: 28},
+													A2(
+														_mdgriffith$elm_style_animation$Style$delay,
+														(_elm_lang$core$Basics$toFloat(i) * 2.5e-2) * _elm_lang$core$Time$second,
+														_mdgriffith$elm_style_animation$Style$animate))))
+									});
+							}),
+						model.submenus);
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{submenus: submenus, style: parentStyle, open: true}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				}
+			case 'ShowMessage':
+				var message = {
+					label: _p0._0,
+					style: _mdgriffith$elm_style_animation$Style$init(
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_mdgriffith$elm_style_animation$Style_Properties$Display(_mdgriffith$elm_style_animation$Style_Properties$Block),
+								_mdgriffith$elm_style_animation$Style_Properties$Opacity(0)
+							]))
+				};
+				var msgStyle = A2(
+					_mdgriffith$elm_style_animation$Style$on,
+					message.style,
+					A2(
+						_mdgriffith$elm_style_animation$Style$set,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_mdgriffith$elm_style_animation$Style_Properties$Display(_mdgriffith$elm_style_animation$Style_Properties$None)
+							]),
+						_mdgriffith$elm_style_animation$Style$andThen(
+							A2(
+								_mdgriffith$elm_style_animation$Style$to,
 								_elm_lang$core$Native_List.fromArray(
 									[
-										A2(_user$project$Style_Properties$Rotate, 380, _user$project$Style_Properties$Deg)
+										_mdgriffith$elm_style_animation$Style_Properties$Opacity(0)
 									]),
-								A2(
-									_user$project$Style$duration,
-									0.7 * _elm_lang$core$Time$second,
-									_user$project$Style$andThen(
-										A2(
-											_user$project$Style$update,
-											F2(
-												function (i, prop) {
-													var _p1 = prop;
-													if (_p1.ctor === 'Rotate') {
-														return _elm_lang$core$Native_Utils.eq(i, 2) ? A2(_user$project$Style_Properties$Rotate, 360, _p1._1) : prop;
-													} else {
-														return prop;
-													}
-												}),
-											A2(
-												_user$project$Style$duration,
-												0.7 * _elm_lang$core$Time$second,
-												_user$project$Style$andThen(
-													A2(
-														_user$project$Style$to,
-														_elm_lang$core$Native_List.fromArray(
-															[
-																A2(_user$project$Style_Properties$TranslateY, -200, _user$project$Style_Properties$Px)
-															]),
-														A2(
-															_user$project$Style$duration,
-															0.7 * _elm_lang$core$Time$second,
-															_user$project$Style$andThen(
-																A2(
-																	_user$project$Style$to,
-																	_elm_lang$core$Native_List.fromArray(
-																		[
-																			A2(_user$project$Style_Properties$Rotate, 20, _user$project$Style_Properties$Deg)
-																		]),
-																	A2(_user$project$Style$duration, 0.5 * _elm_lang$core$Time$second, _user$project$Style$animate)))))))))))))));
-			return {
-				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					model,
-					{style: style}),
-				_1: _elm_lang$core$Platform_Cmd$none
-			};
-		} else {
-			return {
-				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					model,
-					{
-						style: A2(_user$project$Style$tick, _p0._0, model.style)
-					}),
-				_1: _elm_lang$core$Platform_Cmd$none
-			};
+								_mdgriffith$elm_style_animation$Style$andThen(
+									A2(
+										_mdgriffith$elm_style_animation$Style$to,
+										_elm_lang$core$Native_List.fromArray(
+											[
+												_mdgriffith$elm_style_animation$Style_Properties$Opacity(1)
+											]),
+										_mdgriffith$elm_style_animation$Style$animate))))));
+				var msg = _elm_lang$core$Native_Utils.update(
+					message,
+					{style: msgStyle});
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							message: _elm_lang$core$Maybe$Just(msg)
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			default:
+				var _p1 = _p0._0;
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							style: A2(_mdgriffith$elm_style_animation$Style$tick, _p1, model.style),
+							message: A2(
+								_elm_lang$core$Maybe$map,
+								function (msg) {
+									var newMsgStyle = A2(_mdgriffith$elm_style_animation$Style$tick, _p1, msg.style);
+									return _elm_lang$core$Native_Utils.update(
+										msg,
+										{style: newMsgStyle});
+								},
+								model.message),
+							submenus: A2(
+								_elm_lang$core$List$map,
+								function (submenu) {
+									var newStyle = A2(_mdgriffith$elm_style_animation$Style$tick, _p1, submenu.style);
+									return _elm_lang$core$Native_Utils.update(
+										submenu,
+										{style: newStyle});
+								},
+								model.submenus)
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
 		}
 	});
-var _user$project$Main$Model = function (a) {
-	return {style: a};
-};
+var _user$project$Main$Model = F4(
+	function (a, b, c, d) {
+		return {submenus: a, style: b, open: c, message: d};
+	});
+var _user$project$Main$Submenu = F2(
+	function (a, b) {
+		return {style: a, icon: b};
+	});
+var _user$project$Main$Message = F2(
+	function (a, b) {
+		return {label: a, style: b};
+	});
 var _user$project$Main$Animate = function (a) {
 	return {ctor: 'Animate', _0: a};
 };
 var _user$project$Main$subscriptions = function (model) {
 	return _elm_lang$animation_frame$AnimationFrame$times(_user$project$Main$Animate);
 };
-var _user$project$Main$Transform = {ctor: 'Transform'};
-var _user$project$Main$view = function (model) {
-	var renderToString = function (style) {
-		return _elm_lang$core$String$concat(
-			A2(
-				_elm_lang$core$List$map,
-				function (_p2) {
-					var _p3 = _p2;
-					return A2(
-						_elm_lang$core$Basics_ops['++'],
-						_p3._0,
-						A2(_elm_lang$core$Basics_ops['++'], ': ', _p3._1));
-				},
-				style));
-	};
-	var boxStyle = _elm_lang$core$Native_List.fromArray(
-		[
-			{ctor: '_Tuple2', _0: 'position', _1: 'relative'},
-			{ctor: '_Tuple2', _0: 'left', _1: '0px'},
-			{ctor: '_Tuple2', _0: 'top', _1: '0px'},
-			{ctor: '_Tuple2', _0: 'width', _1: '300px'},
-			{ctor: '_Tuple2', _0: 'margin-top', _1: '250px'},
-			{ctor: '_Tuple2', _0: 'margin-left', _1: 'auto'},
-			{ctor: '_Tuple2', _0: 'margin-right', _1: 'auto'},
-			{ctor: '_Tuple2', _0: 'padding', _1: '25px'},
-			{ctor: '_Tuple2', _0: 'text-align', _1: 'center'},
-			{ctor: '_Tuple2', _0: 'border-radius', _1: '5px'},
-			{ctor: '_Tuple2', _0: 'background-color', _1: '#AAA'},
-			{ctor: '_Tuple2', _0: 'cursor', _1: 'pointer'}
-		]);
+var _user$project$Main$ShowMessage = function (a) {
+	return {ctor: 'ShowMessage', _0: a};
+};
+var _user$project$Main$viewSubmenu = function (submenu) {
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
 			[
-				_elm_lang$html$Html_Events$onClick(_user$project$Main$Transform)
+				_elm_lang$html$Html_Attributes$class('child-button'),
+				_elm_lang$html$Html_Attributes$style(
+				_mdgriffith$elm_style_animation$Style$render(submenu.style)),
+				_elm_lang$html$Html_Events$onClick(
+				_user$project$Main$ShowMessage(submenu.icon))
 			]),
 		_elm_lang$core$Native_List.fromArray(
 			[
 				A2(
-				_elm_lang$html$Html$div,
+				_elm_lang$html$Html$i,
 				_elm_lang$core$Native_List.fromArray(
 					[
-						_elm_lang$html$Html_Attributes$style(
-						A2(
-							_elm_lang$core$Basics_ops['++'],
-							boxStyle,
-							_user$project$Style$render(model.style)))
+						_elm_lang$html$Html_Attributes$class(
+						A2(_elm_lang$core$Basics_ops['++'], 'fa  fa-lg fa-', submenu.icon))
 					]),
 				_elm_lang$core$Native_List.fromArray(
-					[
-						A2(
-						_elm_lang$html$Html$h1,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html_Attributes$style(
-								_elm_lang$core$Native_List.fromArray(
-									[
-										{ctor: '_Tuple2', _0: 'padding', _1: '25px'}
-									]))
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html$text('Click to see a Stacked Transform')
-							]))
-					])),
-				A2(
-				_elm_lang$html$Html$small,
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Attributes$style(
-						_elm_lang$core$Native_List.fromArray(
-							[
-								{ctor: '_Tuple2', _0: 'position', _1: 'fixed'},
-								{ctor: '_Tuple2', _0: 'left', _1: '50px'},
-								{ctor: '_Tuple2', _0: 'top', _1: '50px'}
-							]))
-					]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text(
-						renderToString(
-							_user$project$Style$render(model.style)))
-					]))
+					[]))
 			]));
+};
+var _user$project$Main$Toggle = {ctor: 'Toggle'};
+var _user$project$Main$view = function (model) {
+	var submenus = A2(_elm_lang$core$List$map, _user$project$Main$viewSubmenu, model.submenus);
+	var message = A2(
+		_elm_lang$core$Maybe$withDefault,
+		A2(
+			_elm_lang$html$Html$div,
+			_elm_lang$core$Native_List.fromArray(
+				[]),
+			_elm_lang$core$Native_List.fromArray(
+				[])),
+		A2(_elm_lang$core$Maybe$map, _user$project$Main$viewMessage, model.message));
+	var icon = A2(
+		_elm_lang$html$Html$i,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('fa fa-close fa-3x'),
+				_elm_lang$html$Html_Attributes$style(
+				_mdgriffith$elm_style_animation$Style$render(model.style))
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[]));
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('main-button'),
+				_elm_lang$html$Html_Events$onClick(_user$project$Main$Toggle)
+			]),
+		A2(
+			_elm_lang$core$List_ops['::'],
+			icon,
+			A2(_elm_lang$core$List_ops['::'], message, submenus)));
 };
 var _user$project$Main$main = {
 	main: _elm_lang$html$Html_App$program(
 		{init: _user$project$Main$init, view: _user$project$Main$view, update: _user$project$Main$update, subscriptions: _user$project$Main$subscriptions})
 };
+
 var Elm = {};
 Elm['Main'] = Elm['Main'] || {};
 _elm_lang$core$Native_Platform.addPublicModule(Elm['Main'], 'Main', typeof _user$project$Main$main === 'undefined' ? null : _user$project$Main$main);
@@ -14371,4 +14541,4 @@ for (var publicModule in Elm)
 }
 
 }).call(this);
-</script></head><body><script type="text/javascript">Elm.Main.fullscreen()</script></body></html>
+
