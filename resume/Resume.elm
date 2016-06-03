@@ -37,7 +37,7 @@ Matthew Griffith
 > 
 > I developed a prototype API for them using `Python`, `Flask`, and `Postgres`.
 >
-> As more developers were brought on I transitioned to working on Operations, establishing deployment and development pipelines on `Google Compute` using `Docker` and `Kubernetes`.
+> As more developers were brought on, I transitioned to working on Operations, establishing deployment and development pipelines on `Google Compute` using `Docker` and `Kubernetes`.
 
 
 __Evotec__ • _Data Scientist, 2008-2016_
@@ -56,16 +56,16 @@ __Songwise__ • _Personal Project.  Hopefully Future Business._
 
 > _A web project to interactively visualize music on a fretboard._
 > 
-> _The server written in `Haskell` using the `Yesod` framework. I've written a Guitar Tablature parser using `Haskell` and parser combinators from the `Parsec` Library._ 
+> _The server is written in `Haskell` using the `Yesod` framework. I've written a Guitar Tablature parser using `Haskell` and parser combinators from the `Parsec` Library._ 
 >
-> _The entire frontend including fretboard animations, and music theory visualizations is written using `Elm`._
+> _The entire frontend, including fretboard animations and music theory visualizations, is written using `Elm`._
 
 
 [__Elm Style Animation__](https://github.com/mdgriffith/elm-style-animation)
 
-> _`Elm` is a recent language that targets the browser by compiling into Javascript. It has many of the desirable characteristics of Haskell though has made prominent efforts to be more approachable._
+> _`Elm` is a recent language that targets the browser by compiling into Javascript. It has many of the desirable characteristics of Haskell though is much more approachable._
 >
-> _I developed an open source keyframe animation library for Elm to be used for user interface design as well as for browser games.  Complex animations are easily expressed, especially compared to existing javascript animation libraries._
+> _I developed an open source keyframe animation library for Elm to be used for user interface design as well as for browser games.  Complex animations are easily expressed, especially compared to existing Javascript animation libraries._
 > 
 > _It was [very](https://groups.google.com/d/msg/elm-discuss/SgyCIFBmKwg/lMHbI-DbCwAJ) [well](https://groups.google.com/d/msg/elm-discuss/jAtEHcJfTs8/l8tnEF2NAQAJ) [received](https://groups.google.com/d/msg/elm-discuss/E2F-y89IEN0/JCalDy9ABAAJ) when it was released._
 > 
@@ -79,7 +79,7 @@ __Songwise__ • _Personal Project.  Hopefully Future Business._
 
 [__Mechanical Elephant__](http://mechanical-elephant.com/) • _Blog_
 
-> _I started a small technology and design blog.  It's still woefully underpopulated, though it's first article received 20k views._
+> _I started a small technology and design blog.  It's still woefully underpopulated, though its first article received 20K views._
 >
 > Prominent Article - [Becoming Productive in Haskell](http://mechanical-elephant.com/thoughts/2015-04-20-becoming-productive-in-haskell/)
 
