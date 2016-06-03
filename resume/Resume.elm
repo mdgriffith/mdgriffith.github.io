@@ -20,13 +20,13 @@ view model =
 Matthew Griffith
 ================
 
-matt@mechanical-elephant.com • [pdf version](https://mdgriffith.github.io/resume/Matthew Griffith - Resume.pdf)
+matt@mechanical-elephant.com • (646) 470 8636 • [pdf version](https://mdgriffith.github.io/resume/Matthew Griffith - Resume.pdf)
 
 [http://github.com/mdgriffith](http://github.com/mdgriffith) 
 
 _I am a programmer with many interests and a passion for making things. I view programming as my tool to dive deeper into the subjects that I love, be it art, music, design, or biology._
 
-_I am fluent in `Python`, `Javascript`, `Elm`, and `Haskell`._
+_I am fluent in `Python`, `Javascript`, `Elm`, and `Haskell`, as well as many other technologies._
 
 _This position at Cornell Tech interests me greatly.  Seeing a number of student presentations on demo day and speaking with Arnaud Sahuguet about some of the subject matter of faculty research has convinced me that Cornell Tech is a fast growing place of innovation, focusing on interesting, relevant problems._
 
@@ -37,6 +37,14 @@ _I flourish when given creative license, interesting subject matter, and smart p
 <span class="strikethrough">History</span>
 -------
 
+__Evotec__ • _Data Scientist, 2008-2016_
+
+> _Evotec is a biotech company though I worked in the compound management area, developing cheminformatics infrastructure and working on chemical data enrichment.  Our most public compound set was the NIH's Molecular Library Small Molecule Repository of 440K compounds, which can be [found on Pubchem](https://www.ncbi.nlm.nih.gov/pcsubstance?term=MLSMR)_
+>
+> At Evotec I developed a proprietary `Python` library for Datamining the public NCBI databases. We used Jupyter Notebooks for public data retrieval and extraction, which sometimes involved usage of `Python's natural language processing` libraries to extract data from articles and papers.
+> 
+> Later in my employment at Evotec I created a pilot program to use a Graph Database(`Neo4j`) to capture relationships between published papers, our compounds, and other interesting datasets.  Finally, I used `D3.js` to create visually reviewable reports of outgoing shipments and datasets.
+
 
 [__Ally Labs__](http://ally.is/) • _Contractor, 2016_
 
@@ -46,14 +54,6 @@ _I flourish when given creative license, interesting subject matter, and smart p
 >
 > As more developers were brought on, I transitioned to working on Operations, establishing deployment and development pipelines on `Google Compute` using `Docker` and `Kubernetes`.
 
-
-__Evotec__ • _Data Scientist, 2008-2016_
-
-> _Evotec is a biotech company though I worked in the compound management area, developing cheminformatics infrastructure and working on chemical data enrichment.  Our most public compound set was the NIH's Molecular Library Small Molecule Repository of 440K compounds, which can be [found on Pubchem](https://www.ncbi.nlm.nih.gov/pcsubstance?term=MLSMR)_
->
-> At Evotec I developed a proprietary `Python` library for Datamining the public NCBI databases. We used Jupyter Notebooks for public data retrieval and extraction, which sometimes involved usage of `Python's natural language processing` libraries to extract data from articles and papers.
-> 
-> Later in my employment at Evotec I created a pilot program to use a Graph Database(`Neo4j`) to capture relationships between published papers, our compounds, and other interesting datasets.  Finally, I used `D3.js` to create visually reviewable reports of outgoing shipments and datasets.
 
 
 __Songwise__ • _Personal Project.  Hopefully Future Business._
@@ -96,7 +96,7 @@ __Songwise__ • _Personal Project.  Hopefully Future Business._
 
 __[Fill in the Blank Media](http://www.fillintheblankmedia.com/)__ • _Example from Freelance Work_
 
-> _This is a videographer's website using the `Django` framework, and `Postgres`.  Behind the scenes it has batch video transcoding using a message queue and ffmpeg, which saves the owners some time in uploading._
+> _This is a videographer's website using the `Django` framework, and `Postgres`.  Behind the scenes it has batch video transcoding using a message queue and ffmpeg._
 
 
 __University of California Santa Cruz__
