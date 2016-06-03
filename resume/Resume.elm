@@ -20,10 +20,9 @@ view model =
 Matthew Griffith
 ================
 
-> __
+> _I am a programmer with many interests.  I view programming as my tool to dive deeper into the subjects that I love, be it art, music, design, or biology.  My passion is in making things._
 >
-> _I consider myself fluent in `Python`, `Javascript`, `Elm`, and `Haskell`, though with less experience in some of the deeper aspects of Haskell.
-> _
+> _I consider myself fluent in `Python`, `Javascript`, `Elm`, and `Haskell`, though with less experience in some of the deeper aspects of Haskell._
 >
 > _This position at Cornell Tech interests me greatly.  I flourish when given creative license, interesting subject matter, and smart people to collaborate with.  Being able to work on varied projects is incredibly intriguing and something I believe I am well suited for._
 
