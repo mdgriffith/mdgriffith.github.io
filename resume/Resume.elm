@@ -26,11 +26,11 @@ matt@mechanical-elephant.com • [pdf version](https://mdgriffith.github.io/resu
 
 _I am a programmer with many interests and a passion for making things. I view programming as my tool to dive deeper into the subjects that I love, be it art, music, design, or biology._
 
-_I consider myself fluent in `Python`, `Javascript`, `Elm`, and `Haskell`, though with less experience in some of the deeper aspects of Haskell._
+_I am fluent in `Python`, `Javascript`, `Elm`, and `Haskell`._
 
 _This position at Cornell Tech interests me greatly.  Seeing a number of student presentations on demo day and speaking with Arnaud Sahuguet about some of the subject matter of faculty research has convinced me that Cornell Tech is a fast growing place of innovation, focusing on interesting, relevant problems._
 
-_I flourish when given creative license, interesting subject matter, and smart people to collaborate with.  Being able to work on varied projects intrigues me and is something I believe I am well suited for._
+_I flourish when given creative license, interesting subject matter, and smart people to collaborate with.  Being able to work on varied projects intrigues me and is something I am well suited for._
 
 
 
@@ -90,13 +90,14 @@ __Songwise__ • _Personal Project.  Hopefully Future Business._
 
 [__The Wise Manatee__](http://wise-manatee.com) • _Web Experiment_
 
->  _This was an art installation I created using `ReactJS`.  It is a manatee that gives encouraging, sometimes funny programming advice.  Mostly people just think it's bizarre.  And, of course, I agree._
+>  _This was an art installation I created using `ReactJS`.  It is a manatee that gives encouraging, sometimes funny programming advice._
 
 
 
 __[Fill in the Blank Media](http://www.fillintheblankmedia.com/)__ • _Example from Freelance Work_
 
-> _A videographer's website using the `Django` framework, and `Postgres`.  Behind the scenes it has batch video transcoding using a message queue and ffmpeg, which saves the owners some time in uploading._
+> _This is a videographer's website using the `Django` framework, and `Postgres`.  Behind the scenes it has batch video transcoding using a message queue and ffmpeg, which saves the owners some time in uploading._
+
 
 __University of California Santa Cruz__
 
