@@ -24,13 +24,13 @@ matt@mechanical-elephant.com • [pdf version](https://mdgriffith.github.io/resu
 
 [http://github.com/mdgriffith](http://github.com/mdgriffith) 
 
-> _I am a programmer with many interests and a passion for making things. I view programming as my tool to dive deeper into the subjects that I love, be it art, music, design, or biology._
->
-> _I consider myself fluent in `Python`, `Javascript`, `Elm`, and `Haskell`, though with less experience in some of the deeper aspects of Haskell._
->
-> _This position at Cornell Tech interests me greatly.  Seeing a number of student presentations on demo day and speaking with Arnaud Sahuguet about some of the subject matter of faculty research has convinced me that Cornell Tech is a fast growing place of innovation, focusing on interesting, relevant problems._
->
-> _I flourish when given creative license, interesting subject matter, and smart people to collaborate with.  Being able to work on varied projects intrigues me and is something I believe I am well suited for._
+_I am a programmer with many interests and a passion for making things. I view programming as my tool to dive deeper into the subjects that I love, be it art, music, design, or biology._
+
+_I consider myself fluent in `Python`, `Javascript`, `Elm`, and `Haskell`, though with less experience in some of the deeper aspects of Haskell._
+
+_This position at Cornell Tech interests me greatly.  Seeing a number of student presentations on demo day and speaking with Arnaud Sahuguet about some of the subject matter of faculty research has convinced me that Cornell Tech is a fast growing place of innovation, focusing on interesting, relevant problems._
+
+_I flourish when given creative license, interesting subject matter, and smart people to collaborate with.  Being able to work on varied projects intrigues me and is something I believe I am well suited for._
 
 
 
