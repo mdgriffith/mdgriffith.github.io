@@ -63,7 +63,7 @@ __Songwise__ • _Personal Project.  Hopefully Future Business._
 
 [__Elm Style Animation__](https://github.com/mdgriffith/elm-style-animation)
 
-> _`Elm` is a recent language that targets the browser by compiling into Javacript. It has many of the desirable characteristics of Haskell though has made prominent efforts to be more approachable._
+> _`Elm` is a recent language that targets the browser by compiling into Javascript. It has many of the desirable characteristics of Haskell though has made prominent efforts to be more approachable._
 >
 > _I developed an open source keyframe animation library for Elm to be used for user interface design as well as for browser games.  Complex animations are easily expressed, especially compared to existing javascript animation libraries._
 > 
