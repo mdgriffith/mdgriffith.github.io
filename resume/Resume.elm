@@ -24,9 +24,9 @@ matt@mechanical-elephant.com • (646) 470 8636 • [pdf version](https://mdgrif
 
 [http://github.com/mdgriffith](http://github.com/mdgriffith) 
 
-_I am a programmer with many interests and a passion for making things. I view programming as my tool to dive deeper into the subjects that I love, be it art, music, design, or biology._
+_I am a programmer with many interests and a passion for making things. I view programming as my tool to dive deeper into the subjects that I love, be it art, music, design, or science._
 
-_I am fluent in `Python`, `Javascript`, `Elm`, and `Haskell`, as well as many other technologies._
+_I am fluent in `Python`, `Javascript`, `Elm`, and `Haskell`.  In operations I've worked with `Google Compute`, `Docker`, and `Kubernetes`.  I'm very comfortable with `Unix` based systems, `Git`, and a variety of databases such as `Postgres`, and `Neo4j`._
 
 _This position at Cornell Tech interests me greatly.  Seeing a number of student presentations on demo day and speaking with Arnaud Sahuguet about some of the subject matter of faculty research has convinced me that Cornell Tech is a fast growing place of innovation, focusing on interesting, relevant problems._
 
