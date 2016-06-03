@@ -20,18 +20,25 @@ view model =
 Matthew Griffith
 ================
 
+matt@mechanical-elephant.com • [pdf version](https://mdgriffith.github.io/resume/Matthew Griffith - Resume.pdf)
+
+[http://github.com/mdgriffith](http://github.com/mdgriffith) 
+
 > _I am a programmer with many interests and a passion for making things. I view programming as my tool to dive deeper into the subjects that I love, be it art, music, design, or biology._
 >
 > _I consider myself fluent in `Python`, `Javascript`, `Elm`, and `Haskell`, though with less experience in some of the deeper aspects of Haskell._
 >
-> _This position at Cornell Tech interests me greatly.  I flourish when given creative license, interesting subject matter, and smart people to collaborate with.  Being able to work on varied projects intrigues me and is something I believe I am well suited for._
+> _This position at Cornell Tech interests me greatly.  Seeing a number of student presentations on demo day and speaking with Arnaud Sahuguet about some of the subject matter of faculty research has convinced me that Cornell Tech is a fast growing place of innovation, focusing on interesting, relevant problems._
+>
+> _I flourish when given creative license, interesting subject matter, and smart people to collaborate with.  Being able to work on varied projects intrigues me and is something I believe I am well suited for._
+
 
 
 <span class="strikethrough">History</span>
 -------
 
 
-[__Ally Labs__](http://ally.is/) • _contractor, 2016_
+[__Ally Labs__](http://ally.is/) • _Contractor, 2016_
 
 > _Ally is a recent startup that focuses on passive audio analysis for elderly care._
 > 
@@ -42,32 +49,29 @@ Matthew Griffith
 
 __Evotec__ • _Data Scientist, 2008-2016_
 
-> _Evotec is a biotech company based in Germany.  I worked in the compound management area, which is located in South San Francisco._
+> _Evotec is a biotech company though I worked in the compound management area, developing cheminformatics infrastructure and working on chemical data enrichment.  Our most public compound set was the NIH's Molecular Library Small Molecule Repository of 440K compounds, which can be [found on Pubchem](https://www.ncbi.nlm.nih.gov/pcsubstance?term=MLSMR)_
 >
-> * Developed a proprietary `Python` library for Datamining the NCBI databases.
-> * Implemented a chemical structure canonicalization process which allows a compound to be indexed in a database.
-> * Utilized Jupyter Notebooks for public data retrieval and extraction.
-> * Some usage of `Python's Natural Language Processing` libraries
-> * Created a pilot program to use a Graph Database(`Neo4j`) to capture relationships between published papers, our compounds, and other interesting datasets.
-> * Used `D3.js` to create visually reviewable reports of outgoing shipments and datasets.
+> At Evotec I developed a proprietary `Python` library for Datamining the public NCBI databases. We used Jupyter Notebooks for public data retrieval and extraction, which sometimes involved usage of `Python's natural language processing` libraries to extract data from articles and papers.
+> 
+> Later in my employment at Evotec I created a pilot program to use a Graph Database(`Neo4j`) to capture relationships between published papers, our compounds, and other interesting datasets.  Finally, I used `D3.js` to create visually reviewable reports of outgoing shipments and datasets.
 
 
 __Songwise__ • _Personal Project.  Hopefully Future Business._
 
-> _A web project to interactively visualize music on a fretboard._
+> _Songwise is a web project to teach music to guitarists by creating interactive visualizations on a fretboard._
 > 
-> _The server is written in `Haskell` using the `Yesod` framework. I've written a Guitar Tablature parser using `Haskell` and parser combinators from the `Parsec` Library._ 
+> The server is written in `Haskell` using the `Yesod` framework. I've written a Guitar Tablature parser using `Haskell` and parser combinators from the `Parsec` Library.
 >
-> _The entire frontend, including fretboard animations and music theory visualizations, is written using `Elm`._
+> The entire frontend, including fretboard animations and music theory visualizations, is written using `Elm`.
 
 
-[__Elm Style Animation__](https://github.com/mdgriffith/elm-style-animation)
+[__Elm Style Animation__](https://github.com/mdgriffith/elm-style-animation) • _Open Source Elm Library_
 
 > _`Elm` is a recent language that targets the browser by compiling into Javascript. It has many of the desirable characteristics of Haskell though is much more approachable._
 >
-> _I developed an open source keyframe animation library for Elm to be used for user interface design as well as for browser games.  Complex animations are easily expressed, especially compared to existing Javascript animation libraries._
+> I developed an open source keyframe animation library for Elm to be used for user interface design as well as for browser games.  Complex animations are easily expressed, especially compared to existing Javascript animation libraries.
 > 
-> _It was [very](https://groups.google.com/d/msg/elm-discuss/SgyCIFBmKwg/lMHbI-DbCwAJ) [well](https://groups.google.com/d/msg/elm-discuss/jAtEHcJfTs8/l8tnEF2NAQAJ) [received](https://groups.google.com/d/msg/elm-discuss/E2F-y89IEN0/JCalDy9ABAAJ) when it was released._
+> It was [very](https://groups.google.com/d/msg/elm-discuss/SgyCIFBmKwg/lMHbI-DbCwAJ) [well](https://groups.google.com/d/msg/elm-discuss/jAtEHcJfTs8/l8tnEF2NAQAJ) [received](https://groups.google.com/d/msg/elm-discuss/E2F-y89IEN0/JCalDy9ABAAJ) when it was released.
 > 
 > Some Examples
 >
@@ -86,7 +90,7 @@ __Songwise__ • _Personal Project.  Hopefully Future Business._
 
 [__The Wise Manatee__](http://wise-manatee.com) • _Web Experiment_
 
->  _This was an art installation I created using ReactJS.  It is a manatee that gives encouraging, sometimes funny programming advice.  Mostly people just think it's bizarre.  And, of course, I agree._
+>  _This was an art installation I created using `ReactJS`.  It is a manatee that gives encouraging, sometimes funny programming advice.  Mostly people just think it's bizarre.  And, of course, I agree._
 
 
 
@@ -98,7 +102,7 @@ __University of California Santa Cruz__
 
 >  _Bachelors of Science in Biology_
 >
-> _Used `PERL` to interpret Nuclear Magnetic Resonance data. This is data that can be used to reconstruct a chemical structure based on magnetic vibrations in certain atoms._
+> _One of my first projects was to create a visualizer for Nuclear Magnetic Resonance data in `PERL`.  Nuclear Magnetic Resonance data is generally used to reconstruct a chemical structure based on magnetic vibrations in certain atoms._
 
 
 
@@ -107,7 +111,7 @@ __University of California Santa Cruz__
 
 __Rockclimbing__
 
-> _I find rockclimbing to be great complementary to programming.  Being able to step away from the computer, engage in a different, physical puzzle, and then return to the computer, turns out to be very useful in solving heavy problems.  _
+> _I find rockclimbing to be great complement to programming.  Being able to step away from the computer, engage in a different, physical puzzle, and then return to the computer turns out to be very useful in solving heavy problems.  _
 
 __Music__
 
@@ -115,7 +119,7 @@ __Music__
 
 __Aquaculture__
 
-> _Going back to my degree in biology I have an interest in the environment and biological processes.  More recently I've been interested in developments in aquaculture such as those [detailed in this article](https://medium.com/invironment/an-army-of-ocean-farmers-on-the-frontlines-of-the-blue-green-economic-revolution-d5ae171285a3#.i8ephj9sw)._
+> _Going back to my degree in Biology, I have an interest in the environment and biological processes.  More recently I've been interested in developments in aquaculture such as those [detailed in this article](https://medium.com/invironment/an-army-of-ocean-farmers-on-the-frontlines-of-the-blue-green-economic-revolution-d5ae171285a3#.i8ephj9sw)._
 
 __Cryptocurrencies__
 
