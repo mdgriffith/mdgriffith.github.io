@@ -1,0 +1,136 @@
+
+| title
+    Matthew Griffith 
+
+
+matt@mechanical-elephant.com • (646) 470 8636
+
+I am fluent in *Python*, *Javascript*, *Elm*, and *Elixir*, and proficient in *Haskell*. More recently I've been experimenting in *Rust*. In operations I've worked with *Google Compute*, *AWS*, *Docker*, and *Kubernetes*. I'm comfortable with Unix based systems, and databases such as *Postgres*, and *Neo4j*.
+
+I enjoy programming in my free time, as well as rock climbing, and playing guitar.
+
+I prioritize learning, and creating robust solutions to real problems.
+
+
+| header
+    Employment
+
+
+*Cornell Tech* -- Tech Lead 2016--2018
+
+I am currently a research engineer and *Tech Lead* for a number of projects at Cornell Tech.
+
+| list
+    -- `Microdata Core` -- *Elixir*, *Postgres*, *Docker*
+
+        A data--minimization service which allows apps to request fine-grained data from existing data sources.  For example, instead of requiring access to read your entire email, an app could request only a subset taht matches a certain criteria. 
+        
+        This included developing a custom permissions system based on an implementation of [Avenance Tags](https://www.cs.cornell.edu/fbs/publications/avenanceHotPET.pdf).
+
+    -- `Campus Location Service` -- *Python*, *Django*, *Postgres*, *Docker*
+
+        An OAuth API to provide *WiFi-based location* when you are on the Cornell Tech Campus.
+
+    -- `Science Table` -- *Postgres FDW*, *Python*
+
+        Expose public science database APIs like *PubChem* through a *Postgres FDW* so they can be queried as if they were a table in the database.
+
+
+*Evotec* -- Data Scientist, 2008--2016
+
+Evotec managed large repositories of research chemicals, most notably the /Molecular Libraries Small Molecule Respository/.
+
+I handled creation and curation of high value data sets.  Mostly this meant improving the quality of the Chemical data and to relate that to known Biological data in the PubMed, FDA, and MeSH public databases.
+
+
+| list
+    -- `PubQuery` -- *Python*
+
+        A Python library for composing queries to *PubChem* and *PubMed*.
+
+    -- `Annotation Database` -- *Neo4j* (graph database)
+
+        An internal database I created to help in creation and curation of high value datasets.
+
+
+
+| header
+    Open Source Projects
+
+
+/I've created a number of open source projects, mostly in the *Elm* programming language.  While my recent focus has been on *Elm*, I enjoy many technologies./
+
+
+| list
+    -- [`elm-ui`](https://github.com/mdgriffith/elm-ui) 
+
+        I built an alternative to CSS which avoids many of the pitfalls that makes CSS hard to maintain and refactor on big projects.  This is my most successful open source project and is in production for a number of companies.
+
+        *Talks On This Library*
+
+        -> [Building a Better Design Toolkit](https://www.youtube.com/watch?v=Ie-gqwSHQr0) -- /ElmConf, 2018/ 
+        -> [CSS as Bytecode](https://www.youtube.com/watch?v=bt1TzVngOqY) -- /ReactiveConf, 2017/ -- /by Richard Feldman/
+        -> [Understanding Style](https://www.youtube.com/watch?v=Nf4rElfA8SE) -- /Elm Europe, 2017/ 
+
+        *Praise*
+
+        -> [`tweet`](https://twitter.com/z5h/status/1039515182878212099) -- *@z5h*
+            1 day with [elm-ui](https://package.elm-lang.org/packages/mdgriffith/elm-ui/latest/) and I can create UIs more reliably and faster than with CSS after 15 years of exposure\\/use. Thank you @mech_elephant (and @elmlang).
+        
+        -> [`tweet`](https://twitter.com/czaplic/status/886963958229291008) -- *@czaplic, creator of Elm*
+            Check out @mech_elephant's excellent talk on better ways to do layout. The original goal of @elmlang, done better!
+
+    -- `elm-animator` -- /not yet released/
+
+        A new experiment in *animation in an immutable language* like Elm. Using a timeline data structure so that only minimal state is needed in your model.
+
+        *My Talk On This Library*
+
+        -> [The Immutable Animator's Toolkit](https://www.youtube.com/watch?v=Nf4rElfA8SE) -- /Elm Europe, 2018/
+
+    -- [`elm-markup`](https://github.com/mdgriffith/elm-markup)
+
+        A markup language for *interactive content*.  Languages like `markdown` are hard to integrate to highly interactive content.  This library is an extensible markup language parser which allows you to intermix interactive elements with your markup. [This resume]() was written using it!
+
+    -- [`elm-style-animation`](https://github.com/mdgriffith/elm-style-animation)
+
+        I wrote what is currently the most prominent *pure--elm animation library*.
+
+        *My Talk On This Library*
+
+        -> [Rich Animation](https://www.youtube.com/watch?v=DsDwYqsLU3E&t=1s) -- /ElmConf, 2016/
+
+    -- [Why Elm?](https://www.oreilly.com/library/view/why-elm/9781491990728/) --- O'Reilly
+
+        O'Reilly contracted me to write a free ebook on the advantages of Elm.
+
+
+| header
+    Side Projects
+
+
+| list
+    -- `Songwise` --- *Haskell*, *Elixir*, *Elm* -- /not yet released/
+
+        Songwise parses [guitar tablature](https://en.wikipedia.org/wiki/Tablature), extracts insights into the song structure, and displays them to you to help you learn and understand the music.
+
+    -- [`The Wise Manatee`](http://wise-manatee.com/) -- *Javascript*, *React* 
+
+        The Wise Manatee was an art project I did in my spare time.  It's essentially a manatee that gives programming advice.
+
+        The background is procedurally generated.
+
+
+
+| header
+    Education
+
+<smallcaps| University of California, Santa Cruz, 2008 > -- 
+
+| list
+
+    Bachelors of Science in Biology
+
+    /One of my first projects was to create a visualizer for Nuclear Magnetic Resonance data in PERL. Nuclear Magnetic Resonance data is generally used to reconstruct a chemical structure based on magnetic vibrations in certain atoms./
+
+
