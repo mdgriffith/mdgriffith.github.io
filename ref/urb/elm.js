@@ -12829,6 +12829,8 @@ var author$project$Main$myParser = author$project$Mark$parseWith(
 						mdgriffith$elm_ui$Element$Font$size(16),
 						mdgriffith$elm_ui$Element$moveDown(150),
 						mdgriffith$elm_ui$Element$moveRight(150),
+						mdgriffith$elm_ui$Element$htmlAttribute(
+						elm$html$Html$Attributes$class('print-shrink')),
 						mdgriffith$elm_ui$Element$padding(50),
 						mdgriffith$elm_ui$Element$Font$family(
 						_List_fromArray(
