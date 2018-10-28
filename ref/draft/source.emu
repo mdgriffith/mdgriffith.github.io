@@ -1,3 +1,4 @@
+
 | title
     Matthew Griffith 
 
@@ -61,7 +62,7 @@ I rock climb and design open source projects in my free time and have a passion 
 
     -- `Science Table` -- *Postgres*, *Python*
 
-        Expose public science database APIs like *PubChem* through a *Postgres FDW* so they can be queried as if they were *a table in the database*.
+        External data sources, but as if they were *just another table in your database*.  Fascilitates public dataset exploration in a way that's already integrated with your existing data.
 
 
 *Data Scientist* -- /Evotec/ -- , 2008--2016
@@ -70,8 +71,9 @@ I rock climb and design open source projects in my free time and have a passion 
 | list
     -- `PubQuery` -- *Python*
 
-        A Python   A Python library for composing queries to *PubChem* and *PubMed*.
+        A developer--friendly Python library for developing advanced queries to *Public Science Databases* (such as *PubChem*, *PubMed*, and *MeSH*).
 
     -- `Annotation Database` -- *Neo4j* (graph database)
 
-        Designed and maintained a *chemical intelligence database* for high value chemical sets and how they were related to existing research. 
+        A high-performance, *chemical intelligence database* for high value chemical sets and how they were *related to existing research*.
+
