@@ -3,7 +3,7 @@
 
 matt@mechanical-elephant.com • (646) 470 8636
 
-I'm a full--stack web technology lead with a passion for new technology, tempering rapid-release schedules with the performance and stability modern languages and libraries have to offer.  I am fluent in *Python*, *Javascript*, *Elm*, and *Elixir*, and proficient in *Haskell*. I've worked with *Google Compute*, *AWS*, *Docker*, and *Kubernetes*, and databases such as *Postgres* and *Neo4j*. I love crafting *ergonomic APIs* that keep developer productivity high.
+I'm a full--stack web technology lead with a passion for new tech, tempering rapid-release schedules with the performance and stability modern languages and libraries have to offer.  I am fluent in *Python*, *Javascript*, *Elm*, and *Elixir*, and proficient in *Haskell*. I've worked with *Google Compute*, *AWS*, *Docker*, and *Kubernetes*, and databases such as *Postgres* and *Neo4j*. I love crafting *ergonomic APIs* that keep developer productivity high.
 
 In my spare time, I rock climb, read sci-fi, play guitar, and develop numerous open source projects.
 
@@ -60,7 +60,7 @@ In my spare time, I rock climb, read sci-fi, play guitar, and develop numerous o
 
         A developer--friendly Python library for advanced queries to *Public Science Databases* (such as *PubChem*, *PubMed*, and *MeSH*).
 
-    -- {Code|Annotation Database} -- *Neo4j* (graph database)
+    -- {Code|Chemical Intelligence Database} -- *Neo4j* (graph database)
 
-        Modeled a *chemical intelligence database* for connecting high value chemical sets and their biological activity.
+        Modeled a *chemical intelligence database* for relating high value chemical sets to their biological activity.
 
