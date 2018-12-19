@@ -13,13 +13,13 @@ In my spare time, I rock climb, read sci-fi, play guitar, and develop numerous o
 | List
     -- {Link|Why Elm?| url = https://www.oreilly.com/library/view/why-elm/9781491990728/} --- published by O'Reilly
 
-        I demonstrate how Elm, a language for frontend web development characterized by *no<>runtime<>errors*, and an invincible--feeling *refactoring experience*, is not only a strong choice for your next project, but for developing mastery as an engineer.
+        I demonstrate how Elm, a language for frontend web development, characterized by *no<>runtime<>errors* and an invincible--feeling *refactoring experience*, is not only a strong choice for your next project, but for developing mastery as an engineer.
 
     -- {Link|elm-ui|url = https://github.com/mdgriffith/elm-ui}
 
         /What if you never had to write HTML//CSS again?/
         
-        I built a bottom--up, typesafe, developer--friendly *replacement for HTML//CSS* that ensures that a tiny change to your code *won't break your layout unexpectedly*.  Your time is more important than tracking down weird CSS issues.
+        I built a bottom--up, typesafe, developer--friendly *replacement for HTML//CSS* that ensures a tiny change to your code *won't break your layout unexpectedly*.  Your time is more important than tracking down weird CSS issues.
 
         -> {Link|Building a Better Design Toolkit| url = https://www.youtube.com/watch?v=Ie-gqwSHQr0} -- /ElmConf, 2018/ 
         -> {Link|CSS as Bytecode| url = https://www.youtube.com/watch?v=bt1TzVngOqY} -- /ReactiveConf, 2017/ -- /by Richard Feldman/
@@ -27,7 +27,7 @@ In my spare time, I rock climb, read sci-fi, play guitar, and develop numerous o
 
     -- {Link|elm-markup| url=https://github.com/mdgriffith/elm-markup}
 
-        Build truly dynamic content with ease and the safety of static types. A {Code|markdown} replacement with *built-in extensibility* and *intermixing of interactive elements*.
+        Build truly dynamic content with the ease and the safety of static types. A {Code|markdown} replacement with *built-in extensibility* and *intermixing of interactive elements*.
 
     -- {Link|elm-style-animation| url = https://github.com/mdgriffith/elm-style-animation}
 
